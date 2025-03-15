@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71df5490a3529946a60152e2c02a8af, type: 3}
   m_Name: Strength
   m_EditorClassIdentifier: 
-  stateName: 
-  statDesc: 
-  incAmount: 0
+  statName: Strength
+  statDesc: Your physical abilities
+  incAmount: 2

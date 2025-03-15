@@ -9,7 +9,8 @@ public class EnemyMovement : MonoBehaviour
     {
         PATROL,
         ATTACK,
-        CHASE
+        CHASE,
+        IDLE
     }
 
 
@@ -58,6 +59,10 @@ public class EnemyMovement : MonoBehaviour
         else if (enemyState == EnemyState.CHASE)
         {
             agent.SetDestination(player.transform.position);
+        }
+        else if(enemyState == EnemyState.IDLE)
+        {
+            ;
         }
     }
 
