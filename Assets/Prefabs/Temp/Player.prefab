@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2691849331308262229}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.28, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -185,6 +185,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b4f83d4feb948468dd9184cff72262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charisma: 0
+  dexterity: 0
+  intelligence: 0
+  strength: 0
+  wisdom: 0
+  constitution: 0
+  boss1: 0
+  boss2: 0
+  boss3: 0
+  boss4: 0
+  boss5: 0
 --- !u!1 &6470386563764639281
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 6470386563764639281}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.39, z: 0.16}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -251,7 +262,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

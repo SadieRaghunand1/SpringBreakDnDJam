@@ -15,18 +15,21 @@ public class EnemyAnimator : MonoBehaviour
     {
         if (em.enemyState == EnemyState.PATROL)
         {
+            animator.SetBool("isPunching", false);
             animator.SetBool("isMoving", true);
         }
         else if (em.enemyState == EnemyState.CHASE)
         {
+            animator.SetBool("isPunching", false);
             animator.SetBool("isMoving", true);
         }
         else if (em.enemyState == EnemyState.ATTACK)
         {
-            ;
+            animator.SetBool("isPunching", true);
         }
         else if (em.enemyState == EnemyState.IDLE)
         {
+            animator.SetBool("isPunching", false);
             animator.SetBool("isMoving", false);
         }
     }

@@ -716,7 +716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1430328959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,7 +866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 645134817431661152, guid: b5a23aabe7fdf7042b860cb319a9441f, type: 3}
       propertyPath: enemyState
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 645134817431661152, guid: b5a23aabe7fdf7042b860cb319a9441f, type: 3}
       propertyPath: patrolPts.Array.size
