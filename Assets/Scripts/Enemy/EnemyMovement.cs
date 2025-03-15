@@ -20,6 +20,8 @@ public class EnemyMovement : MonoBehaviour
     public GameObject[] patrolPts;
     private int ptIndex = 0;
 
+    public bool debugging;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +31,13 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StateMachine();
-        ChangePatrolPt();
+
+        if(!debugging)
+        {
+            StateMachine();
+            ChangePatrolPt();
+        }
+        
     }
 
    
