@@ -25,8 +25,7 @@ public class PlayerController : MonoBehaviour
     public float lookXLimit = 45f;
     private float rotationX = 0;
 
-    //added for pause menu
-    //public pauseMenu pMenu;
+    
 
     #region Monobehaviour methods
     private void Start()
@@ -57,23 +56,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) //Player lands after jumping
     {
-        if (collision.gameObject.layer == 6)
-        {
-            Debug.Log("Layer 6");
-            // transform.parent = collision.gameObject.transform;
-            // transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-        }
+        
         CheckGrounded(collision, true);
         isJumping = false;
     }
 
     private void OnCollisionExit(Collision collision) //Player jumps
     {
-        if (collision.gameObject.layer == 6)
-        {
-            /*transform.parent = null;
-            transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);*/
-        }
+        
         CheckGrounded(collision, false);
 
     }
