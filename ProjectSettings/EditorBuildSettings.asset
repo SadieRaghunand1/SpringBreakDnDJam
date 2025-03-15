@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Sadie_Test.unity
+    guid: b6843be55ced56c49a409e0b4154b1fe
+  - enabled: 1
+    path: Assets/Scenes/SadieTest2.unity
+    guid: 41018cb04276db14aad3a2c7792a13fa
+  - enabled: 1
+    path: Assets/Scenes/SadieTest3.unity
+    guid: 706e163eb936569449be46e50d4a44e9
   m_configObjects: {}
