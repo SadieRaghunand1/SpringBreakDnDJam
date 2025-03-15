@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1507151983806450637}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.043619223, z: 0, w: -0.99904823}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.365, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -274,6 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aaf234ec8983b549b88ace7f15a7165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyState: 0
+  enemyState: 3
   patrolPts: []
   debugging: 0
