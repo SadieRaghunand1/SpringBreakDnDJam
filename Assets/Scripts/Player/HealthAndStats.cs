@@ -7,6 +7,15 @@ public class HealthAndStats : MonoBehaviour
 {
     private Transform startPos;
 
+    [Header("Stats")]
+    public int dexterity;
+    public int strength;
+    public int constitution; //Always at 1, cannot change
+    public int intelligence;
+    public int wisdom;
+    public int charisma;
+
+
 
     private void Start()
     {
