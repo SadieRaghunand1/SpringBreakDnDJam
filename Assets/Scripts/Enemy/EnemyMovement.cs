@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = FindAnyObjectByType<PlayerController>().gameObject;
-        
+        enemyState = EnemyState.PATROL;
     }
 
     void StateMachine()
