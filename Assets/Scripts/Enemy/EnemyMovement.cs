@@ -17,7 +17,8 @@ public class EnemyMovement : MonoBehaviour
     public EnemyState enemyState;
     private GameObject player;
 
-    [SerializeField] private GameObject[] patrolPts;
+    public GameObject[] patrolPts;
+    private int ptIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +30,15 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         StateMachine();
+        ChangePatrolPt();
     }
 
+   
     void InitValues()
     {
         agent = GetComponent<NavMeshAgent>();
         player = FindAnyObjectByType<PlayerController>().gameObject;
+        
     }
 
     void StateMachine()
@@ -42,10 +46,29 @@ public class EnemyMovement : MonoBehaviour
         if(enemyState == EnemyState.PATROL)
         {
             //Move
+            agent.SetDestination(patrolPts[ptIndex].transform.position);
         }
         else if (enemyState == EnemyState.CHASE)
         {
             agent.SetDestination(player.transform.position);
         }
     }
+
+
+    void ChangePatrolPt()
+    {
+        if(transform.position.x == patrolPts[ptIndex].transform.position.x && transform.position.z == patrolPts[ptIndex].transform.position.z)
+        {
+            if (ptIndex + 1 == patrolPts.Length)
+            {
+                ptIndex = 0;
+            }
+            else
+            {
+                ptIndex++;
+            }
+            
+        }
+    }
+
 }

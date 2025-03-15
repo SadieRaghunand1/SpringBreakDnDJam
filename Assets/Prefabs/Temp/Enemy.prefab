@@ -217,5 +217,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aaf234ec8983b549b88ace7f15a7165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyState: 2
+  enemyState: 0
   patrolPts: []

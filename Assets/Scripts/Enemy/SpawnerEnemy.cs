@@ -6,6 +6,8 @@ public class SpawnerEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefab;
     private GameObject prefabToSpawn;
+    public GameObject[] areaPatrolPts;
+    private GameObject enemySpawned;
 
     [Header("Spawn time varables")]
     public float maxTime;
@@ -22,7 +24,8 @@ public class SpawnerEnemy : MonoBehaviour
     {
         Debug.Log("Spawn");
         prefabToSpawn = enemyPrefab[Random.Range(0, enemyPrefab.Length)];
-        Instantiate(prefabToSpawn, transform.position, prefabToSpawn.transform.rotation);
+        enemySpawned = Instantiate(prefabToSpawn, transform.position, prefabToSpawn.transform.rotation);
+        enemySpawned.GetComponent<EnemyMovement>().patrolPts = areaPatrolPts;   
     }
 
     IEnumerator TimeSpawns()
