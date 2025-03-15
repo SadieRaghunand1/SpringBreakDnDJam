@@ -219,3 +219,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyState: 0
   patrolPts: []
+  debugging: 0

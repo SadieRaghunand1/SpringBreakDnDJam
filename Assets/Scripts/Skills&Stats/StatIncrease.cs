@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UIElements;
 
 public class StatIncrease : MonoBehaviour
 {
+    //Change of plans: Use this for skills, not stats
+
+
+
     [SerializeField] private Canvas statIncCanvas;
     private int statIncAmount;
     [SerializeField] private ScriptObjSTATS[] statsToChoose;
@@ -25,6 +30,7 @@ public class StatIncrease : MonoBehaviour
 
     void RandomizeStatInc()
     {
+        int[] _chosenIndx = new int[5];
         //Clear choices if they are filled already
         for(int i = 0; i < displayedChoices.Length; i++)
         {
@@ -34,10 +40,12 @@ public class StatIncrease : MonoBehaviour
         //Choose new choices
         for(int i = 0; i < displayedChoices.Length; i++)
         {
-            ScriptObjSTATS _statRolled = statsToChoose[Random.Range(0, statsToChoose.Length)];
+            _chosenIndx[i] = Random.Range(0, statsToChoose.Length);
+           
+            ScriptObjSTATS _statRolled = statsToChoose[_chosenIndx[i]];
             displayedChoices[i] = _statRolled;
             //Check that choices are new, not already rolled
-           /* for(int j = 0; j < displayedChoices.Length; i++)
+            for(int j = 0; j < i; j++)
             {
                 if (displayedChoices[j] == _statRolled)
                 {
@@ -45,13 +53,20 @@ public class StatIncrease : MonoBehaviour
                     i--;
                     break;
                 }
-            }*/
+            }
         }
 
-        //Debug
+        PopulateStatOptions();
+    }
+
+
+    void PopulateStatOptions()
+    {
         for(int i = 0; i < displayedChoices.Length; i++)
         {
-            Debug.Log(displayedChoices[i].statName);
+            title[i].text = displayedChoices[i].statName;
+            desc[i].text = displayedChoices[i].statDesc;
+            inc[i].text = displayedChoices[i].incAmount.ToString();
         }
     }
 }
