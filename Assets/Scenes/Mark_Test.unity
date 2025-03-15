@@ -862,11 +862,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 645134817431661152, guid: b5a23aabe7fdf7042b860cb319a9441f, type: 3}
       propertyPath: debugging
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 645134817431661152, guid: b5a23aabe7fdf7042b860cb319a9441f, type: 3}
       propertyPath: enemyState
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 645134817431661152, guid: b5a23aabe7fdf7042b860cb319a9441f, type: 3}
       propertyPath: patrolPts.Array.size
