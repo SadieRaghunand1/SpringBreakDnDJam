@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int health;
+    [SerializeField] protected int health;
 
 
     public void LoseHealth()
     {
         health--;
 
-        if(health <= 0)
+        CheckDead();
+    }
+
+    public virtual void CheckDead()
+    {
+        if (health <= 0)
         {
             Debug.Log("Die");
 
