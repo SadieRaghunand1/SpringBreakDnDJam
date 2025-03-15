@@ -7,6 +7,7 @@ public class HealthAndStats : MonoBehaviour
 {
     private Transform startPos;
     private int incAmount = 2;
+    private StatsManager statsManager;
     [Header("Stats")]
     public int charisma; //1
     public int dexterity; //2
@@ -15,13 +16,19 @@ public class HealthAndStats : MonoBehaviour
     public int wisdom; //5
     public int constitution; //Always at 1, cannot change
 
-
+    [Header("BossIndicators")]
+    public bool boss1;
+    public int boss2;
+    public int boss3;
+    public int boss4;
+    public int boss5;
+        
 
 
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-
+        statsManager = FindAnyObjectByType<StatsManager>();
         //Temp for debugging menus
         Cursor.lockState = CursorLockMode.None;
     }
@@ -61,5 +68,13 @@ public class HealthAndStats : MonoBehaviour
         //Temp, rn this causes the issue of several players in scene so will need to spawn in player, not put in scene automatically
         int scene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(scene);
+    }
+
+
+    public void CheckBossDeath(int bossID)
+    {
+        //First trigger menu
+        statsManager.OpenStatMenu();
+        //Then trigger bool check
     }
 }
