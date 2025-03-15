@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
     {
         MovementFixed(movement);
         RotatePlayer();
-        // Jump();
 
 
     }
@@ -79,25 +78,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == 11)
-        {
-            Debug.Log("safe zone?");
-            inSafeZone = true;
-        }
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.layer == 11)
-        {
-            Debug.Log("Exit safe zone");
-            inSafeZone = false;
-        }
-
-    }
+  
     #endregion
 
     void MovementUpdate()
@@ -136,7 +117,7 @@ public class PlayerController : MonoBehaviour
         
             rotationX += -Input.GetAxis("Mouse Y") * cameraSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            //playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         
     }
 
