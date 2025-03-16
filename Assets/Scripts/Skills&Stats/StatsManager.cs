@@ -50,9 +50,9 @@ public class StatsManager : MonoBehaviour
     public void HoldSkillToggles(int _skillInx)
     {
         Debug.Log("Clicked");
-        int _skillID = skillCanvas.displayedChoices[_skillInx].skillIndex;
-        Debug.Log("Enter Hold skill toggle" + _skillID);
-        switch (_skillID)
+        //int _skillID = skillCanvas.displayedChoices[_skillInx].skillIndex;
+        //Debug.Log("Enter Hold skill toggle" + _skillID);
+       /* switch (_skillID)
         {
             
             case 1: //Knight helmet
@@ -70,7 +70,7 @@ public class StatsManager : MonoBehaviour
             case 5: //Winged helmet
                 skillManager.TurnOnWingedHelmet();
                 break;
-        }
+        }*/
 
         CloseSkillMenu();
     }
@@ -102,13 +102,13 @@ public class StatsManager : MonoBehaviour
         skillMenu.SetActive(false);
 
         //Load random next room
-        ChangeSceneOnPlayer();
+       // ChangeSceneOnPlayer();
     }
 
 
     void ChangeSceneOnPlayer()
     {
-        Debug.Log("Enter change scene");
+        //Debug.Log("Enter change scene");
         int _currentScene = SceneManager.GetActiveScene().buildIndex;
         for(int i = 0; i < buildIndices.Count; i++)
         {

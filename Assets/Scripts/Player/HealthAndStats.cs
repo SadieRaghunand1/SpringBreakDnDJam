@@ -32,7 +32,7 @@ public class HealthAndStats : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log(this.gameObject.name);
+       // Debug.Log(this.gameObject.name);
         scenesVisitedThisRun = new List<int>();
         
     }
@@ -56,7 +56,7 @@ public class HealthAndStats : MonoBehaviour
         skillManager.OnStartRemove();
         for(int i = 0; i < scenesVisitedThisRun.Count; i++)
         {
-            Debug.Log("Scenes: " + scenesVisitedThisRun[i]);
+            //Debug.Log("Scenes: " + scenesVisitedThisRun[i]);
         }
     }
 
@@ -86,7 +86,7 @@ public class HealthAndStats : MonoBehaviour
     }
     public void Die()
     {
-        Debug.Log("Die");
+       // Debug.Log("Die");
 
         health--;
         if(health <= 0)

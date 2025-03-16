@@ -13,6 +13,7 @@ public class StatIncrease : MonoBehaviour
     [SerializeField] private Canvas statIncCanvas;
     private int statIncAmount;
     public List<ScriptObjSkills> statsToChoose;
+    public ScriptObjSkills empty;
     public ScriptObjSkills[] displayedChoices;
 
     [Header("UI")]
@@ -39,39 +40,40 @@ public class StatIncrease : MonoBehaviour
         //Choose new choices
         for(int i = 0; i < displayedChoices.Length; i++)
         {
-            _chosenIndx[i] = Random.Range(0, statsToChoose.Count - 1);
-            if (statsToChoose[_chosenIndx[i]] == null)
+            if(statsToChoose.Count > 1)
             {
-                Debug.Log("Empty");
-                _statRolled = statsToChoose[statsToChoose.Count - 1];
-                displayedChoices[i] = _statRolled;
-                PopulateStatOptions();
-                return;
+                _chosenIndx[i] = Random.Range(0, statsToChoose.Count);
+                //Check if there are no more unique skills to pull from, fill in empty
+                if (statsToChoose[_chosenIndx[i]] == null)
+                {
+                    Debug.Log("Empty");
+                    _statRolled = statsToChoose[statsToChoose.Count];
+                    displayedChoices[i] = _statRolled;
+                   // PopulateStatOptions();
+
+                }
+                else
+                {
+                    _statRolled = statsToChoose[_chosenIndx[i]];
+
+
+                    //statsToChoose[_chosenIndx[i]] = null;
+                    statsToChoose.RemoveAt(_chosenIndx[i]);
+                    displayedChoices[i] = _statRolled;
+                }
             }
-            _statRolled = statsToChoose[_chosenIndx[i]];
-
- 
-            //statsToChoose[_chosenIndx[i]] = null;
-            statsToChoose.RemoveAt(_chosenIndx[i]);
-            displayedChoices[i] = _statRolled;
-            //Check that choices are new, not already rolled
-
-           
-            /*for(int j = 0; j < i; j++)
+            else
             {
-                //Testing
-                if(_statRolled = null)
-                {
-                    Debug.Log("Null");
-                }
+                //_statRolled = statsToChoose[statsToChoose.Count - 1];
+                displayedChoices[i] = empty;
+                //PopulateStatOptions();
+                
+            }
 
-                if (displayedChoices[j] == _statRolled)
-                {
-                    displayedChoices[i] = null;
-                    i--;
-                    break;
-                }
-            }*/
+
+            
+                
+           
         }
 
         PopulateStatOptions();

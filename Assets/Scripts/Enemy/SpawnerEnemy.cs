@@ -28,7 +28,7 @@ public class SpawnerEnemy : MonoBehaviour
     }
     void SpawnEnemy()
     {
-        Debug.Log("Spawn");
+        //Debug.Log("Spawn");
         prefabToSpawn = enemyPrefab[Random.Range(0, enemyPrefab.Length)];
         enemy = Instantiate(prefabToSpawn, transform.position, prefabToSpawn.transform.rotation);
         EnemyMovement _enemyMove = enemy.GetComponent<EnemyMovement>();

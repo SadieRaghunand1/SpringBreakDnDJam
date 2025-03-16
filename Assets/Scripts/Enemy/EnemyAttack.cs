@@ -21,7 +21,7 @@ public class EnemyAttack : MonoBehaviour
 
     void AttackPlayer()
     {
-        Debug.Log("Enemy Shoot");
+        //Debug.Log("Enemy Shoot");
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, attackDistance))
@@ -39,7 +39,7 @@ public class EnemyAttack : MonoBehaviour
         else
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
-            Debug.Log("Hit - " + hit.collider.gameObject.name);
+            //Debug.Log("Hit - " + hit.collider.gameObject.name);
         }
     }
 

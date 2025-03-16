@@ -18,7 +18,7 @@ public class Attack : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Shoot");
+            //Debug.Log("Shoot");
             AttackSword();
         }
     }
@@ -35,7 +35,7 @@ public class Attack : MonoBehaviour
             if(hit.collider.gameObject.layer == 7)
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                Debug.Log("Did Hit");
+                //Debug.Log("Did Hit");
 
                 EnemyHealth _enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
                 _enemy.LoseHealth();

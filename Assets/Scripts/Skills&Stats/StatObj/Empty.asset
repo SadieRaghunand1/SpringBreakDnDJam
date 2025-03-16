@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71df5490a3529946a60152e2c02a8af, type: 3}
   m_Name: Empty
   m_EditorClassIdentifier: 
-  statName: 
-  statDesc: 
+  statName: ' '
+  statDesc: ' '
   skillIndex: 0
