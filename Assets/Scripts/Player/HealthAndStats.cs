@@ -17,11 +17,8 @@ public class HealthAndStats : MonoBehaviour
     public int constitution; //Always at 1, cannot change
 
     [Header("BossIndicators")]
-    public bool boss1;
-    public int boss2;
-    public int boss3;
-    public int boss4;
-    public int boss5;
+    public bool[] bossDefeated;
+
         
 
 
@@ -59,6 +56,8 @@ public class HealthAndStats : MonoBehaviour
                 wisdom += incAmount;
                 break;
         }
+
+        statsManager.CloseStatMenu();
            
     }
     public void Die()
@@ -71,10 +70,16 @@ public class HealthAndStats : MonoBehaviour
     }
 
 
-    public void CheckBossDeath(int bossID)
+    public void CheckBossDeath(int _bossID) //Boss id refers to the index that will be checked
     {
-        //First trigger menu
-        statsManager.OpenStatMenu();
-        //Then trigger bool check
+        if (!bossDefeated[_bossID])
+        {
+            //First trigger menu
+            statsManager.OpenStatMenu();
+            //Then trigger bool check
+            bossDefeated[_bossID] = true;
+        }
+
+
     }
 }

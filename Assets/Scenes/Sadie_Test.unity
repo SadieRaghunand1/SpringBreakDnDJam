@@ -4224,6 +4224,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BBEG
       objectReference: {fileID: 0}
+    - target: {fileID: 8633498023600206479, guid: a55f6f8cd8f6c044e98695d7f0b1e0a1, type: 3}
+      propertyPath: bossID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633498023600206479, guid: a55f6f8cd8f6c044e98695d7f0b1e0a1, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5392,8 +5400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f06826c01d0b424d99282a4809beec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statMenu: {fileID: 0}
-  skillMenu: {fileID: 0}
+  statMenu: {fileID: 1163582496}
+  skillMenu: {fileID: 600456625}
 --- !u!4 &1368451886
 Transform:
   m_ObjectHideFlags: 0

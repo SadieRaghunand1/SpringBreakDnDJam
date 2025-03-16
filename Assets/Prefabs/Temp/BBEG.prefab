@@ -108,10 +108,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3118145687730825988}
   - component: {fileID: 279152412072785409}
-  - component: {fileID: 4867498648714740677}
   - component: {fileID: 2561014829643095461}
   - component: {fileID: 3350465791085519661}
   - component: {fileID: 645134817431661152}
+  - component: {fileID: 8633498023600206479}
   m_Layer: 7
   m_Name: BBEG
   m_TagString: Untagged
@@ -156,19 +156,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.187731, y: 1.7927763, z: 1}
   m_Center: {x: -0.028942585, y: 0.99797595, z: 0}
---- !u!114 &4867498648714740677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4375388206222397441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbbe87e610e416f42bd604a5c495db36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
 --- !u!114 &2561014829643095461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,3 +206,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyState: 0
   patrolPts: []
+  debugging: 0
+--- !u!114 &8633498023600206479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4375388206222397441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5891d1ebbcd5424bb66651cd9c946e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  bossID: 0

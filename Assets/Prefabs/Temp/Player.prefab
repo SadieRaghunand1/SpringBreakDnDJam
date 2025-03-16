@@ -185,6 +185,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b4f83d4feb948468dd9184cff72262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charisma: 0
+  dexterity: 0
+  intelligence: 0
+  strength: 0
+  wisdom: 0
+  constitution: 0
+  bossDefeated: 0000000000
 --- !u!1 &6470386563764639281
 GameObject:
   m_ObjectHideFlags: 0
