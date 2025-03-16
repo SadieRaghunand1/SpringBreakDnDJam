@@ -208,11 +208,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e64f8be1f5069943b461aec5a2ce86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterListOfSkillsAvailable:
+  - {fileID: 11400000, guid: fd232a54d03d7d04187b223e808acf46, type: 2}
+  - {fileID: 11400000, guid: dc8ecf6e1d37138408e725db6d043b18, type: 2}
+  - {fileID: 11400000, guid: dc9b22c2c12a01f4a96d8f0679c0296b, type: 2}
+  - {fileID: 11400000, guid: 6da4a62dec00a2544afe133215db4568, type: 2}
+  - {fileID: 11400000, guid: e3b42b4b6412d594c8a43674b5d02ec8, type: 2}
   blurryHat: 0
   flowerPot: 0
   knightHelmet: 0
   propellorHat: 0
   wingedHelmet: 0
+  obtainedSkills: []
   healthAndStats: {fileID: 4072236553033286769}
   rb: {fileID: 3872104621890735132}
   playerController: {fileID: 1695697037005702782}

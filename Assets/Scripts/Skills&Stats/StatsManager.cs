@@ -49,11 +49,12 @@ public class StatsManager : MonoBehaviour
 
     public void HoldSkillToggles(int _skillInx)
     {
+        Debug.Log("Clicked");
         int _skillID = skillCanvas.displayedChoices[_skillInx].skillIndex;
-        Debug.Log(_skillID);
-        
-        switch(_skillID)
+        Debug.Log("Enter Hold skill toggle" + _skillID);
+        switch (_skillID)
         {
+            
             case 1: //Knight helmet
                 skillManager.IncreaseDefense();
                 break;
@@ -107,18 +108,22 @@ public class StatsManager : MonoBehaviour
 
     void ChangeSceneOnPlayer()
     {
-        
+        Debug.Log("Enter change scene");
         int _currentScene = SceneManager.GetActiveScene().buildIndex;
         for(int i = 0; i < buildIndices.Count; i++)
         {
             if (buildIndices[i] == _currentScene)
             {
-                buildIndices.Remove(i);
+                buildIndices.RemoveAt(i);
                 break;
             }
         }
 
          int _loadSceneInx = Random.Range(0, buildIndices.Count);
+        while(_loadSceneInx == 0)
+        {
+            Random.Range(0, buildIndices.Count);
+        }
         Debug.Log(_loadSceneInx);
          SceneManager.LoadScene(_loadSceneInx);
 

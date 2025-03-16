@@ -12,6 +12,7 @@ public class HealthAndStats : MonoBehaviour
 
     [Header("Loading")]
     public List<int> scenesVisitedThisRun;
+    
 
     [Header("Stats")]
     public int charisma; //1
@@ -52,6 +53,7 @@ public class HealthAndStats : MonoBehaviour
         startPos = GameObject.FindWithTag("StartPos").transform;
         transform.position = startPos.position;
         scenesVisitedThisRun.Add(SceneManager.GetActiveScene().buildIndex);
+        skillManager.OnStartRemove();
         for(int i = 0; i < scenesVisitedThisRun.Count; i++)
         {
             Debug.Log("Scenes: " + scenesVisitedThisRun[i]);

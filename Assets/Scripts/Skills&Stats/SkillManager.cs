@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
+    [SerializeField] private ScriptObjSkills[] masterListOfSkillsAvailable;
+
     [Header("Skill bools")]
-    public bool blurryHat;
-    public bool flowerPot;
-    public bool knightHelmet;
-    public bool propellorHat;
-    public bool wingedHelmet;
+    public bool blurryHat; // 0
+    public bool flowerPot; //1
+    public bool knightHelmet; //2
+    public bool propellorHat; //3
+    public bool wingedHelmet; //4
+
+    public List<ScriptObjSkills> obtainedSkills = new List<ScriptObjSkills>();
 
     [Header("Other")]
     [SerializeField] private HealthAndStats healthAndStats;
@@ -18,23 +22,47 @@ public class SkillManager : MonoBehaviour
 
     //These need container methods to be accessed by the buttons
 
+    public void OnStartRemove()
+    {
+        StatIncrease _statIncrease = FindAnyObjectByType<StatIncrease>();
 
+       for(int i = 0; i < obtainedSkills.Count; i++)
+        {
+            for(int j = 0; j < _statIncrease.statsToChoose.Count; j++)
+            {
+                if (obtainedSkills[i] == _statIncrease.statsToChoose[j])
+                {
+                    _statIncrease.statsToChoose.RemoveAt(j);
+                }
+            }
+        }
+    }
     /// <summary>
     /// Knight helmet: increase defense by doubling health
     /// </summary>
     public void IncreaseDefense()
     {
-        wingedHelmet = true;
-        healthAndStats.health *= 2;
+        if(!knightHelmet)
+        {
+            obtainedSkills.Add(masterListOfSkillsAvailable[2]);
+            wingedHelmet = true;
+            healthAndStats.health *= 2;
+        }
+        
     } //END IncreaseDefense()
 
     /// <summary>
-    /// Winged helmet: decrease mass of player to mimic glide effect
+    /// Propellor: decrease mass of player to mimic glide effect
     /// </summary>
     public void DecreaseGravity()
     {
-        propellorHat = true;
-        rb.mass /= 2;
+        if(!propellorHat)
+        {
+            obtainedSkills.Add(masterListOfSkillsAvailable[3]);
+            propellorHat = true;
+            rb.mass /= 2;
+        }
+        
     } //END DecreaseGravity()
 
     /// <summary>
@@ -42,8 +70,13 @@ public class SkillManager : MonoBehaviour
     /// </summary>
     public void IncreaseSpeed()
     {
-        blurryHat = true;
-        playerController.speed *= 2;
+        if(!blurryHat)
+        {
+            obtainedSkills.Add(masterListOfSkillsAvailable[0]);
+            blurryHat = true;
+            playerController.speed *= 2;
+        }
+        
     } //END IncreaseSpeed()
 
     /// <summary>
@@ -51,7 +84,12 @@ public class SkillManager : MonoBehaviour
     /// </summary>
     public void TurnOnFlowerPot()
     {
-        flowerPot = true;
+        if(!flowerPot)
+        {
+            obtainedSkills.Add(masterListOfSkillsAvailable[1]);
+            flowerPot = true; 
+        }
+        
     } //END TurnOnFLowerPot()
 
     /// <summary>
@@ -59,7 +97,12 @@ public class SkillManager : MonoBehaviour
     /// </summary>
     public void TurnOnWingedHelmet()
     {
-        wingedHelmet = true;
+        if (!wingedHelmet)
+        {
+            obtainedSkills.Add(masterListOfSkillsAvailable[4]);
+            wingedHelmet = true;
+        }
+        
     } //END TurnOnWingedHelmet()
 
     /// <summary>
