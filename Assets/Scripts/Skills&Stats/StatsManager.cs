@@ -102,7 +102,7 @@ public class StatsManager : MonoBehaviour
         skillMenu.SetActive(false);
 
         //Load random next room
-       // ChangeSceneOnPlayer();
+        ChangeSceneOnPlayer();
     }
 
 
@@ -119,7 +119,9 @@ public class StatsManager : MonoBehaviour
             }
         }
 
-         int _loadSceneInx = Random.Range(0, buildIndices.Count);
+         int _loadSceneInx = buildIndices[Random.Range(0, buildIndices.Count)];
+
+        //This is the culprit!
         while(_loadSceneInx == 0)
         {
             Random.Range(0, buildIndices.Count);
