@@ -7,6 +7,7 @@ public class Attack : MonoBehaviour
 {
     [SerializeField] private float attackDistance;
     public bool isAttacking = false;
+    private bool canAttack = true;
 
 
 
@@ -17,11 +18,13 @@ public class Attack : MonoBehaviour
 
     void InputAttack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canAttack)
         {
             isAttacking = true;
             Debug.Log("Shoot");
             AttackSword();
+
+            StartCoroutine(WaitForAttackAnim());
         }
         else if (!Input.GetMouseButtonDown(0))
         {
@@ -52,6 +55,12 @@ public class Attack : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
         }
+    }
 
+    IEnumerator WaitForAttackAnim()
+    {
+        canAttack = false;
+        yield return new WaitForSecondsRealtime(1f);
+        canAttack = true;
     }
 }
