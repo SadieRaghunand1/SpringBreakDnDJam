@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
         if(!debugging)
         {
             StateMachine();
-            ChangePatrolPt();
+            //ChangePatrolPt();
         }
         
     }
@@ -46,7 +46,7 @@ public class EnemyMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = FindAnyObjectByType<PlayerController>().gameObject;
-        enemyState = EnemyState.PATROL;
+       // enemyState = EnemyState.PATROL;
     }
 
     void StateMachine()
@@ -55,6 +55,7 @@ public class EnemyMovement : MonoBehaviour
         {
             //Move
             agent.SetDestination(patrolPts[ptIndex].transform.position);
+            ChangePatrolPt();
         }
         else if (enemyState == EnemyState.CHASE)
         {

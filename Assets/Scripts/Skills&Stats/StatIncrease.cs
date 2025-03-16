@@ -19,7 +19,6 @@ public class StatIncrease : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI[] title;
     [SerializeField] private TextMeshProUGUI[] desc;
-    [SerializeField] private TextMeshProUGUI[] inc;
 
     private void Start()
     {

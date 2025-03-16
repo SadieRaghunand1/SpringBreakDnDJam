@@ -15,7 +15,8 @@ public class PlayerSpawnManager : MonoBehaviour
     {
         if(FindAnyObjectByType<PlayerController>() == null)
         {
-            Instantiate(playerPrefab, transform.position, playerPrefab.transform.rotation);
+            GameObject _player = Instantiate(playerPrefab, transform.position, playerPrefab.transform.rotation);
+            _player.GetComponent<HealthAndStats>().InitValuesOnLoad();
         }
         else
         {

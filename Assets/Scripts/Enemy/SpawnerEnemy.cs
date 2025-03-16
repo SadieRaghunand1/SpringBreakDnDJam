@@ -53,4 +53,16 @@ public class SpawnerEnemy : MonoBehaviour
             }
         }
     }
+
+    public void ClearLevelEnemies()
+    {
+        for(int i = 0; i < enemiesSpawned.Count; i++)
+        {
+            if (enemiesSpawned[i] != null)
+            {
+                Destroy(enemiesSpawned[i].gameObject);
+            }
+            
+        }
+    }
 }

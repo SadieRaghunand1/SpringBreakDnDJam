@@ -9,9 +9,7 @@ public class EnemyAttack : MonoBehaviour
     private float timeMax = 10;
     private float timeMin = 0;
 
-        //ChanceToHit
-    [SerializeField] private int chanceToHitMax = 20;
-    [SerializeField] private int chanceToHitMin = 0;
+
     private int chanceToHit;
     private float attackDistance = 50;
 
@@ -23,7 +21,7 @@ public class EnemyAttack : MonoBehaviour
 
     void AttackPlayer()
     {
-        Debug.Log("Shoot");
+        Debug.Log("Enemy Shoot");
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, attackDistance))

@@ -9,6 +9,10 @@ public class HealthAndStats : MonoBehaviour
     private Transform startPos;
     private int incAmount = 2;
     private StatsManager statsManager;
+
+    [Header("Loading")]
+    public List<int> scenesVisitedThisRun;
+
     [Header("Stats")]
     public int charisma; //1
     public int dexterity; //2
@@ -17,24 +21,41 @@ public class HealthAndStats : MonoBehaviour
     public int wisdom; //5
     public int constitution; //Always at 1, cannot change
 
+
+    [Header("Skills")]
+    [SerializeField] private SkillManager skillManager;
+
     [Header("BossIndicators")]
     public bool[] bossDefeated;
 
-        
 
+    private void Awake()
+    {
+        Debug.Log(this.gameObject.name);
+        scenesVisitedThisRun = new List<int>();
+        
+    }
 
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        scenesVisitedThisRun = new List<int>();
         statsManager = FindAnyObjectByType<StatsManager>();
         //Temp for debugging menus
         Cursor.lockState = CursorLockMode.None;
+        //scenesVisitedThisRun = new List<int>();
+
     }
 
     public void InitValuesOnLoad()
     {
         startPos = GameObject.FindWithTag("StartPos").transform;
         transform.position = startPos.position;
+        scenesVisitedThisRun.Add(SceneManager.GetActiveScene().buildIndex);
+        for(int i = 0; i < scenesVisitedThisRun.Count; i++)
+        {
+            Debug.Log("Scenes: " + scenesVisitedThisRun[i]);
+        }
     }
 
     public void IncreaseStat(int _statID)
@@ -68,6 +89,7 @@ public class HealthAndStats : MonoBehaviour
         health--;
         if(health <= 0)
         {
+            skillManager.OnDeath();
             //Temp, rn this causes the issue of several players in scene so will need to spawn in player, not put in scene automatically
             int scene = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(scene);

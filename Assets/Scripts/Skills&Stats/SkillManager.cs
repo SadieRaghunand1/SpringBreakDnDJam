@@ -62,4 +62,26 @@ public class SkillManager : MonoBehaviour
         wingedHelmet = true;
     } //END TurnOnWingedHelmet()
 
+    /// <summary>
+    /// Reset all skills
+    /// </summary>
+    public void OnDeath()
+    {
+
+        if(blurryHat)
+        {
+            playerController.speed /= 2;
+        }
+
+        blurryHat = false;
+        flowerPot = false;
+        knightHelmet = false;
+        propellorHat = false;
+        wingedHelmet = false;
+
+        healthAndStats.health = 1;
+        rb.mass = 1;
+
+    } //END OnDeath()
+
 }
