@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71df5490a3529946a60152e2c02a8af, type: 3}
-  m_Name: Charisma
+  m_Name: FlowerPot
   m_EditorClassIdentifier: 
-  statName: Charisma
-  statDesc: Your ability to persuade and appeal to others
-  incAmount: 2
+  statName: Flower Pot
+  statDesc: Locks on enemies and shoots seeds
+  incAmount: 0

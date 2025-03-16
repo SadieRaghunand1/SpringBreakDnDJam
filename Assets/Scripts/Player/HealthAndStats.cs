@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HealthAndStats : MonoBehaviour
 {
+    public int health = 1;
     private Transform startPos;
     private int incAmount = 2;
     private StatsManager statsManager;
@@ -64,9 +65,16 @@ public class HealthAndStats : MonoBehaviour
     {
         Debug.Log("Die");
 
-        //Temp, rn this causes the issue of several players in scene so will need to spawn in player, not put in scene automatically
-        int scene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(scene);
+        health--;
+        if(health <= 0)
+        {
+            //Temp, rn this causes the issue of several players in scene so will need to spawn in player, not put in scene automatically
+            int scene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(scene);
+            health = 1;
+        }
+
+        
     }
 
 

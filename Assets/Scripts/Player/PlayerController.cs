@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     float vertical;
     Vector3 movement;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float speed;
+    public float speed;
     [SerializeField] private float cameraSpeed = 3;
 
     [SerializeField] private Vector3 jumpForce;

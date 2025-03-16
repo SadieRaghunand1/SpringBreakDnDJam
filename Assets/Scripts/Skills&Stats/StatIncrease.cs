@@ -13,8 +13,8 @@ public class StatIncrease : MonoBehaviour
 
     [SerializeField] private Canvas statIncCanvas;
     private int statIncAmount;
-    [SerializeField] private ScriptObjSTATS[] statsToChoose;
-    private ScriptObjSTATS[] displayedChoices;
+    [SerializeField] private ScriptObjSkills[] statsToChoose;
+    private ScriptObjSkills[] displayedChoices;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI[] title;
@@ -23,7 +23,7 @@ public class StatIncrease : MonoBehaviour
 
     private void Start()
     {
-        displayedChoices = new ScriptObjSTATS[3];
+        displayedChoices = new ScriptObjSkills[3];
         //Debug
         RandomizeStatInc();
     }
@@ -42,7 +42,7 @@ public class StatIncrease : MonoBehaviour
         {
             _chosenIndx[i] = Random.Range(0, statsToChoose.Length);
            
-            ScriptObjSTATS _statRolled = statsToChoose[_chosenIndx[i]];
+            ScriptObjSkills _statRolled = statsToChoose[_chosenIndx[i]];
             displayedChoices[i] = _statRolled;
             //Check that choices are new, not already rolled
             for(int j = 0; j < i; j++)
@@ -66,7 +66,6 @@ public class StatIncrease : MonoBehaviour
         {
             title[i].text = displayedChoices[i].statName;
             desc[i].text = displayedChoices[i].statDesc;
-            inc[i].text = displayedChoices[i].incAmount.ToString();
         }
     }
 }

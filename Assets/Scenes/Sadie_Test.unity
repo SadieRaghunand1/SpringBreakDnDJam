@@ -2268,7 +2268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &600456626
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3353,11 +3353,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statIncCanvas: {fileID: 802532750}
   statsToChoose:
-  - {fileID: 11400000, guid: 1f0d999337157db4d9be55c99d3d7d90, type: 2}
-  - {fileID: 11400000, guid: 44ae035e9c57d4641bcb8f0697246f1b, type: 2}
-  - {fileID: 11400000, guid: d5285e565538d35429535c4de90671b2, type: 2}
-  - {fileID: 11400000, guid: 31880ff5de10fd348b288da1554b7aed, type: 2}
-  - {fileID: 11400000, guid: f933975c2c09aa04696ed9d4229a9cea, type: 2}
+  - {fileID: 11400000, guid: fd232a54d03d7d04187b223e808acf46, type: 2}
+  - {fileID: 11400000, guid: dc8ecf6e1d37138408e725db6d043b18, type: 2}
+  - {fileID: 11400000, guid: dc9b22c2c12a01f4a96d8f0679c0296b, type: 2}
+  - {fileID: 11400000, guid: 6da4a62dec00a2544afe133215db4568, type: 2}
+  - {fileID: 11400000, guid: e3b42b4b6412d594c8a43674b5d02ec8, type: 2}
   title:
   - {fileID: 104141794}
   - {fileID: 95690739}

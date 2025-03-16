@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71df5490a3529946a60152e2c02a8af, type: 3}
-  m_Name: Wisdom
+  m_Name: WingedHelmet
   m_EditorClassIdentifier: 
-  statName: Wisdom
-  statDesc: Your knowledge of what to do in any given situation
-  incAmount: 2
+  statName: Winged Helmet
+  statDesc: Double jump
+  incAmount: 0

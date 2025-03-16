@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class ScriptObjSTATS : ScriptableObject
+public class ScriptObjSkills : ScriptableObject
 {
     public string statName;
     public string statDesc;
-    public int incAmount;
 }

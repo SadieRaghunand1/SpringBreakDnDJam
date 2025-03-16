@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71df5490a3529946a60152e2c02a8af, type: 3}
-  m_Name: Intelligence
+  m_Name: BlurryHat
   m_EditorClassIdentifier: 
-  statName: Intelligence
-  statDesc: Your knowledge of any given subject
-  incAmount: 2
+  statName: Blurry Hat
+  statDesc: Doubles your speed
+  incAmount: 0
