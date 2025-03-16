@@ -34,6 +34,7 @@ public class SpawnerEnemy : MonoBehaviour
         EnemyMovement _enemyMove = enemy.GetComponent<EnemyMovement>();
         _enemyMove.patrolPts = areaPatrolPts;
         enemiesSpawned.Add(_enemyMove);
+        StartCoroutine(TimeSpawns());
     }
 
     IEnumerator TimeSpawns()

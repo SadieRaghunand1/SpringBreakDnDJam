@@ -789,7 +789,7 @@ MonoBehaviour:
   - {fileID: 68796638725002034}
   - {fileID: 8532228697017726327}
   - {fileID: 8404910981639873775}
-  maxTime: 5
+  maxTime: 2
   minTime: 0.5
 --- !u!65 &2073247098196703084
 BoxCollider:
