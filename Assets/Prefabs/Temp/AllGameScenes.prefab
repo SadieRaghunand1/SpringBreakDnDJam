@@ -4365,6 +4365,7 @@ MonoBehaviour:
   skillMenu: {fileID: 2436239990281063380}
   skillCanvas: {fileID: 4466836109426924796}
   buildIndices: 0100000002000000030000000400000004000000
+  bossBuildInx: 5
 --- !u!1 &6833859687947367335
 GameObject:
   m_ObjectHideFlags: 0

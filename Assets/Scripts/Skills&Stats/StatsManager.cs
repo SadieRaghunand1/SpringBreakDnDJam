@@ -17,6 +17,8 @@ public class StatsManager : MonoBehaviour
 
 
     [SerializeField] private List<int> buildIndices;
+
+    [SerializeField] private int bossBuildInx;
     private void Start()
     {
         InitValues();
@@ -50,9 +52,9 @@ public class StatsManager : MonoBehaviour
     public void HoldSkillToggles(int _skillInx)
     {
         Debug.Log("Clicked");
-        //int _skillID = skillCanvas.displayedChoices[_skillInx].skillIndex;
-        //Debug.Log("Enter Hold skill toggle" + _skillID);
-       /* switch (_skillID)
+        int _skillID = skillCanvas.displayedChoices[_skillInx].skillIndex;
+        Debug.Log("Enter Hold skill toggle" + _skillID);
+        switch (_skillID)
         {
             
             case 1: //Knight helmet
@@ -70,7 +72,7 @@ public class StatsManager : MonoBehaviour
             case 5: //Winged helmet
                 skillManager.TurnOnWingedHelmet();
                 break;
-        }*/
+        }
 
         CloseSkillMenu();
     }
@@ -108,6 +110,7 @@ public class StatsManager : MonoBehaviour
 
     void ChangeSceneOnPlayer()
     {
+        int _loadSceneInx;
         //Debug.Log("Enter change scene");
         int _currentScene = SceneManager.GetActiveScene().buildIndex;
         for(int i = 0; i < buildIndices.Count; i++)
@@ -119,7 +122,15 @@ public class StatsManager : MonoBehaviour
             }
         }
 
-         int _loadSceneInx = buildIndices[Random.Range(0, buildIndices.Count)];
+        if(buildIndices.Count <= 0)
+        {
+            _loadSceneInx = bossBuildInx;
+        }
+        else
+        {
+            _loadSceneInx = buildIndices[Random.Range(0, buildIndices.Count)];
+        }
+           
 
         //This is the culprit!
         while(_loadSceneInx == 0)
