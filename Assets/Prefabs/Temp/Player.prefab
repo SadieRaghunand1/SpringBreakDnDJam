@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3872104621890735132}
   - component: {fileID: 4446321573845822359}
   - component: {fileID: 4072236553033286769}
+  - component: {fileID: 1709396392718550915}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -185,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b4f83d4feb948468dd9184cff72262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
   charisma: 0
   dexterity: 0
   intelligence: 0
@@ -192,6 +194,26 @@ MonoBehaviour:
   wisdom: 0
   constitution: 0
   bossDefeated: 0000000000
+--- !u!114 &1709396392718550915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691849331308262229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e64f8be1f5069943b461aec5a2ce86b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blurryHat: 0
+  flowerPot: 0
+  knightHelmet: 0
+  propellorHat: 0
+  wingedHelmet: 0
+  healthAndStats: {fileID: 4072236553033286769}
+  rb: {fileID: 3872104621890735132}
+  playerController: {fileID: 1695697037005702782}
 --- !u!1 &6470386563764639281
 GameObject:
   m_ObjectHideFlags: 0

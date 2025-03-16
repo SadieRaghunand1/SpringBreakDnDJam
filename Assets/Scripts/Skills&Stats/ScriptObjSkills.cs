@@ -7,4 +7,5 @@ public class ScriptObjSkills : ScriptableObject
 {
     public string statName;
     public string statDesc;
+    public int skillIndex;
 }

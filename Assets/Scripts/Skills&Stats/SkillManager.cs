@@ -46,4 +46,20 @@ public class SkillManager : MonoBehaviour
         playerController.speed *= 2;
     } //END IncreaseSpeed()
 
+    /// <summary>
+    /// Flower Pot
+    /// </summary>
+    public void TurnOnFlowerPot()
+    {
+        flowerPot = true;
+    } //END TurnOnFLowerPot()
+
+    /// <summary>
+    /// Winged helmet
+    /// </summary>
+    public void TurnOnWingedHelmet()
+    {
+        wingedHelmet = true;
+    } //END TurnOnWingedHelmet()
+
 }

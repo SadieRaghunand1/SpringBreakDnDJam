@@ -14,7 +14,7 @@ public class StatIncrease : MonoBehaviour
     [SerializeField] private Canvas statIncCanvas;
     private int statIncAmount;
     [SerializeField] private ScriptObjSkills[] statsToChoose;
-    private ScriptObjSkills[] displayedChoices;
+    public ScriptObjSkills[] displayedChoices;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI[] title;

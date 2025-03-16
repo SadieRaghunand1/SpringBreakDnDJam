@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statName: '*Rare* Knight Helmet'
   statDesc: Increases defense, you now can take 2 hits before dying
-  incAmount: 0
+  skillIndex: 1

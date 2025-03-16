@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statName: Winged Helmet
   statDesc: Double jump
-  incAmount: 0
+  skillIndex: 5
