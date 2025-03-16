@@ -6,6 +6,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [SerializeField] private float attackDistance;
+    public bool isAttacking = false;
 
 
 
@@ -16,10 +17,15 @@ public class Attack : MonoBehaviour
 
     void InputAttack()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
+            isAttacking = true;
             Debug.Log("Shoot");
             AttackSword();
+        }
+        else if (!Input.GetMouseButtonDown(0))
+        {
+            isAttacking = false;
         }
     }
 
@@ -46,6 +52,6 @@ public class Attack : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
         }
-       
+
     }
 }
