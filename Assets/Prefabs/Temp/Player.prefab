@@ -176,6 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDistance: 20
   isAttacking: 0
+  killed: 0
+  exitRoom: {fileID: 0}
 --- !u!114 &4072236553033286769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  attack: {fileID: 4446321573845822359}
   scenesVisitedThisRun: 00000000
   charisma: 0
   dexterity: 0

@@ -9,9 +9,11 @@ public class HealthAndStats : MonoBehaviour
     private Transform startPos;
     private int incAmount = 2;
     private StatsManager statsManager;
+    [SerializeField] private Attack attack;
 
     [Header("Loading")]
     public List<int> scenesVisitedThisRun;
+    private int lobbyBuildIndx = 0;
     
 
     [Header("Stats")]
@@ -93,9 +95,8 @@ public class HealthAndStats : MonoBehaviour
         {
             skillManager.OnDeath();
             //Temp, rn this causes the issue of several players in scene so will need to spawn in player, not put in scene automatically
-            int scene = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(scene);
-            health = 1;
+            SceneManager.LoadScene(lobbyBuildIndx);
+            ResetEverythingOnDeath();
         }
 
         
@@ -113,5 +114,11 @@ public class HealthAndStats : MonoBehaviour
         }
 
 
+    }
+
+    void ResetEverythingOnDeath()
+    {
+        health = 1;
+        attack.killed = 0;
     }
 }
