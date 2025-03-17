@@ -3530,6 +3530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsManager: {fileID: 4858533997449167557}
   spawnEnemy: {fileID: 406508487104823266}
+  goalKill: 5
 --- !u!1 &5310514060675923256
 GameObject:
   m_ObjectHideFlags: 0
@@ -4364,7 +4365,7 @@ MonoBehaviour:
   statMenu: {fileID: 6698490268842247726}
   skillMenu: {fileID: 2436239990281063380}
   skillCanvas: {fileID: 4466836109426924796}
-  buildIndices: 0100000002000000030000000400000004000000
+  buildIndices: 02000000030000000400000004000000
   bossBuildInx: 5
 --- !u!1 &6833859687947367335
 GameObject:

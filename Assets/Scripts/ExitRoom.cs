@@ -8,24 +8,25 @@ public class ExitRoom : MonoBehaviour
     [SerializeField] private StatsManager statsManager;
     private StatIncrease statIncrease;
     [SerializeField] private SpawnerEnemy spawnEnemy;
+    private Attack attack;
+    [SerializeField] private int goalKill;
 
     private void Start()
     {
         statIncrease = FindAnyObjectByType<StatIncrease>();
+        attack = FindAnyObjectByType<Attack>();
+        attack.exitRoom = this;
     }
 
-    private void OnCollisionEnter(Collision collision)
+   
+    public void StopGame()
     {
-        StopGame(collision);
-    }
-
-    void StopGame(Collision _collision)
-    {
-        if(_collision.gameObject.layer == 8)
+        if(attack.killed >= goalKill) 
         {
             statIncrease.RandomizeStatInc();
             spawnEnemy.ClearLevelEnemies();
             statsManager.OpenSkillMenu();
+            attack.killed = 0;
         }
  
     }

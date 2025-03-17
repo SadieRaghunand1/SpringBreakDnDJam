@@ -937,10 +937,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1368451885}
-    - target: {fileID: 3501053651979730477, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
-      propertyPath: statsManager
-      value: 
-      objectReference: {fileID: 1368451885}
     - target: {fileID: 3698821276978283549, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1002,7 +998,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1368451885}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3835535988374900391, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}

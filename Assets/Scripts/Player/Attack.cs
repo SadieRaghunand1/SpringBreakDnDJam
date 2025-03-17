@@ -9,8 +9,9 @@ public class Attack : MonoBehaviour
     public bool isAttacking = false;
     private bool canAttack = true;
 
+    public int killed;
 
-
+   public ExitRoom exitRoom;
     private void Update()
     {
         InputAttack();
@@ -47,6 +48,8 @@ public class Attack : MonoBehaviour
                 Debug.Log("Did Hit");
 
                 EnemyHealth _enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
+                killed++;
+                exitRoom.StopGame();
                 _enemy.LoseHealth();
             }
             
