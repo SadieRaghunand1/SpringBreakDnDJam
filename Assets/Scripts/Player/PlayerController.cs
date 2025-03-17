@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
     public float lookXLimit = 45f;
     private float rotationX = 0;
 
-    
+    [SerializeField] private SkillManager skillManager;
+    private int jumpCount; //Specifically for when has winged helmet, allows double jump
 
     #region Monobehaviour methods
     private void Start()
@@ -118,10 +119,11 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || !isJumping))
+        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || !isJumping || (skillManager.wingedHelmet && jumpCount < 2)))
         {
             //Debug.Log("Jump");
             isJumping = true;
+            jumpCount++;
             rb.AddForce(jumpForce, ForceMode.Impulse);
         }
     } //END Jump()
@@ -134,6 +136,7 @@ public class PlayerController : MonoBehaviour
         if (_collision.gameObject.layer == 6)
         {
             isGrounded = _changeValue;
+            jumpCount = 0;
 
         }
     } //END CheckGrounded()

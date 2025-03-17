@@ -135,6 +135,7 @@ MonoBehaviour:
   holdPos: {fileID: 0}
   playerCamera: {fileID: 9012730307709169851}
   lookXLimit: 45
+  skillManager: {fileID: 1709396392718550915}
 --- !u!54 &3872104621890735132
 Rigidbody:
   m_ObjectHideFlags: 0
