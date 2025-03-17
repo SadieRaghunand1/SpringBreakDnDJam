@@ -229,6 +229,7 @@ MonoBehaviour:
   healthAndStats: {fileID: 4072236553033286769}
   rb: {fileID: 3872104621890735132}
   playerController: {fileID: 1695697037005702782}
+  attack: {fileID: 4446321573845822359}
 --- !u!1 &6470386563764639281
 GameObject:
   m_ObjectHideFlags: 0

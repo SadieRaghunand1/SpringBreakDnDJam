@@ -11,6 +11,8 @@ public class Attack : MonoBehaviour
 
     public int killed;
 
+    int flowerPotSpeed = 1;
+
    public ExitRoom exitRoom;
     private void Update()
     {
@@ -65,5 +67,12 @@ public class Attack : MonoBehaviour
         canAttack = false;
         yield return new WaitForSecondsRealtime(1f);
         canAttack = true;
+    }
+
+    public IEnumerator FlowerPotAttack()
+    {
+        yield return new WaitForSeconds(flowerPotSpeed);
+        AttackSword();
+        StartCoroutine(FlowerPotAttack());
     }
 }

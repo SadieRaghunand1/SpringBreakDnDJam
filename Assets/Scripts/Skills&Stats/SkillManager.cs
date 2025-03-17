@@ -19,6 +19,7 @@ public class SkillManager : MonoBehaviour
     [SerializeField] private HealthAndStats healthAndStats;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private Attack attack;
 
     //These need container methods to be accessed by the buttons
 
@@ -87,7 +88,8 @@ public class SkillManager : MonoBehaviour
         if(!flowerPot)
         {
             obtainedSkills.Add(masterListOfSkillsAvailable[1]);
-            flowerPot = true; 
+            flowerPot = true;
+            StartCoroutine(attack.FlowerPotAttack());
         }
         
     } //END TurnOnFLowerPot()

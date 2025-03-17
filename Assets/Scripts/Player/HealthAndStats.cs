@@ -120,5 +120,6 @@ public class HealthAndStats : MonoBehaviour
     {
         health = 1;
         attack.killed = 0;
+        attack.StopAllCoroutines();
     }
 }
