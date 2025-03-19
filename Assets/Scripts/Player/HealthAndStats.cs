@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +28,7 @@ public class HealthAndStats : MonoBehaviour
 
     [Header("Skills")]
     [SerializeField] private SkillManager skillManager;
+    public int reviveRate;
 
     [Header("BossIndicators")]
     public bool[] bossDefeated;
@@ -90,6 +92,12 @@ public class HealthAndStats : MonoBehaviour
     {
        // Debug.Log("Die");
 
+        
+        if(skillManager.barbarianHelmet && Revive())
+        {
+            return;
+        }
+
         health--;
         if(health <= 0)
         {
@@ -121,5 +129,19 @@ public class HealthAndStats : MonoBehaviour
         health = 1;
         attack.killed = 0;
         attack.StopAllCoroutines();
+    }
+
+    bool Revive()
+    {
+        int _score = Random.Range(0, 101);
+        if(_score <= reviveRate)
+        {
+            health = 1;
+            return true; //Survive
+        }
+        else
+        {
+            return false; //Die
+        }
     }
 }
