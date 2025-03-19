@@ -9,19 +9,18 @@ public class TheWholeBean : SkillBehavior
 
     public override void OnActivate()
     {
-        base.OnActivate();
-        Debug.Log("The Whole Bean?");
+        skillManager.knightHelmet = true;
     }
 
     public override void OnDeactivate()
     {
-        base.OnDeactivate();
-        Debug.Log("Only half the bean");
+        skillManager.knightHelmet = false;
+        Destroy(this.gameObject);
     }
 
     public override void OnUpgrade(int _rank)
     {
-        Debug.Log("Increase rate of evasion");
+        //Increase rate of evasion
     }
 
 }

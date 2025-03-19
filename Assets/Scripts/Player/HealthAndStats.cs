@@ -28,7 +28,8 @@ public class HealthAndStats : MonoBehaviour
 
     [Header("Skills")]
     [SerializeField] private SkillManager skillManager;
-    public int reviveRate;
+    public int reviveRate = 5;
+    public int dodgeRate = 10;
 
     [Header("BossIndicators")]
     public bool[] bossDefeated;
@@ -98,6 +99,11 @@ public class HealthAndStats : MonoBehaviour
             return;
         }
 
+        if(skillManager.knightHelmet && Dodge())
+        {
+            return;
+        }
+
         health--;
         if(health <= 0)
         {
@@ -137,11 +143,28 @@ public class HealthAndStats : MonoBehaviour
         if(_score <= reviveRate)
         {
             health = 1;
+            Debug.Log("Revive");
             return true; //Survive
         }
         else
         {
             return false; //Die
+        }
+    }
+
+    //Note, dodge and revive are very similar functionality wise, branding in game will be beeded to deistinguish them
+    bool Dodge()
+    {
+        int _score = Random.Range(0, 101);
+        if (_score <= dodgeRate)
+        {
+            health = 1;
+            Debug.Log("Dodge");
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

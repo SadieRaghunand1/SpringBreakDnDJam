@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TheWholeBean
   m_EditorClassIdentifier: 
   statName: The Whole Bean
-  statDesc: Increases defense, you now can take 2 hits before dying
+  statDesc: Low chance to dodge an attack
   skillIndex: 1
   skillType: 3
   statAssociated: 1

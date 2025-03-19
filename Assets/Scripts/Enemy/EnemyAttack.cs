@@ -50,4 +50,5 @@ public class EnemyAttack : MonoBehaviour
         AttackPlayer();
         StartCoroutine(TimeAttack());
     }
+
 }
