@@ -23,6 +23,7 @@ public class BlurryHat : SkillBehavior
         {
             skillManager.blurryHat = false;
             skillManager.playerController.speed /= 2;
+            Destroy(this.gameObject);
         }
     }
 

@@ -153,7 +153,7 @@ public class SkillManager : MonoBehaviour
     public void OnDeath()
     {
 
-        if(blurryHat)
+       /* if(blurryHat)
         {
             playerController.speed /= 2;
         }
@@ -165,7 +165,15 @@ public class SkillManager : MonoBehaviour
         wingedHelmet = false;
 
         healthAndStats.health = 1;
-        rb.mass = 1;
+        rb.mass = 1;*/
+
+        for(int i = 0; i < skillBehavior.Length; i++)
+        {
+            if (skillBehavior[i] != null)
+            {
+                skillBehavior[i].OnDeactivate();
+            }
+        }
 
     } //END OnDeath()
 

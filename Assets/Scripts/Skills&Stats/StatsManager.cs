@@ -78,7 +78,7 @@ public class StatsManager : MonoBehaviour
             if (skillManager.skillBehavior[1] != null)
             {
                 skillManager.skillBehavior[1].OnDeactivate();
-                Destroy(skillManager.skillObj[1]);
+                //Destroy(skillManager.skillObj[1]);
             }
 
             skillManager.skillObj[1] = _tempObj;
@@ -94,7 +94,7 @@ public class StatsManager : MonoBehaviour
             if (skillManager.skillBehavior[2] != null)
             {
                 skillManager.skillBehavior[2].OnDeactivate();
-                Destroy(skillManager.skillObj[2]);
+               // Destroy(skillManager.skillObj[2]);
             }
 
             skillManager.skillObj[2] = _tempObj;
@@ -111,7 +111,7 @@ public class StatsManager : MonoBehaviour
             if (skillManager.skillBehavior[3] != null)
             {
                 skillManager.skillBehavior[3].OnDeactivate();
-                Destroy(skillManager.skillObj[3]);
+               //Destroy(skillManager.skillObj[3]);
             }
 
             skillManager.skillObj[3] = _tempObj;

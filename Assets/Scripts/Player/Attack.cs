@@ -14,9 +14,13 @@ public class Attack : MonoBehaviour
     int flowerPotSpeed = 1;
 
    public ExitRoom exitRoom;
+
+    [SerializeField] private SkillManager skillManager;
+
     private void Update()
     {
         InputAttack();
+        InputCastSpell();
     }
 
     void InputAttack()
@@ -32,6 +36,15 @@ public class Attack : MonoBehaviour
         else if (!Input.GetMouseButtonDown(0))
         {
             isAttacking = false;
+        }
+    }
+
+
+    void InputCastSpell()
+    {
+        if(Input.GetMouseButtonDown(1) && skillManager.obtainedSkills[2] != null)
+        {
+            skillManager.skillBehavior[2].OnCast();
         }
     }
 
@@ -74,5 +87,12 @@ public class Attack : MonoBehaviour
         yield return new WaitForSeconds(flowerPotSpeed);
         AttackSword();
         StartCoroutine(FlowerPotAttack());
+    }
+
+    public IEnumerator DoubleAttack()
+    {
+        AttackSword();
+        yield return new WaitForSeconds(0.5f);
+        AttackSword();
     }
 }

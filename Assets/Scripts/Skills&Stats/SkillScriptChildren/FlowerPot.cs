@@ -22,6 +22,7 @@ public class FlowerPot : SkillBehavior
         base.OnDeactivate();
         skillManager.flowerPot = false;
         StopCoroutine(skillManager.attack.FlowerPotAttack());
+        Destroy(this.gameObject);
     }
 
     public override void OnUpgrade(int _rank)

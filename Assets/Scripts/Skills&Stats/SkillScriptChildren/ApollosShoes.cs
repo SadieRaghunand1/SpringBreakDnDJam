@@ -21,6 +21,7 @@ public class ApollosShoes : SkillBehavior
         if (skillManager.wingedHelmet)
         {
             skillManager.wingedHelmet = false;
+            Destroy(this.gameObject);
         }
     }
 

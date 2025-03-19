@@ -22,6 +22,7 @@ public class BirdsOfPrey : SkillBehavior
         {
             skillManager.propellorHat = false;
             skillManager.rb.mass = 1;
+            Destroy(this.gameObject);
         }
     }
 

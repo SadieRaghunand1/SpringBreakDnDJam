@@ -179,6 +179,7 @@ MonoBehaviour:
   isAttacking: 0
   killed: 0
   exitRoom: {fileID: 0}
+  skillManager: {fileID: 1709396392718550915}
 --- !u!114 &4072236553033286769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +240,11 @@ MonoBehaviour:
   rayOfFrost: 0
   vineWhip: 0
   charmPerson: 0
-  obtainedSkills: []
+  obtainedSkills:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   skillBehavior:
   - {fileID: 0}
   - {fileID: 0}
