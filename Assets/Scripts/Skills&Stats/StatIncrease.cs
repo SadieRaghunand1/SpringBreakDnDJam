@@ -90,4 +90,6 @@ public class StatIncrease : MonoBehaviour
             stat[i].text = displayedChoices[i].statAssociated.ToString();
         }
     }
+
+    
 }

@@ -10,7 +10,7 @@ public class ApollosShoes : SkillBehavior
         base.OnActivate();
         if (!skillManager.wingedHelmet)
         {
-            //obtainedSkills.Add(masterListOfSkillsAvailable[4]);
+            skillManager.obtainedSkills[1] = data;
             skillManager.wingedHelmet = true;
         }
     }

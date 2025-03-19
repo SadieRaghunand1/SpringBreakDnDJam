@@ -9,8 +9,8 @@ public class BlurryHat : SkillBehavior
         base.OnActivate();
         if (!skillManager.blurryHat)
         {
-           
-            //obtainedSkills.Add(masterListOfSkillsAvailable[0]);
+
+            skillManager.obtainedSkills[0] = data;
             skillManager.blurryHat = true;
             skillManager.playerController.speed *= 2; //We will change the amount of speed multiplier
         }

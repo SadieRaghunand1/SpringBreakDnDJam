@@ -9,8 +9,8 @@ public class FlowerPot : SkillBehavior
         base.OnActivate();
         if (!skillManager.flowerPot)
         {
-            
-            //obtainedSkills.Add(masterListOfSkillsAvailable[1]);
+
+            skillManager.obtainedSkills[0] = data;
             skillManager.flowerPot = true;
             StartCoroutine(skillManager.attack.FlowerPotAttack());
         }

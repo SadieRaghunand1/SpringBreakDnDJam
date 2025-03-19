@@ -9,7 +9,7 @@ public class BirdsOfPrey : SkillBehavior
         base.OnActivate();
         if (!skillManager.propellorHat)
         {
-            //obtainedSkills.Add(masterListOfSkillsAvailable[3]);
+            skillManager.obtainedSkills[1] = data;
             skillManager.propellorHat = true;
             skillManager.rb.mass /= 2;
         }
