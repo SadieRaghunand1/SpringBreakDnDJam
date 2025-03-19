@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] protected int health;
+    [SerializeField] protected float health;
 
 
-    public void LoseHealth()
+    public void LoseHealth(float _damage)
     {
-        health--;
+        health -= _damage;
 
         CheckDead();
     }

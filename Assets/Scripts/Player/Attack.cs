@@ -6,6 +6,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [SerializeField] private float attackDistance;
+    public float attackDamage;
     public bool isAttacking = false;
     private bool canAttack = true;
 
@@ -65,7 +66,7 @@ public class Attack : MonoBehaviour
                 EnemyHealth _enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
                 killed++;
                 exitRoom.StopGame();
-                _enemy.LoseHealth();
+                _enemy.LoseHealth(attackDamage);
             }
             
         }
