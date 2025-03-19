@@ -6,11 +6,13 @@ public class SkillBehavior : MonoBehaviour
 {
     public ScriptObjSkills data;
     public SkillManager skillManager;
+    protected SpawnerEnemy spawner;
 
     protected void Awake()
     {
         Debug.Log("Start on skill behavior run");
         skillManager = FindAnyObjectByType<SkillManager>();
+        spawner = FindAnyObjectByType<SpawnerEnemy>();
     }
 
     public virtual void OnActivate()

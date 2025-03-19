@@ -10,7 +10,7 @@ public class SpawnerEnemy : MonoBehaviour
     private GameObject prefabToSpawn;
     public GameObject[] areaPatrolPts;
     private GameObject enemy;
-    private List<EnemyMovement> enemiesSpawned = new List<EnemyMovement>();
+    public List<EnemyMovement> enemiesSpawned = new List<EnemyMovement>();
 
     [Header("Spawn time varables")]
     public float maxTime;
