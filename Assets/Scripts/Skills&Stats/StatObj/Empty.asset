@@ -15,3 +15,5 @@ MonoBehaviour:
   statName: ' '
   statDesc: ' '
   skillIndex: 0
+  skillType: 4
+  statAssociated: 5

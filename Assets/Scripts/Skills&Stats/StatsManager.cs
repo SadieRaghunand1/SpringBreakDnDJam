@@ -52,8 +52,74 @@ public class StatsManager : MonoBehaviour
     public void HoldSkillToggles(int _skillInx)
     {
         Debug.Log("Clicked");
-        int _skillID = skillCanvas.displayedChoices[_skillInx].skillIndex;
-        Debug.Log("Enter Hold skill toggle" + _skillID);
+        GameObject _tempObj;
+        //skillCanvas.displayedChoices[_skillInx].skillBehavior.skillManager = skillManager;
+        if (skillCanvas.displayedChoices[_skillInx].skillType == ScriptObjSkills.SkillType.HAT)
+        {
+            _tempObj = Instantiate(skillCanvas.displayedChoices[_skillInx].skillBehavior.gameObject);
+            _tempObj.transform.parent = player.gameObject.transform;
+
+            if (skillManager.skillBehavior[0]!= null)
+            {
+                skillManager.skillBehavior[0].OnDeactivate();
+                Destroy(skillManager.skillObj[0]);
+            }
+            
+            skillManager.skillObj[0] = _tempObj;
+            //skillManager.skillBehavior[0] = skillCanvas.displayedChoices[_skillInx].skillBehavior;
+            skillManager.skillBehavior[0] = skillManager.skillObj[0].GetComponent<SkillBehavior>();
+            skillManager.skillBehavior[0].OnActivate();
+        }
+        else if(skillCanvas.displayedChoices[_skillInx].skillType == ScriptObjSkills.SkillType.BUFF)
+        {
+            _tempObj = Instantiate(skillCanvas.displayedChoices[_skillInx].skillBehavior.gameObject);
+            _tempObj.transform.parent = player.gameObject.transform;
+
+            if (skillManager.skillBehavior[1] != null)
+            {
+                skillManager.skillBehavior[1].OnDeactivate();
+                Destroy(skillManager.skillObj[1]);
+            }
+
+            skillManager.skillObj[1] = _tempObj;
+            //skillManager.skillBehavior[1] = skillCanvas.displayedChoices[_skillInx].skillBehavior;
+            skillManager.skillBehavior[1] = skillManager.skillObj[1].GetComponent<SkillBehavior>();
+            skillManager.skillBehavior[1].OnActivate();
+        }
+        else if(skillCanvas.displayedChoices[_skillInx].skillType == ScriptObjSkills.SkillType.SPELL)
+        {
+            _tempObj = Instantiate(skillCanvas.displayedChoices[_skillInx].skillBehavior.gameObject);
+            _tempObj.transform.parent = player.gameObject.transform;
+
+            if (skillManager.skillBehavior[2] != null)
+            {
+                skillManager.skillBehavior[2].OnDeactivate();
+                Destroy(skillManager.skillObj[2]);
+            }
+
+            skillManager.skillObj[2] = _tempObj;
+            //skillManager.skillBehavior[2] = skillCanvas.displayedChoices[_skillInx].skillBehavior;
+            skillManager.skillBehavior[2] = skillManager.skillObj[2].GetComponent<SkillBehavior>();
+            skillManager.skillBehavior[2].OnActivate();
+        }
+        else if(skillCanvas.displayedChoices[_skillInx].skillType == ScriptObjSkills.SkillType.SKILL)
+        {
+            _tempObj = Instantiate(skillCanvas.displayedChoices[_skillInx].skillBehavior.gameObject);
+            _tempObj.transform.parent = player.gameObject.transform;
+
+
+            if (skillManager.skillBehavior[3] != null)
+            {
+                skillManager.skillBehavior[3].OnDeactivate();
+                Destroy(skillManager.skillObj[3]);
+            }
+
+            skillManager.skillObj[3] = _tempObj;
+            //skillManager.skillBehavior[3] = skillCanvas.displayedChoices[_skillInx].skillBehavior;
+            skillManager.skillBehavior[3] = skillManager.skillObj[3].GetComponent<SkillBehavior>();
+            skillManager.skillBehavior[3].OnActivate();
+        }
+        /*Debug.Log("Enter Hold skill toggle" + _skillID);
         switch (_skillID)
         {
             
@@ -73,7 +139,9 @@ public class StatsManager : MonoBehaviour
                 skillManager.TurnOnWingedHelmet();
                 break;
         }
+        */
 
+        
         CloseSkillMenu();
     }
 

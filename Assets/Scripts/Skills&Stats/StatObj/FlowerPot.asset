@@ -15,3 +15,6 @@ MonoBehaviour:
   statName: Flower Pot
   statDesc: Locks on enemies and shoots seeds
   skillIndex: 4
+  skillType: 0
+  statAssociated: 0
+  skillBehavior: {fileID: 8762163381863423517, guid: 74602471723ca994e92b0d27baf89d1b, type: 3}

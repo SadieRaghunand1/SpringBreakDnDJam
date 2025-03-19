@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71df5490a3529946a60152e2c02a8af, type: 3}
-  m_Name: KnightHelmet
+  m_Name: BirdsOfPrey
   m_EditorClassIdentifier: 
-  statName: '*Rare* Knight Helmet'
-  statDesc: Increases defense, you now can take 2 hits before dying
-  skillIndex: 1
+  statName: BirdsOfPrey
+  statDesc: Glide instead of falling
+  skillIndex: 2
+  skillType: 1
+  statAssociated: 4
+  skillBehavior: {fileID: 6135594947148337016, guid: 13195639d9b9e454cbe052c86a895257, type: 3}

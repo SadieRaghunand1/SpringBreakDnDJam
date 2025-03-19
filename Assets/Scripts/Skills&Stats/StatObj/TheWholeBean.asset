@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71df5490a3529946a60152e2c02a8af, type: 3}
-  m_Name: WingedHelmet
+  m_Name: TheWholeBean
   m_EditorClassIdentifier: 
-  statName: Winged Helmet
-  statDesc: Double jump
-  skillIndex: 5
+  statName: The Whole Bean
+  statDesc: Increases defense, you now can take 2 hits before dying
+  skillIndex: 1
+  skillType: 3
+  statAssociated: 1
+  skillBehavior: {fileID: 2554472415521189010, guid: 350a07b60de31f846a7a25d6944b5027, type: 3}

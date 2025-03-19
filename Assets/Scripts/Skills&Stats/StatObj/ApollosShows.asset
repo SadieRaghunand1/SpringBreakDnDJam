@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c71df5490a3529946a60152e2c02a8af, type: 3}
-  m_Name: PropellerHat
+  m_Name: ApollosShows
   m_EditorClassIdentifier: 
-  statName: Porpellor Hat
-  statDesc: Glide instead of falling
-  skillIndex: 2
+  statName: ApollosShoes
+  statDesc: Double jump
+  skillIndex: 5
+  skillType: 1
+  statAssociated: 0
+  skillBehavior: {fileID: 143475557463694671, guid: 81998d1708f886b45947dbe4fab92551, type: 3}

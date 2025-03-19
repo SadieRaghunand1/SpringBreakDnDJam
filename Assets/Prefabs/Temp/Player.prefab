@@ -222,10 +222,34 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e3b42b4b6412d594c8a43674b5d02ec8, type: 2}
   blurryHat: 0
   flowerPot: 0
-  knightHelmet: 0
+  barbarianHelmet: 0
+  wizardHat: 0
+  bearFur: 0
+  rage: 0
+  attackSpeed: 0
   propellorHat: 0
   wingedHelmet: 0
+  doubleAttack: 0
+  steadyHands: 0
+  fireball: 0
+  moonbeam: 0
+  eldritchBlast: 0
+  knightHelmet: 0
+  increasedStamina: 0
+  rayOfFrost: 0
+  vineWhip: 0
+  charmPerson: 0
   obtainedSkills: []
+  skillBehavior:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  skillObj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   healthAndStats: {fileID: 4072236553033286769}
   rb: {fileID: 3872104621890735132}
   playerController: {fileID: 1695697037005702782}

@@ -4,30 +4,70 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
+
+    /// <summary>
+    /// This script holds the functions for turning on and off skills, incuding replacing them
+    /// There is one bool for each skill
+    /// The player has an array of skills they currently hold, organized by type per index
+    /// The plyer can only hold one skill of each type (hat, buff, spell, skill) at once
+    /// If they choose one of a type they have already, it replaces that one, in teh array and previous functionality must be turned off, which should be moved to the scriptable object itself if possible (OnActivate, OnDeactiivate)
+    /// Upgrades will be using the same bool, will just affect functionality when chosen
+    /// </summary>
+
+
+
     [SerializeField] private ScriptObjSkills[] masterListOfSkillsAvailable;
 
-    [Header("Skill bools")]
+    [Header("Skill bools - Hats")]
     public bool blurryHat; // 0
     public bool flowerPot; //1
-    public bool knightHelmet; //2
-    public bool propellorHat; //3
-    public bool wingedHelmet; //4
+    public bool barbarianHelmet; //5
+    public bool wizardHat; //6
+    public bool bearFur; //7
 
-    public List<ScriptObjSkills> obtainedSkills = new List<ScriptObjSkills>();
+    [Header("Skill bools - Buffs")]
+    public bool rage; //8
+    public bool attackSpeed; //9
+    public bool propellorHat; //3, now BIRDS OF PREY
+    public bool wingedHelmet; //4, now APOLLO's SHOES
+    //NEED ONE FOR INTELLIGENCE
+
+    [Header("Skill bools - Spells")]
+    public bool doubleAttack; //10
+    public bool steadyHands; //11
+    public bool fireball; //12
+    public bool moonbeam; //13
+    public bool eldritchBlast; //14
+
+    [Header("Skill bools - Skills")]
+    public bool knightHelmet; //2, this is THE WHOLE BEAN now
+    public bool increasedStamina; //15
+    public bool rayOfFrost; //16
+    public bool vineWhip; //17
+    public bool charmPerson; //18
+
+    [Header("Skills player has")]
+    public ScriptObjSkills[] obtainedSkills; //0 - Hat, 1 - Buff, 2 - Spell, 3 - Skill
+    public SkillBehavior[] skillBehavior;
+    public GameObject[] skillObj;
 
     [Header("Other")]
-    [SerializeField] private HealthAndStats healthAndStats;
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] private PlayerController playerController;
-    [SerializeField] private Attack attack;
+    public HealthAndStats healthAndStats;
+    public Rigidbody rb;
+    public PlayerController playerController;
+    public Attack attack;
+
+
 
     //These need container methods to be accessed by the buttons
+
+   
 
     public void OnStartRemove()
     {
         StatIncrease _statIncrease = FindAnyObjectByType<StatIncrease>();
 
-       for(int i = 0; i < obtainedSkills.Count; i++)
+       for(int i = 0; i < obtainedSkills.Length; i++)
         {
             for(int j = 0; j < _statIncrease.statsToChoose.Count; j++)
             {
@@ -45,7 +85,7 @@ public class SkillManager : MonoBehaviour
     {
         if(!knightHelmet)
         {
-            obtainedSkills.Add(masterListOfSkillsAvailable[2]);
+            //obtainedSkills.Add(masterListOfSkillsAvailable[2]);
             wingedHelmet = true;
             healthAndStats.health *= 2;
         }
@@ -59,7 +99,7 @@ public class SkillManager : MonoBehaviour
     {
         if(!propellorHat)
         {
-            obtainedSkills.Add(masterListOfSkillsAvailable[3]);
+            //obtainedSkills.Add(masterListOfSkillsAvailable[3]);
             propellorHat = true;
             rb.mass /= 2;
         }
@@ -73,7 +113,7 @@ public class SkillManager : MonoBehaviour
     {
         if(!blurryHat)
         {
-            obtainedSkills.Add(masterListOfSkillsAvailable[0]);
+            //obtainedSkills.Add(masterListOfSkillsAvailable[0]);
             blurryHat = true;
             playerController.speed *= 2;
         }
@@ -87,7 +127,7 @@ public class SkillManager : MonoBehaviour
     {
         if(!flowerPot)
         {
-            obtainedSkills.Add(masterListOfSkillsAvailable[1]);
+            //obtainedSkills.Add(masterListOfSkillsAvailable[1]);
             flowerPot = true;
             StartCoroutine(attack.FlowerPotAttack());
         }
@@ -101,7 +141,7 @@ public class SkillManager : MonoBehaviour
     {
         if (!wingedHelmet)
         {
-            obtainedSkills.Add(masterListOfSkillsAvailable[4]);
+            //obtainedSkills.Add(masterListOfSkillsAvailable[4]);
             wingedHelmet = true;
         }
         
@@ -128,5 +168,7 @@ public class SkillManager : MonoBehaviour
         rb.mass = 1;
 
     } //END OnDeath()
+
+   
 
 }

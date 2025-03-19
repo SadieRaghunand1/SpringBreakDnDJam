@@ -15,3 +15,6 @@ MonoBehaviour:
   statName: Blurry Hat
   statDesc: Doubles your speed
   skillIndex: 3
+  skillType: 0
+  statAssociated: 1
+  skillBehavior: {fileID: 8764802331753659149, guid: 81b2038b4f2510e40a213a6f0ea3de2a, type: 3}

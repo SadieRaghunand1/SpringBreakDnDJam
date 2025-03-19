@@ -611,6 +611,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2118020980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177973813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5659383644587211388, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+  m_PrefabInstance: {fileID: 5888291015455911571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1270710385 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6071072041816781771, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+  m_PrefabInstance: {fileID: 5888291015455911571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1368451885 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
@@ -821,6 +843,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2118020980}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &2042893001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6222762376389195857, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+  m_PrefabInstance: {fileID: 5888291015455911571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2118020979
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +978,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1368451885}
+    - target: {fileID: 4466836109426924796, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: stat.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466836109426924796, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: stat.Array.data[0]
+      value: 
+      objectReference: {fileID: 1270710385}
+    - target: {fileID: 4466836109426924796, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: stat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2042893001}
+    - target: {fileID: 4466836109426924796, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: stat.Array.data[2]
+      value: 
+      objectReference: {fileID: 1177973813}
     - target: {fileID: 4724398837834795806, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
