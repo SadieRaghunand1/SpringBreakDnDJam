@@ -41,7 +41,7 @@ public class SkillManager : MonoBehaviour
 
     [Header("Skill bools - Skills")]
     public bool knightHelmet; //2, this is THE WHOLE BEAN now
-    public bool increasedStamina; //15
+    public bool increasedStamina; //15, sprint
     public bool rayOfFrost; //16
     public bool vineWhip; //17
     public bool charmPerson; //18

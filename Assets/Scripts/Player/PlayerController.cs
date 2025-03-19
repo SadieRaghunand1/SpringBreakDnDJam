@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,6 +15,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 jumpForce;
     public bool isGrounded;
     bool isJumping;
+    bool isSprinting;
+
+    public float sprintDuration;
 
     public bool inSafeZone;
 
@@ -42,7 +46,7 @@ public class PlayerController : MonoBehaviour
         MovementUpdate();
         Jump();
         RotateCam();
-
+        Sprint();
        
     }
 
@@ -128,6 +132,24 @@ public class PlayerController : MonoBehaviour
         }
     } //END Jump()
 
+
+    void Sprint()
+    {
+        if(skillManager.increasedStamina)
+        {
+            if(Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                isSprinting = true;
+
+            }
+
+            if(isSprinting)
+            {
+                rb.AddForce(Vector3.forward * 1, ForceMode.Impulse);
+            }
+        }
+    }
+
     /// <summary>
     /// Change isGrounded
     /// </summary>
@@ -140,6 +162,12 @@ public class PlayerController : MonoBehaviour
 
         }
     } //END CheckGrounded()
+
+    IEnumerator EndSprint()
+    {
+        yield return new WaitForSeconds(sprintDuration);
+        isSprinting = false;
+    }
 
 
 }

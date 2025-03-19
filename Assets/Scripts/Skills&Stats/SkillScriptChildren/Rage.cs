@@ -16,6 +16,7 @@ public class Rage : SkillBehavior
     {
         skillManager.rage = false;
         skillManager.attack.attackDamage /= attackMult;
+        Destroy(this.gameObject);
     }
 
     public override void OnUpgrade(int _rank)
