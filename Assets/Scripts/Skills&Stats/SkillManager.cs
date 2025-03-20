@@ -234,4 +234,26 @@ public class SkillManager : MonoBehaviour
     }
 
     #endregion
+
+    #region CharmPerson
+
+    private void ChooseEnemy()
+    {
+        SpawnerEnemy _spawner = FindAnyObjectByType<SpawnerEnemy>();
+        int _enemyChosen = Random.Range(0, _spawner.enemiesSpawned.Count);
+        Debug.Log("Charmed enemy - " + _spawner.enemiesSpawned[_enemyChosen].gameObject);
+        _spawner.enemiesSpawned[_enemyChosen].enemyState = EnemyMovement.EnemyState.CHARMED;
+        _spawner.enemiesSpawned[_enemyChosen].ChooseEnemyCharmed();
+        StartCoroutine(TimeChoosing());
+        
+    }
+
+    public IEnumerator TimeChoosing()
+    {
+        float _time = Random.Range(5, 12);
+        yield return new WaitForSeconds(_time);
+        ChooseEnemy();
+    }
+
+    #endregion
 }

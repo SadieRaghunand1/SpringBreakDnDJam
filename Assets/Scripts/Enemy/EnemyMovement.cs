@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
         PATROL,
         ATTACK,
         CHASE,
+        CHARMED,
         IDLE
     }
 
@@ -22,6 +23,9 @@ public class EnemyMovement : MonoBehaviour
     private int ptIndex = 0;
 
     public bool debugging;
+
+    private SpawnerEnemy spawner;
+    private GameObject targetEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +50,7 @@ public class EnemyMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         player = FindAnyObjectByType<PlayerController>().gameObject;
+        spawner = FindAnyObjectByType<SpawnerEnemy>();
        // enemyState = EnemyState.PATROL;
     }
 
@@ -60,6 +65,10 @@ public class EnemyMovement : MonoBehaviour
         else if (enemyState == EnemyState.CHASE)
         {
             agent.SetDestination(player.transform.position);
+        }
+        else if (enemyState == EnemyState.CHARMED)
+        {
+            CharmedMovement();
         }
         else if(enemyState == EnemyState.IDLE)
         {
@@ -82,6 +91,18 @@ public class EnemyMovement : MonoBehaviour
             }
             
         }
+    }
+
+    public void ChooseEnemyCharmed ()
+    {
+        int _index = Random.Range(0, spawner.enemyObjSpawned.Count);
+        targetEnemy = spawner.enemyObjSpawned[_index];
+    }
+
+    void CharmedMovement()
+    {
+        if (targetEnemy != null)
+            agent.SetDestination(targetEnemy.transform.position);
     }
 
 }

@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4ee6ea833a4e4478bd477f3031ec99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyMovement: {fileID: 645134817431661152}
 --- !u!195 &3350465791085519661
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -272,6 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aaf234ec8983b549b88ace7f15a7165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyState: 3
+  enemyState: 4
   patrolPts: []
   debugging: 0

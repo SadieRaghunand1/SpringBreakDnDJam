@@ -12,6 +12,7 @@ public class EnemyAttack : MonoBehaviour
 
     private int chanceToHit;
     private float attackDistance = 50;
+    [SerializeField] EnemyMovement enemyMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class EnemyAttack : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, attackDistance))
 
         {
-            if (hit.collider.gameObject.layer == 8)
+            if (hit.collider.gameObject.layer == 8 && enemyMovement.enemyState != EnemyMovement.EnemyState.CHARMED)
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 
@@ -35,12 +36,15 @@ public class EnemyAttack : MonoBehaviour
                 healthAndStats.Die();
             }
 
+            else if(hit.collider.gameObject.layer == 8 && enemyMovement.enemyState == EnemyMovement.EnemyState.CHARMED)
+            {
+                EnemyHealth _enemyHealth = hit.collider.gameObject.GetComponent<EnemyHealth>();
+                _enemyHealth.LoseHealth(1);
+                Debug.Log("Enemy hit bc one is charmed");
+            }
+
         }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
-            //Debug.Log("Hit - " + hit.collider.gameObject.name);
-        }
+        
     }
 
     private IEnumerator TimeAttack()
