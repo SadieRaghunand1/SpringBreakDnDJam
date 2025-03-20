@@ -13,6 +13,7 @@ public class Attack : MonoBehaviour
     public int killed;
 
     int flowerPotSpeed = 1;
+    public float spellDamage = 1;
 
    public ExitRoom exitRoom;
 

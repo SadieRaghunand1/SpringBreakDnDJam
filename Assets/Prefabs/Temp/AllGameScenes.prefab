@@ -924,6 +924,7 @@ MonoBehaviour:
   - {fileID: 8532228697017726327}
   - {fileID: 8404910981639873775}
   enemiesSpawned: []
+  enemyObjSpawned: []
   maxTime: 2
   minTime: 0.5
 --- !u!65 &2073247098196703084
@@ -6342,6 +6343,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8f9886be62061b94cb6c3b912313bd3e, type: 2}
   - {fileID: 11400000, guid: f17f076651c4d374b94a90cb15060747, type: 2}
   - {fileID: 11400000, guid: 806d8da9722d41c498042583fb10650d, type: 2}
+  - {fileID: 11400000, guid: f461fd44848cdf14fa26a87ec37a8ffd, type: 2}
   empty: {fileID: 11400000, guid: fb35e6dceda0fb7429c383070be6f6fa, type: 2}
   displayedChoices: []
   title:

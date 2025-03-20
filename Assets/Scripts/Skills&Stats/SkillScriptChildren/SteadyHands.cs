@@ -39,7 +39,7 @@ public class SteadyHands : SkillBehavior
         }
         lockedEnemy = closestEnemy.gameObject.GetComponent<EnemyHealth>();
         Debug.Log(lockedEnemy.gameObject.name + "Auto tagets");
-        lockedEnemy.LoseHealth(skillManager.attack.attackDamage);
+        lockedEnemy.LoseHealth(skillManager.attack.spellDamage);
         StartCoroutine(CastCooldown());
     }
 
