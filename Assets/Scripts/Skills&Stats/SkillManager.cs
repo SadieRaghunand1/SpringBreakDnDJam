@@ -66,6 +66,7 @@ public class SkillManager : MonoBehaviour
     private float vineDistance;
     private GameObject enemyVined;
     private bool currentlyVine;
+    public GameObject[] blastPoints;
 
 
 

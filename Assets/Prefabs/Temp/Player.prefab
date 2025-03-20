@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2143964376198918473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8072378912276326246}
+  m_Layer: 0
+  m_Name: EldritchBlast1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8072378912276326246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143964376198918473}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1139825034466438659}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2317876904120878476
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +208,9 @@ Transform:
   - {fileID: 8690563646491808551}
   - {fileID: 1244250106910107482}
   - {fileID: 1590879479605778649}
+  - {fileID: 8072378912276326246}
+  - {fileID: 6479157067795267569}
+  - {fileID: 4192762274129849985}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1344733397521379389
@@ -406,6 +440,41 @@ MonoBehaviour:
   moon: {fileID: 9166170752751007631}
   vine: {fileID: 4877615823005265245}
   vineSpeed: 0.1
+  blastPoints:
+  - {fileID: 2143964376198918473}
+  - {fileID: 4618798260597473845}
+  - {fileID: 8910460031850758947}
+--- !u!1 &4618798260597473845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6479157067795267569}
+  m_Layer: 0
+  m_Name: EldritchBlast2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6479157067795267569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4618798260597473845}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.3480429, z: -0, w: 0.9374786}
+  m_LocalPosition: {x: 1.4, y: 0, z: 1.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1139825034466438659}
+  m_LocalEulerAnglesHint: {x: 0, y: 40.735, z: 0}
 --- !u!1 &6470386563764639281
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +689,37 @@ MonoBehaviour:
   animator: {fileID: 8142407899557828825}
   spriteRenderer: {fileID: 3228585157876282331}
   attack: {fileID: 4446321573845822359}
+--- !u!1 &8910460031850758947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4192762274129849985}
+  m_Layer: 0
+  m_Name: EldritchBlast3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4192762274129849985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8910460031850758947}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.3807726, z: -0, w: 0.9246687}
+  m_LocalPosition: {x: -1.53, y: 0, z: 1.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1139825034466438659}
+  m_LocalEulerAnglesHint: {x: 0, y: -44.763, z: 0}
 --- !u!1 &8955626628744270364
 GameObject:
   m_ObjectHideFlags: 0
