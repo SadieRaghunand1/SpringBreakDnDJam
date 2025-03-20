@@ -60,12 +60,24 @@ public class SkillManager : MonoBehaviour
     [Header("Specific functionality")]
     public float frostDuration = 5;
     public LineRenderer moon;
+    public LineRenderer vine;
+    public float vineSpeed;
+    private float vineStartTime;
+    private float vineDistance;
+    private GameObject enemyVined;
+    private bool currentlyVine;
 
 
 
     //These need container methods to be accessed by the buttons
 
-   
+    private void Update()
+    {
+        if (vineWhip && currentlyVine)
+        {
+            PullEnemyVine();
+        }
+    }
 
     public void OnStartRemove()
     {
@@ -155,6 +167,70 @@ public class SkillManager : MonoBehaviour
         StartCoroutine(TimeRayCasts());
     }
 
+
+    #endregion
+
+    #region VineWhip
+
+    private void VineWhipLaunch()
+    {
+        SpawnerEnemy  _spawner = FindAnyObjectByType<SpawnerEnemy>();
+        float _closestDistanceComp = 0;
+        Transform _targetEnemy = null;
+
+        //get target enemy: first rank is closest enemy
+        for (int i = 0; i < _spawner.enemiesSpawned.Count; i++)
+        {
+            /*if (_spawner == null)
+            {
+                _spawner = FindAnyObjectByType<SpawnerEnemy>();
+            }*/
+
+             Debug.Log(_spawner.gameObject.name);
+            //Debug.Log("This - " + this.transform.parent.gameObject.name);
+            Debug.Log(_spawner.enemyObjSpawned[i] + "Spawner");
+            float _thisDistance = Vector3.Distance(this.transform.position, _spawner.enemyObjSpawned[i].transform.position);
+
+            if (_closestDistanceComp == 0 || _thisDistance < _closestDistanceComp)
+            {
+                _closestDistanceComp = _thisDistance;
+                _targetEnemy = _spawner.enemyObjSpawned[i].transform;
+            }
+        }
+        Debug.Log(_targetEnemy.gameObject.name + "Get vined");
+
+        //Set LineRenderer
+        vine.enabled = true;
+        vine.SetPosition(0, playerController.gameObject.transform.position);
+        vine.SetPosition(1, _targetEnemy.position);
+        vineStartTime = Time.time;
+        vineDistance = _closestDistanceComp;
+        enemyVined = _targetEnemy.gameObject;
+        currentlyVine = true;
+        StartCoroutine(EndVineWhip());
+    }
+
+    private void PullEnemyVine()
+    {
+        float _a = (Time.time - vineStartTime) * vineSpeed;
+        float _b = _a / vineDistance;
+
+        enemyVined.transform.position = Vector3.Lerp(enemyVined.transform.position, transform.position, _b);
+    }
+
+    public IEnumerator StartVineWhip()
+    {
+        yield return new WaitForSeconds(5);
+        VineWhipLaunch();
+    }
+ 
+    IEnumerator EndVineWhip()
+    {
+        yield return new WaitForSeconds(1);
+        currentlyVine = false;
+        vine.enabled = false;
+        StartCoroutine(StartVineWhip());
+    }
 
     #endregion
 }

@@ -21,7 +21,7 @@ public class Moonbeam : SkillBehavior
 
     public override void OnCast()
     {
-        //Similar functionlity to steady hands, but choose random enemy.  The main difference will be the presentation - https://docs.unity3d.com/ScriptReference/LineRenderer.html
+        //Similar functionlity to steady hands, but choose random enemy.  
         spawner = FindAnyObjectByType<SpawnerEnemy>();
         int _randEnemy = Random.Range(0, spawner.enemyObjSpawned.Count);
 
@@ -31,6 +31,7 @@ public class Moonbeam : SkillBehavior
 
         //Visuals
         skillManager.moon.enabled = true;
+        skillManager.moon.SetPosition(0, skillManager.moon.gameObject.transform.position);
         skillManager.moon.SetPosition(1, _lockedEnemy.transform.position);
         StartCoroutine(HideMoonbeam());
     }
