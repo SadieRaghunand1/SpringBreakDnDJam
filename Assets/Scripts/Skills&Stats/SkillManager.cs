@@ -57,6 +57,9 @@ public class SkillManager : MonoBehaviour
     public PlayerController playerController;
     public Attack attack;
 
+    [Header("Specific functionality")]
+    public float frostDuration = 5;
+
 
 
     //These need container methods to be accessed by the buttons
@@ -109,6 +112,48 @@ public class SkillManager : MonoBehaviour
 
     } //END OnDeath()
 
-   
+    ////////////////////////////////////////////
+    ///Below here is functions relating specifically to different skills' functionalities
+    ///
 
+    #region RayOfFrost
+    private void RayOfFrostLaunch()
+    {
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 50)) //50 is a placeholder distance
+
+        {
+            if (hit.collider.gameObject.layer == 7)
+            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
+                Debug.Log("Get Frosted");
+
+
+                EnemyMovement _enemyMove = hit.collider.gameObject.GetComponent<EnemyMovement>();
+                EnemyMovement.EnemyState _previousState = _enemyMove.enemyState;
+                _enemyMove.enemyState = EnemyMovement.EnemyState.IDLE;
+
+                StartCoroutine(TimeRayDuration(_enemyMove, _previousState));
+
+            }
+
+        }
+    }
+
+    private IEnumerator TimeRayDuration(EnemyMovement _enemyMove, EnemyMovement.EnemyState _returnState)
+    {
+        yield return new WaitForSeconds(frostDuration);
+        _enemyMove.enemyState = _returnState;
+    }
+
+    public IEnumerator TimeRayCasts()
+    {
+        yield return new WaitForSeconds(7); //7 is placeholder
+        RayOfFrostLaunch();
+        StartCoroutine(TimeRayCasts());
+    }
+
+
+    #endregion
 }
