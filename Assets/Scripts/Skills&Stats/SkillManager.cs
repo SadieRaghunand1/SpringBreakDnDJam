@@ -59,6 +59,7 @@ public class SkillManager : MonoBehaviour
 
     [Header("Specific functionality")]
     public float frostDuration = 5;
+    public LineRenderer moon;
 
 
 
