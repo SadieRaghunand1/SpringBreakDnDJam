@@ -19,6 +19,8 @@ public class Attack : MonoBehaviour
 
     [SerializeField] private SkillManager skillManager;
 
+  
+
     private void Update()
     {
         InputAttack();
@@ -77,6 +79,8 @@ public class Attack : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
         }
     }
+
+   
 
     IEnumerator WaitForAttackAnim()
     {

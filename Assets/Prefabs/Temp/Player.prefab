@@ -131,6 +131,7 @@ MonoBehaviour:
   cameraSpeed: 3
   jumpForce: {x: 0, y: 5, z: 0}
   isGrounded: 0
+  sprintDuration: 0
   inSafeZone: 0
   holdPos: {fileID: 0}
   playerCamera: {fileID: 9012730307709169851}
@@ -176,10 +177,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDistance: 20
+  attackDamage: 0
   isAttacking: 0
   killed: 0
+  spellDamage: 1
   exitRoom: {fileID: 0}
   skillManager: {fileID: 1709396392718550915}
+  fireballPrefab: {fileID: 5329031916238933091, guid: 256bae0e5801fc546843004b7ab5c52a, type: 3}
 --- !u!114 &4072236553033286769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +206,8 @@ MonoBehaviour:
   wisdom: 0
   constitution: 0
   skillManager: {fileID: 1709396392718550915}
+  reviveRate: 5
+  dodgeRate: 10
   bossDefeated: 0000000000
 --- !u!114 &1709396392718550915
 MonoBehaviour:
