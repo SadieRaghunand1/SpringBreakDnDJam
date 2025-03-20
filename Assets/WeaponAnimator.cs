@@ -14,6 +14,10 @@ public class WeaponAnimator : MonoBehaviour
         {
             Debug.Log("animate");
             animator.SetBool("isAttacking", true);
+            if(attack.skillManager.attackSpeed)
+            {
+                animator.SetFloat("attackSpeed",attack.skillManager.animMult);
+            }
         }
         else
         {

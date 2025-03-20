@@ -17,8 +17,8 @@ public class Attack : MonoBehaviour
 
    public ExitRoom exitRoom;
 
-    [SerializeField] private SkillManager skillManager;
-
+    public SkillManager skillManager;
+    [SerializeField] Animator weaponAnim;
   
 
     private void Update()
@@ -85,7 +85,8 @@ public class Attack : MonoBehaviour
     IEnumerator WaitForAttackAnim()
     {
         canAttack = false;
-        yield return new WaitForSecondsRealtime(1f);
+        float _time = weaponAnim.GetCurrentAnimatorStateInfo(1).length;
+        yield return new WaitForSecondsRealtime(_time);
         canAttack = true;
     }
 
