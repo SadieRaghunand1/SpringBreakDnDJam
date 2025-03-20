@@ -13,7 +13,7 @@ public class SpawnerEnemy : MonoBehaviour
     public List<EnemyMovement> enemiesSpawned = new List<EnemyMovement>();
     public List<GameObject> enemyObjSpawned = new List<GameObject>();
 
-    [Header("Spawn time varables")]
+    [Header("Spawn time variables")]
     public float maxTime;
     public float minTime;
     private float timeS;
@@ -37,6 +37,17 @@ public class SpawnerEnemy : MonoBehaviour
         enemiesSpawned.Add(_enemyMove);
         enemyObjSpawned.Add(enemy);
         StartCoroutine(TimeSpawns());
+
+        //If player has bear fur, and distance is in range, set enemy to attack immediatly
+        if(FindAnyObjectByType<BearFur>() != null)
+        {
+            BearFur _bearFur = FindAnyObjectByType<BearFur>();
+            PlayerController _player = FindAnyObjectByType<PlayerController>();
+            if (Mathf.Abs(transform.position.x - _player.gameObject.transform.position.x) < _bearFur.radius && Mathf.Abs(transform.position.z - _player.gameObject.transform.position.z) < _bearFur.radius)
+            {
+                _enemyMove.enemyState = EnemyMovement.EnemyState.CHASE;
+            }
+        }
     }
 
     IEnumerator TimeSpawns()
