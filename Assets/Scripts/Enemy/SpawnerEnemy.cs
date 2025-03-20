@@ -11,6 +11,7 @@ public class SpawnerEnemy : MonoBehaviour
     public GameObject[] areaPatrolPts;
     private GameObject enemy;
     public List<EnemyMovement> enemiesSpawned = new List<EnemyMovement>();
+    public List<GameObject> enemyObjSpawned = new List<GameObject>();
 
     [Header("Spawn time varables")]
     public float maxTime;
@@ -34,6 +35,7 @@ public class SpawnerEnemy : MonoBehaviour
         EnemyMovement _enemyMove = enemy.GetComponent<EnemyMovement>();
         _enemyMove.patrolPts = areaPatrolPts;
         enemiesSpawned.Add(_enemyMove);
+        enemyObjSpawned.Add(enemy);
         StartCoroutine(TimeSpawns());
     }
 

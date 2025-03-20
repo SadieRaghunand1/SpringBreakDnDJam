@@ -45,6 +45,7 @@ public class Attack : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(1) && skillManager.obtainedSkills[2] != null)
         {
+            Debug.Log("Right mouse pressed");
             skillManager.skillBehavior[2].OnCast();
         }
     }

@@ -6,6 +6,7 @@ public class Sprint : SkillBehavior
 {
     public override void OnActivate()
     {
+        skillManager.obtainedSkills[3] = data;
         skillManager.increasedStamina = true;
     }
 

@@ -6,6 +6,7 @@ public class BarbarianHelmet : SkillBehavior
 {
     public override void OnActivate()
     {
+        skillManager.obtainedSkills[0] = data;
         skillManager.barbarianHelmet = true;
     }
 

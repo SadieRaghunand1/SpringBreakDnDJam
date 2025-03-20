@@ -8,6 +8,7 @@ public class Rage : SkillBehavior
 
     public override void OnActivate()
     {
+        skillManager.obtainedSkills[1] = data;
         skillManager.rage = true;
         skillManager.attack.attackDamage *= attackMult;
     }

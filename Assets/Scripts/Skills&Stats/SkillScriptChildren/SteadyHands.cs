@@ -12,6 +12,7 @@ public class SteadyHands : SkillBehavior
 
     public override void OnActivate()
     {
+        skillManager.obtainedSkills[2] = data;
         skillManager.steadyHands = true;
 
     }
@@ -24,15 +25,17 @@ public class SteadyHands : SkillBehavior
 
     public override void OnCast()
     {
-        for(int i = 0; i < spawner.enemiesSpawned.Count; i++)
+        spawner = FindAnyObjectByType<SpawnerEnemy>();
+        for (int i = 0; i < spawner.enemiesSpawned.Count; i++)
         {
-            float _thisDistance = Vector3.Distance(this.transform.parent.transform.position, spawner.enemiesSpawned[i].gameObject.transform.position);
+           // Debug.Log(spawner.gameObject.name);
+            float _thisDistance = Vector3.Distance(this.transform.parent.transform.position, spawner.enemyObjSpawned[i].transform.position);
 
-            if(closestDistanceComp == 0 || _thisDistance < closestDistanceComp)
+            if (closestDistanceComp == 0 || _thisDistance < closestDistanceComp)
             {
                 closestDistanceComp = _thisDistance;
-                closestEnemy = spawner.enemiesSpawned[i].gameObject.transform;
-            }
+                closestEnemy = spawner.enemyObjSpawned[i].transform;
+            }          
         }
         lockedEnemy = closestEnemy.gameObject.GetComponent<EnemyHealth>();
         Debug.Log(lockedEnemy.gameObject.name + "Auto tagets");

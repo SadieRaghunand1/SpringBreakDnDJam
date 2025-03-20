@@ -9,6 +9,7 @@ public class TheWholeBean : SkillBehavior
 
     public override void OnActivate()
     {
+        skillManager.obtainedSkills[3] = data;
         skillManager.knightHelmet = true;
     }
 
