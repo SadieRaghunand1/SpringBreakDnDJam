@@ -22,6 +22,14 @@ public class StatIncrease : MonoBehaviour
     public ScriptObjSkills[] displayedChoices;
     private HealthAndStats healthAndStats;
 
+    //Stat min and max indexes
+    private int strengthMin = 0, strengthMax = 4;
+    private int dexterityMin = 4, dexterityMax = 8;
+    private int intelligenceMin = 8, intelligenceMax = 12;
+    private int wisdomMin = 12, wisdomMax = 16;
+    private int charismaMin = 16, charismaMax = 20;
+
+
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI[] title;
     [SerializeField] private TextMeshProUGUI[] desc;
@@ -53,19 +61,24 @@ public class StatIncrease : MonoBehaviour
                 switch(ChooseStatToChooseSkill())
                 {
                     case 0:
-                        _chosenIndx[i] = Random.Range(16, 20);
+                        _chosenIndx[i] = Random.Range(charismaMin, charismaMax);
+                        charismaMax--;
                         break;
                     case 1:
-                        _chosenIndx[i] = Random.Range(4, 8);
+                        _chosenIndx[i] = Random.Range(dexterityMin, dexterityMax);
+                        dexterityMax--; intelligenceMin--; intelligenceMax--; wisdomMin--; wisdomMax--; charismaMin--; charismaMax--;
                         break;
                     case 2:
-                        _chosenIndx[i] = Random.Range(8, 12);
+                        _chosenIndx[i] = Random.Range(intelligenceMin, intelligenceMax);
+                        intelligenceMax--; wisdomMin--; wisdomMax--; charismaMin--; charismaMax--;
                         break;
                     case 3:
-                        _chosenIndx[i] = Random.Range(0, 4);
+                        _chosenIndx[i] = Random.Range(strengthMin, strengthMax);
+                        strengthMax--; dexterityMax--; intelligenceMin--; intelligenceMax--; wisdomMin--; wisdomMax--; charismaMin--; charismaMax--;
                         break;
                     case 4:
-                        _chosenIndx[i] = Random.Range(12, 16);
+                        _chosenIndx[i] = Random.Range(wisdomMin, wisdomMax);
+                        wisdomMax--; charismaMin--; charismaMax--;
                         break;
                 }
                 Debug.Log("index = " + _chosenIndx[i]);
@@ -85,6 +98,7 @@ public class StatIncrease : MonoBehaviour
 
                     //statsToChoose[_chosenIndx[i]] = null;
                     statsToChoose.RemoveAt(_chosenIndx[i]);
+
                     displayedChoices[i] = _statRolled;
                 }
             }
