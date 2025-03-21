@@ -9,24 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/SadieTestLobby.unity
     guid: 4c70f9690a6880e4aadcda1b73649de6
   - enabled: 1
-    path: Assets/Scenes/Sadie_Test.unity
+    path: Assets/Scenes/ForestRoom1.unity
     guid: b6843be55ced56c49a409e0b4154b1fe
   - enabled: 1
-    path: Assets/Scenes/SadieTest2.unity
+    path: Assets/Scenes/ForestRoom2.unity
     guid: 41018cb04276db14aad3a2c7792a13fa
   - enabled: 1
-    path: Assets/Scenes/SadieTest3.unity
+    path: Assets/Scenes/ForestRoom3.unity
     guid: 706e163eb936569449be46e50d4a44e9
   - enabled: 1
-    path: Assets/Scenes/SadieTest4.unity
+    path: Assets/Scenes/ForestRoom4.unity
     guid: 62de9fb42abb2df4f87e6786fafa4de7
   - enabled: 1
-    path: Assets/Scenes/SadieTest5.unity
+    path: Assets/Scenes/ForestRoom5.unity
     guid: de98e982eb2b36f42b3345850f65dc8b
   - enabled: 1
-    path: Assets/Scenes/SadieTest6.unity
+    path: Assets/Scenes/ForestRoom6.unity
     guid: a6ec408ade516b24c8f9d14703585247
   - enabled: 1
-    path: Assets/Scenes/SadieTestBoss.unity
+    path: Assets/Scenes/ForestBoss.unity
     guid: c0a511510e2cbad4ca5a8f83ce773676
+  - enabled: 1
+    path: Assets/Scenes/PrisonRoom1.unity
+    guid: fe3720b03f1d5b746aabcca75159da23
   m_configObjects: {}
