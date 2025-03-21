@@ -6,7 +6,7 @@ public class Fireball : SkillBehavior
 {
     private float fireballForce = 20;
     [SerializeField] private GameObject fireballPrefab;
-    private GameObject fireballObj;
+    public GameObject fireballObj;
 
     public override void OnActivate()
     {
@@ -23,7 +23,10 @@ public class Fireball : SkillBehavior
 
     public override void OnCast()
     {
-        fireballObj = Instantiate(fireballPrefab, skillManager.gameObject.transform.position, fireballPrefab.transform.rotation);
+        Debug.Log("OH GOD WE ARE ALL GOING TO DIE WHY WOULD YOU CAST FIREBALL");
+        Vector3 _spawnPos = new Vector3(skillManager.gameObject.transform.position.x, skillManager.gameObject.transform.position.y + 3, skillManager.gameObject.transform.position.z);
+        fireballObj = Instantiate(fireballPrefab, _spawnPos, fireballPrefab.transform.rotation);
+        
         Rigidbody _rb = fireballObj.GetComponent<Rigidbody>();
         FireballAttack _fbAttack = fireballObj.GetComponent<FireballAttack>();
         _fbAttack.damage = skillManager.attack.spellDamage;

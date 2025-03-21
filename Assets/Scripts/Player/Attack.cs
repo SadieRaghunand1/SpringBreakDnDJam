@@ -76,8 +76,8 @@ public class Attack : MonoBehaviour
                     _enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
                 }
                     
-                killed++;
-                exitRoom.StopGame();
+               // killed++;
+                //exitRoom.StopGame();
                 _enemy.LoseHealth(attackDamage);
             }
             

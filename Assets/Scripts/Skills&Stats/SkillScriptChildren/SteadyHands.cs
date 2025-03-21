@@ -26,22 +26,41 @@ public class SteadyHands : SkillBehavior
     public override void OnCast()
     {
         spawner = FindAnyObjectByType<SpawnerEnemy>();
+        int _count = 0;
         for (int i = 0; i < spawner.enemiesSpawned.Count; i++)
         {
-            //Debug.Log("Spawner " + spawner.gameObject.name);
-            Debug.Log("Enemy in question = " + spawner.enemyObjSpawned[i].name);
-            float _thisDistance = Vector3.Distance(this.transform.parent.transform.position, spawner.enemyObjSpawned[i].transform.position);
-
-            if (closestDistanceComp == 0 || _thisDistance < closestDistanceComp)
+            if (spawner.enemyObjSpawned[i] != null)
             {
-                closestDistanceComp = _thisDistance;
-                closestEnemy = spawner.enemyObjSpawned[i].transform;
-            }          
+                //Debug.Log("Spawner " + spawner.gameObject.name);
+                //Debug.Log("Enemy in question = " + spawner.enemyObjSpawned[i].name);
+                //Debug.Log("i = " + i);
+                float _thisDistance = Vector3.Distance(this.transform.parent.transform.position, spawner.enemyObjSpawned[i].transform.position);
+
+                if (closestDistanceComp == 0 || _thisDistance < closestDistanceComp || closestEnemy == null)
+                {
+                    Debug.Log("Change closest i = " + i);
+                    closestDistanceComp = _thisDistance;
+                    closestEnemy = spawner.enemyObjSpawned[i].transform;
+                    _count = i;
+                }
+            }
+            else
+            {
+                Debug.Log("Null enemy");
+            }
+                  
         }
-        lockedEnemy = closestEnemy.gameObject.GetComponent<EnemyHealth>();
-        Debug.Log(lockedEnemy.gameObject.name + "Auto tagets");
-        lockedEnemy.LoseHealth(skillManager.attack.spellDamage);
-        StartCoroutine(CastCooldown());
+
+
+        //Debug.Log("Closest enemy is " + closestEnemy.gameObject.name);
+        if (closestEnemy != null)
+        {
+            lockedEnemy = closestEnemy.gameObject.GetComponent<EnemyHealth>();
+            Debug.Log(lockedEnemy.gameObject.name + "Auto tagets");
+            lockedEnemy.LoseHealth(skillManager.attack.spellDamage);
+            StartCoroutine(CastCooldown());
+        }
+       
     }
 
     public override void OnUpgrade(int _rank)
