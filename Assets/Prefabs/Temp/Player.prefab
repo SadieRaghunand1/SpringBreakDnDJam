@@ -355,6 +355,7 @@ MonoBehaviour:
   spellDamage: 1
   exitRoom: {fileID: 0}
   skillManager: {fileID: 1709396392718550915}
+  weaponAnim: {fileID: 8142407899557828825}
 --- !u!114 &4072236553033286769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +376,8 @@ MonoBehaviour:
   intelligence: 0
   strength: 0
   wisdom: 0
-  constitution: 0
+  constitution: 1
+  statArray: 0000000000000000000000000000000000000000
   skillManager: {fileID: 1709396392718550915}
   reviveRate: 5
   dodgeRate: 10
@@ -444,6 +446,7 @@ MonoBehaviour:
   - {fileID: 2143964376198918473}
   - {fileID: 4618798260597473845}
   - {fileID: 8910460031850758947}
+  animMult: 1.75
 --- !u!1 &4618798260597473845
 GameObject:
   m_ObjectHideFlags: 0

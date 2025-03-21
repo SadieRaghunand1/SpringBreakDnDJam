@@ -18,13 +18,13 @@ public class HealthAndStats : MonoBehaviour
     
 
     [Header("Stats")]
-    public int charisma; //1
-    public int dexterity; //2
-    public int intelligence; //3
-    public int strength; //4
-    public int wisdom; //5
+    public int charisma; //0
+    public int dexterity; //1
+    public int intelligence; //2
+    public int strength; //3
+    public int wisdom; //4
     public int constitution; //Always at 1, cannot change
-
+    public int[] statArray; //index 0 is highest, last is lowest.  Contains the id for each stat as listed above
 
     [Header("Skills")]
     [SerializeField] private SkillManager skillManager;
@@ -49,6 +49,7 @@ public class HealthAndStats : MonoBehaviour
         statsManager = FindAnyObjectByType<StatsManager>();
         //Temp for debugging menus
         Cursor.lockState = CursorLockMode.None;
+        InitStats();
         //scenesVisitedThisRun = new List<int>();
 
     }
@@ -65,25 +66,166 @@ public class HealthAndStats : MonoBehaviour
         }
     }
 
+    void InitStats()
+    {
+        //Time crunching there is likely a way to do better than this but for now; if time later fix + reorganize
+
+        List<int> _standardArray = new List<int>{ 15, 14, 13, 12, 10 }; //Get rid of 8, bc lowest will be 1 - con
+        int _b;
+       
+        //Charisma
+        _b = Random.Range(0, _standardArray.Count);
+        charisma = _standardArray[_b];
+        _standardArray.RemoveAt(_b);
+        switch(charisma)
+        {
+            case 15:
+                statArray[0] = 0;
+                break;
+            case 14:
+                statArray[1] = 0;
+                break;
+            case 13:
+                statArray[2] = 0;
+                break;
+            case 12:
+                statArray[3] = 0;
+                break;
+            case 10:
+                statArray[4] = 0;
+                break;
+
+        }
+
+        //Dexterity
+        _b = Random.Range(0, _standardArray.Count);
+        dexterity = _standardArray[_b];
+        _standardArray.RemoveAt(_b);
+        switch (dexterity)
+        {
+            case 15:
+                statArray[0] = 1;
+                break;
+            case 14:
+                statArray[1] = 1;
+                break;
+            case 13:
+                statArray[2] = 1;
+                break;
+            case 12:
+                statArray[3] = 1;
+                break;
+            case 10:
+                statArray[4] = 1;
+                break;
+
+        }
+
+        //Intelligence
+        _b = Random.Range(0, _standardArray.Count);
+        intelligence = _standardArray[_b];
+        _standardArray.RemoveAt(_b);
+        switch (intelligence)
+        {
+            case 15:
+                statArray[0] = 2;
+                break;
+            case 14:
+                statArray[1] = 2;
+                break;
+            case 13:
+                statArray[2] = 2;
+                break;
+            case 12:
+                statArray[3] = 2;
+                break;
+            case 10:
+                statArray[4] = 2;
+                break;
+
+        }
+
+        //Strength
+        _b = Random.Range(0, _standardArray.Count);
+        strength = _standardArray[_b];
+        _standardArray.RemoveAt(_b);
+        switch (strength)
+        {
+            case 15:
+                statArray[0] = 3;
+                break;
+            case 14:
+                statArray[1] = 3;
+                break;
+            case 13:
+                statArray[2] = 3;
+                break;
+            case 12:
+                statArray[3] = 3;
+                break;
+            case 10:
+                statArray[4] = 3;
+                break;
+
+        }
+
+        //Wisdom
+        _b = Random.Range(0, _standardArray.Count);
+        wisdom = _standardArray[_b];
+        _standardArray.RemoveAt(_b);
+        switch (wisdom)
+        {
+            case 15:
+                statArray[0] = 4;
+                break;
+            case 14:
+                statArray[1] = 4;
+                break;
+            case 13:
+                statArray[2] = 4;
+                break;
+            case 12:
+                statArray[3] = 4;
+                break;
+            case 10:
+                statArray[4] = 4;
+                break;
+
+        }
+
+
+    }
+
     public void IncreaseStat(int _statID)
     {
         switch(_statID)
         {
-            case 1:
+            case 0:
                 charisma += incAmount;
                 break;
-            case 2:
+            case 1:
                 dexterity += incAmount;
                 break;
-            case 3:
+            case 2:
                 intelligence += incAmount;
                 break;
-            case 4:
+            case 3:
                 strength += incAmount;
                 break;
-            case 5:
+            case 4:
                 wisdom += incAmount;
                 break;
+        }
+
+        //Need to take into account if stats surpass others, their placement in statArray should change
+        for (int i = 0; i < statArray.Length; i++)
+        {
+            if (statArray[i] == _statID && i != 0)
+            {
+                int _temp = statArray[i - 1];
+                statArray[i - 1] = _statID;
+                statArray[i] = _temp;
+            }
         }
 
         statsManager.CloseStatMenu();

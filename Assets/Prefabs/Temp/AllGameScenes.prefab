@@ -592,14 +592,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4858533997449167557}
         m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
         m_MethodName: HoldIncreaseStats
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2627,14 +2627,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4858533997449167557}
         m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
         m_MethodName: HoldIncreaseStats
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3146,14 +3146,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4858533997449167557}
         m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
         m_MethodName: HoldIncreaseStats
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4539,14 +4539,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4858533997449167557}
         m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
         m_MethodName: HoldIncreaseStats
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5973,14 +5973,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4858533997449167557}
         m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
         m_MethodName: HoldIncreaseStats
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6333,25 +6333,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statIncCanvas: {fileID: 392668813932523599}
   statsToChoose:
-  - {fileID: 11400000, guid: fd232a54d03d7d04187b223e808acf46, type: 2}
-  - {fileID: 11400000, guid: dc8ecf6e1d37138408e725db6d043b18, type: 2}
-  - {fileID: 11400000, guid: dc9b22c2c12a01f4a96d8f0679c0296b, type: 2}
-  - {fileID: 11400000, guid: 6da4a62dec00a2544afe133215db4568, type: 2}
-  - {fileID: 11400000, guid: e3b42b4b6412d594c8a43674b5d02ec8, type: 2}
-  - {fileID: 11400000, guid: d368a4a528c566e469c85194f2761e0b, type: 2}
   - {fileID: 11400000, guid: 2526106c215338846975a7c19ba85a57, type: 2}
+  - {fileID: 11400000, guid: d368a4a528c566e469c85194f2761e0b, type: 2}
   - {fileID: 11400000, guid: 8f9886be62061b94cb6c3b912313bd3e, type: 2}
   - {fileID: 11400000, guid: f17f076651c4d374b94a90cb15060747, type: 2}
+  - {fileID: 11400000, guid: 1cd533286dfe9c245a00980cb4d377b7, type: 2}
+  - {fileID: 11400000, guid: fd232a54d03d7d04187b223e808acf46, type: 2}
+  - {fileID: 11400000, guid: dc9b22c2c12a01f4a96d8f0679c0296b, type: 2}
   - {fileID: 11400000, guid: 806d8da9722d41c498042583fb10650d, type: 2}
   - {fileID: 11400000, guid: f461fd44848cdf14fa26a87ec37a8ffd, type: 2}
+  - {fileID: 11400000, guid: fb35e6dceda0fb7429c383070be6f6fa, type: 2}
   - {fileID: 11400000, guid: 62735043317a631429fe0138116269cf, type: 2}
   - {fileID: 11400000, guid: ea9f480e65a322145bff42c71cf52722, type: 2}
+  - {fileID: 11400000, guid: 6da4a62dec00a2544afe133215db4568, type: 2}
   - {fileID: 11400000, guid: b7bba36c57d465942b60a44290fac740, type: 2}
-  - {fileID: 11400000, guid: d542c524cdcca3846a3baf9055141312, type: 2}
   - {fileID: 11400000, guid: 01a99035cfa7ec9499bf097d4913188b, type: 2}
+  - {fileID: 11400000, guid: d542c524cdcca3846a3baf9055141312, type: 2}
+  - {fileID: 11400000, guid: e3b42b4b6412d594c8a43674b5d02ec8, type: 2}
   - {fileID: 11400000, guid: 7674ba49ef62f614e8e1c42cc398ad31, type: 2}
   - {fileID: 11400000, guid: 4d29b6b319e0d8c4ba1eeaa8207416fc, type: 2}
-  - {fileID: 11400000, guid: 1cd533286dfe9c245a00980cb4d377b7, type: 2}
+  - {fileID: 11400000, guid: dc8ecf6e1d37138408e725db6d043b18, type: 2}
   empty: {fileID: 11400000, guid: fb35e6dceda0fb7429c383070be6f6fa, type: 2}
   displayedChoices: []
   title:
