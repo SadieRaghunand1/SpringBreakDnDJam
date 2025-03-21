@@ -119,27 +119,7 @@ public class StatsManager : MonoBehaviour
             skillManager.skillBehavior[3] = skillManager.skillObj[3].GetComponent<SkillBehavior>();
             skillManager.skillBehavior[3].OnActivate();
         }
-        /*Debug.Log("Enter Hold skill toggle" + _skillID);
-        switch (_skillID)
-        {
-            
-            case 1: //Knight helmet
-                skillManager.IncreaseDefense();
-                break;
-            case 2: //Propellor hat
-                skillManager.DecreaseGravity(); 
-                break;
-            case 3: //Blurry hat
-                skillManager.IncreaseSpeed();
-                break;
-            case 4: //Flower pot
-                skillManager.TurnOnFlowerPot();
-                break;
-            case 5: //Winged helmet
-                skillManager.TurnOnWingedHelmet();
-                break;
-        }
-        */
+        
 
         
         CloseSkillMenu();

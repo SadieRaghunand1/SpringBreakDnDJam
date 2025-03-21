@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SadieTest4.unity
     guid: 62de9fb42abb2df4f87e6786fafa4de7
   - enabled: 1
+    path: Assets/Scenes/SadieTest5.unity
+    guid: de98e982eb2b36f42b3345850f65dc8b
+  - enabled: 1
+    path: Assets/Scenes/SadieTest6.unity
+    guid: a6ec408ade516b24c8f9d14703585247
+  - enabled: 1
     path: Assets/Scenes/SadieTestBoss.unity
     guid: c0a511510e2cbad4ca5a8f83ce773676
   m_configObjects: {}
