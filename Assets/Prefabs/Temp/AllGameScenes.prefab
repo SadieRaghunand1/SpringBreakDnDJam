@@ -4897,6 +4897,7 @@ MonoBehaviour:
   skillCanvas: {fileID: 4466836109426924796}
   buildIndices: 0200000003000000040000000500000006000000
   bossBuildInx: 7
+  nextAreaIndx: 0
 --- !u!1 &6833859687947367335
 GameObject:
   m_ObjectHideFlags: 0
@@ -6356,6 +6357,11 @@ MonoBehaviour:
   - {fileID: 6071072041816781771}
   - {fileID: 6222762376389195857}
   - {fileID: 5659383644587211388}
+  debugList:
+  - {fileID: 11400000, guid: 806d8da9722d41c498042583fb10650d, type: 2}
+  - {fileID: 11400000, guid: 8f9886be62061b94cb6c3b912313bd3e, type: 2}
+  - {fileID: 11400000, guid: 62735043317a631429fe0138116269cf, type: 2}
+  debugMode: 1
 --- !u!1 &8922489702688258738
 GameObject:
   m_ObjectHideFlags: 0

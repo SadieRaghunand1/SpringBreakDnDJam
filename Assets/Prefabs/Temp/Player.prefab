@@ -303,7 +303,7 @@ MonoBehaviour:
   cameraSpeed: 3
   jumpForce: {x: 0, y: 5, z: 0}
   isGrounded: 0
-  sprintDuration: 0
+  sprintDuration: 1
   inSafeZone: 0
   holdPos: {fileID: 0}
   playerCamera: {fileID: 9012730307709169851}

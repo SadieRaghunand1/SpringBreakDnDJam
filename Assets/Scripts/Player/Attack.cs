@@ -32,7 +32,7 @@ public class Attack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             isAttacking = true;
-            Debug.Log("Shoot");
+            //Debug.Log("Shoot");
             AttackSword();
 
             StartCoroutine(WaitForAttackAnim());

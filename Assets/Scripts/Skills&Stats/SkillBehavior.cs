@@ -10,7 +10,7 @@ public class SkillBehavior : MonoBehaviour
 
     protected void Awake()
     {
-        Debug.Log("Start on skill behavior run");
+       // Debug.Log("Start on skill behavior run");
         skillManager = FindAnyObjectByType<SkillManager>();
         spawner = FindAnyObjectByType<SpawnerEnemy>();
     }

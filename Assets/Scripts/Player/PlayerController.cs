@@ -140,12 +140,13 @@ public class PlayerController : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.LeftShift))
             {
                 isSprinting = true;
+                StartCoroutine(EndSprint());
 
             }
 
             if(isSprinting)
             {
-                rb.AddForce(Vector3.forward * 1, ForceMode.Impulse);
+                rb.AddForce(transform.forward * 1, ForceMode.Impulse);
             }
         }
     }

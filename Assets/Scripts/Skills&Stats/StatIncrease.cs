@@ -17,7 +17,7 @@ public class StatIncrease : MonoBehaviour
 
     [SerializeField] private Canvas statIncCanvas;
     private int statIncAmount;
-    public List<ScriptObjSkills> statsToChoose; 
+    public List<ScriptObjSkills> statsToChoose;
     public ScriptObjSkills empty;
     public ScriptObjSkills[] displayedChoices;
     private HealthAndStats healthAndStats;
@@ -34,6 +34,10 @@ public class StatIncrease : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] title;
     [SerializeField] private TextMeshProUGUI[] desc;
     [SerializeField] private TextMeshProUGUI[] stat;
+
+    [Header("Debugging")]
+    public ScriptObjSkills[] debugList;
+    public bool debugMode;
 
     private void Start()
     {
@@ -56,6 +60,13 @@ public class StatIncrease : MonoBehaviour
         //Choose new choices
         for(int i = 0; i < displayedChoices.Length; i++)
         {
+            //Debugging Start
+            if(debugMode)
+            {
+                displayedChoices[i] = debugList[i];
+                continue;
+            }
+
             if(statsToChoose.Count > 1)
             {
                 switch(ChooseStatToChooseSkill())

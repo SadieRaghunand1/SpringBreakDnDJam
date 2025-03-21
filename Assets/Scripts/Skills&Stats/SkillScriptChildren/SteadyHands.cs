@@ -28,7 +28,8 @@ public class SteadyHands : SkillBehavior
         spawner = FindAnyObjectByType<SpawnerEnemy>();
         for (int i = 0; i < spawner.enemiesSpawned.Count; i++)
         {
-           // Debug.Log(spawner.gameObject.name);
+            //Debug.Log("Spawner " + spawner.gameObject.name);
+            Debug.Log("Enemy in question = " + spawner.enemyObjSpawned[i].name);
             float _thisDistance = Vector3.Distance(this.transform.parent.transform.position, spawner.enemyObjSpawned[i].transform.position);
 
             if (closestDistanceComp == 0 || _thisDistance < closestDistanceComp)

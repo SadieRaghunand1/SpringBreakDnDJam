@@ -128,6 +128,7 @@ public class StatsManager : MonoBehaviour
 
     public void OpenStatMenu()
     {
+        Debug.Log("STAT menu");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         statMenu.SetActive(true);
@@ -145,6 +146,7 @@ public class StatsManager : MonoBehaviour
 
     public void OpenSkillMenu()
     {
+        Debug.Log("SKILL menu");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         skillMenu.SetActive(true);
@@ -192,7 +194,7 @@ public class StatsManager : MonoBehaviour
         {
             Random.Range(0, buildIndices.Count);
         }
-        Debug.Log(_loadSceneInx);
+       // Debug.Log(_loadSceneInx);
          SceneManager.LoadScene(_loadSceneInx);
 
         

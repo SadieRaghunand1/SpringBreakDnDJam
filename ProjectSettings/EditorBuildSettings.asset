@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SadieTestLobby.unity
+    path: Assets/Scenes/Lobby.unity
     guid: 4c70f9690a6880e4aadcda1b73649de6
   - enabled: 1
     path: Assets/Scenes/ForestRoom1.unity
