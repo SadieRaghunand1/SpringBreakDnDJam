@@ -81,7 +81,7 @@ public class StatIncrease : MonoBehaviour
                         wisdomMax--; charismaMin--; charismaMax--;
                         break;
                 }
-                Debug.Log("index = " + _chosenIndx[i]);
+                //Debug.Log("index = " + _chosenIndx[i]);
                 //Check if there are no more unique skills to pull from, fill in empty
                 if (statsToChoose[_chosenIndx[i]] == null)
                 {

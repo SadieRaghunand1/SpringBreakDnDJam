@@ -134,10 +134,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllGameScenes
       objectReference: {fileID: 0}
+    - target: {fileID: 967271467156703049, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4381442846163335751, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: 71ae6450a1f8cf546bd1a52a5ee52c42, type: 2}
+    - target: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: nextAreaIndx
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5954744247915874217, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5948377
@@ -299,7 +307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 645134817431661152, guid: a55f6f8cd8f6c044e98695d7f0b1e0a1, type: 3}
       propertyPath: enemyState
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3118145687730825988, guid: a55f6f8cd8f6c044e98695d7f0b1e0a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -307,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3118145687730825988, guid: a55f6f8cd8f6c044e98695d7f0b1e0a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.26
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 3118145687730825988, guid: a55f6f8cd8f6c044e98695d7f0b1e0a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -347,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8633498023600206479, guid: a55f6f8cd8f6c044e98695d7f0b1e0a1, type: 3}
       propertyPath: bossID
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8633498023600206479, guid: a55f6f8cd8f6c044e98695d7f0b1e0a1, type: 3}
       propertyPath: health

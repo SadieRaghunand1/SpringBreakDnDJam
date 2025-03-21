@@ -261,8 +261,10 @@ public class HealthAndStats : MonoBehaviour
 
     public void CheckBossDeath(int _bossID) //Boss id refers to the index that will be checked
     {
+        Debug.Log("Boss dead at all");
         if (!bossDefeated[_bossID])
         {
+            Debug.Log("Boss down");
             //First trigger menu
             statsManager.OpenStatMenu();
             //Then trigger bool check

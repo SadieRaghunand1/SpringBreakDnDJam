@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] protected float health;
 
 
-    public void LoseHealth(float _damage)
+    public virtual void LoseHealth(float _damage)
     {
         health -= _damage;
 
@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
 
     public virtual void CheckDead()
     {
+        
         if (health <= 0)
         {
             Debug.Log("Die");

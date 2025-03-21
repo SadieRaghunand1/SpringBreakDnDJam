@@ -65,9 +65,17 @@ public class Attack : MonoBehaviour
             if(hit.collider.gameObject.layer == 7)
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                Debug.Log("Did Hit");
-
-                EnemyHealth _enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
+                Debug.Log("Did Hit " + hit.collider.gameObject.name);
+                EnemyHealth _enemy;
+                if (hit.collider.gameObject.GetComponent<BossHealth>())
+                {
+                     _enemy = hit.collider.gameObject.GetComponent<BossHealth>();
+                }
+                else
+                {
+                    _enemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
+                }
+                    
                 killed++;
                 exitRoom.StopGame();
                 _enemy.LoseHealth(attackDamage);
