@@ -1082,7 +1082,7 @@ MonoBehaviour:
   exitRoom: {fileID: 0}
   maxTime: 3
   minTime: 1
-  numToSpawn: 15
+  numToSpawn: 8
   counter: 0
 --- !u!65 &2073247098196703084
 BoxCollider:
@@ -6683,10 +6683,10 @@ MonoBehaviour:
   - {fileID: 6222762376389195857}
   - {fileID: 5659383644587211388}
   debugList:
-  - {fileID: 11400000, guid: 806d8da9722d41c498042583fb10650d, type: 2}
+  - {fileID: 11400000, guid: b7bba36c57d465942b60a44290fac740, type: 2}
   - {fileID: 11400000, guid: f469190c3bcd1a64e9155a1806a36dbf, type: 2}
   - {fileID: 11400000, guid: 62735043317a631429fe0138116269cf, type: 2}
-  debugMode: 0
+  debugMode: 1
 --- !u!1 &8922489702688258738
 GameObject:
   m_ObjectHideFlags: 0

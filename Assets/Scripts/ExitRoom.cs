@@ -29,6 +29,7 @@ public class ExitRoom : MonoBehaviour
 
     public void StopGame(Collision _collision)
     {
+        Debug.Log("Portal collided with " + _collision.gameObject.name);
         if(attack.killed >= goalKill && _collision.gameObject.layer == 8 && !bossRoom) 
         {
             Debug.Log(attack.killed + " " + goalKill);

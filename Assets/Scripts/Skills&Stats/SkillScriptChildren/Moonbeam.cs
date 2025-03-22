@@ -23,7 +23,11 @@ public class Moonbeam : SkillBehavior
     {
         //Similar functionlity to steady hands, but choose random enemy.  
         spawner = FindAnyObjectByType<SpawnerEnemy>();
-        int _randEnemy = Random.Range(0, spawner.enemyObjSpawned.Count);
+        int _randEnemy = 0;
+        while (spawner.enemyObjSpawned[_randEnemy] == null)
+        {
+            _randEnemy = Random.Range(0, spawner.enemyObjSpawned.Count);
+        }
 
         EnemyHealth _lockedEnemy = spawner.enemyObjSpawned[_randEnemy].GetComponent<EnemyHealth>();
         Debug.Log(_lockedEnemy.gameObject.name + "moonbeamed");

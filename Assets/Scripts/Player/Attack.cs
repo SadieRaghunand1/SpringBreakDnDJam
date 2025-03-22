@@ -6,6 +6,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [SerializeField] private float attackDistance;
+    [SerializeField] private float flowerDistance;
     public float attackDamage;
     public bool isAttacking = false;
     private bool canAttack = true;
@@ -33,7 +34,7 @@ public class Attack : MonoBehaviour
         {
             isAttacking = true;
             //Debug.Log("Shoot");
-            AttackSword();
+            AttackSword(false);
 
             StartCoroutine(WaitForAttackAnim());
         }
@@ -54,12 +55,22 @@ public class Attack : MonoBehaviour
     }
 
 
-    void AttackSword()
+    void AttackSword(bool _flowerPot)
     {
-        
-        RaycastHit hit;
+
+        float _distance;
+        if(_flowerPot)
+        {
+            _distance = flowerDistance;
+        }
+        else
+        {
+            _distance = attackDistance;
+        }
+
+            RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, attackDistance))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _distance))
 
         {
             if(hit.collider.gameObject.layer == 7)
@@ -86,14 +97,18 @@ public class Attack : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
         }
-        weaponAnim.SetTrigger("isAttackingTrigger");
-        if(skillManager.attackSpeed)
+
+        if(!_flowerPot)
         {
-            weaponAnim.SetFloat("attackSpeed", skillManager.animMult);
+            weaponAnim.SetTrigger("isAttackingTrigger");
+            if (skillManager.attackSpeed)
+            {
+                weaponAnim.SetFloat("attackSpeed", skillManager.animMult);
+            }
         }
+       
     }
 
-   
 
     IEnumerator WaitForAttackAnim()
     {
@@ -106,14 +121,14 @@ public class Attack : MonoBehaviour
     public IEnumerator FlowerPotAttack()
     {
         yield return new WaitForSeconds(flowerPotSpeed);
-        AttackSword();
+        AttackSword(true);
         StartCoroutine(FlowerPotAttack());
     }
 
     public IEnumerator DoubleAttack()
     {
-        AttackSword();
+        AttackSword(false);
         yield return new WaitForSeconds(0.5f);
-        AttackSword();
+        AttackSword(false);
     }
 }

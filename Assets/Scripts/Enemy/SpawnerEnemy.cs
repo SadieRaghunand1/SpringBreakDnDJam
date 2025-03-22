@@ -29,13 +29,14 @@ public class SpawnerEnemy : MonoBehaviour
     {
         StartCoroutine(TimeSpawns());
         SkillManager _skillManager = FindAnyObjectByType<SkillManager>();
+        exitRoom = FindAnyObjectByType<ExitRoom>();
         if(_skillManager.scythesEdge)
         {
             numToSpawn /= 2;
-            exitRoom.goalKill = numToSpawn;
+            
         }
-        
-        
+
+        exitRoom.goalKill = numToSpawn;
     }
 
     /*private void OnTriggerEnter(Collider other)

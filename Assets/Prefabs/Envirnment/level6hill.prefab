@@ -2694,6 +2694,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6001422218672712346, guid: 1ec387fcc2b03a64ea01b6cfc1595dbb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7453883362653170626}
+    - targetCorrespondingSourceObject: {fileID: -6001422218672712346, guid: 1ec387fcc2b03a64ea01b6cfc1595dbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2889492708965389960}
   m_SourcePrefab: {fileID: 100100000, guid: 1ec387fcc2b03a64ea01b6cfc1595dbb, type: 3}
 --- !u!1 &29034160075730853 stripped
 GameObject:
@@ -3449,6 +3452,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020000007, y: 0.023817122, z: 0.020000007}
   m_Center: {x: -3.5549506e-12, y: -0.0019085498, z: 1.1377077e-10}
+--- !u!114 &2889492708965389960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674389166719105625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd22bc38c0f0c34e880531cb2ee3b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsManager: {fileID: 0}
+  spawnEnemy: {fileID: 0}
+  goalKill: 0
+  bossDead: 0
+  bossRoom: 0
 --- !u!1 &707901516247649005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3188473475546179026, guid: 1ec387fcc2b03a64ea01b6cfc1595dbb, type: 3}

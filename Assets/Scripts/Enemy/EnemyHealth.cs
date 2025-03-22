@@ -28,6 +28,10 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.Log("Die");
             playerAttack.killed++;
+            if(playerAttack.killed == exitRoom.goalKill)
+            {
+                Debug.Log("All enemies dead");
+            }
             //exitRoom.StopGame();
             //Temp: Destroy
             Destroy(gameObject);

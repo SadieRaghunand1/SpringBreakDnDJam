@@ -348,7 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e766bdf0f57b2343850d3263523a12c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 20
+  attackDistance: 5
+  flowerDistance: 15
   attackDamage: 1
   isAttacking: 0
   killed: 0
@@ -371,6 +372,7 @@ MonoBehaviour:
   health: 1
   attack: {fileID: 4446321573845822359}
   scenesVisitedThisRun: 00000000
+  levelCount: 0
   charisma: 0
   dexterity: 0
   intelligence: 0
@@ -409,6 +411,7 @@ MonoBehaviour:
   attackSpeed: 0
   propellorHat: 0
   wingedHelmet: 0
+  scythesEdge: 0
   doubleAttack: 0
   steadyHands: 0
   fireball: 0
