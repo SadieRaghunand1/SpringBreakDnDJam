@@ -30,6 +30,7 @@ public class SkillManager : MonoBehaviour
     public bool attackSpeed; //9
     public bool propellorHat; //3, now BIRDS OF PREY
     public bool wingedHelmet; //4, now APOLLO's SHOES
+    public bool scythesEdge; //19
     //NEED ONE FOR INTELLIGENCE
 
     [Header("Skill bools - Spells")]

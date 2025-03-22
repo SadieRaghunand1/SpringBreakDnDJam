@@ -1080,6 +1080,7 @@ MonoBehaviour:
   - {fileID: 8404910981639873775}
   enemiesSpawned: []
   enemyObjSpawned: []
+  exitRoom: {fileID: 3501053651979730477}
   maxTime: 2
   minTime: 0.5
   numToSpawn: 15
@@ -6778,7 +6779,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dc9b22c2c12a01f4a96d8f0679c0296b, type: 2}
   - {fileID: 11400000, guid: 806d8da9722d41c498042583fb10650d, type: 2}
   - {fileID: 11400000, guid: f461fd44848cdf14fa26a87ec37a8ffd, type: 2}
-  - {fileID: 11400000, guid: fb35e6dceda0fb7429c383070be6f6fa, type: 2}
+  - {fileID: 11400000, guid: f469190c3bcd1a64e9155a1806a36dbf, type: 2}
   - {fileID: 11400000, guid: 62735043317a631429fe0138116269cf, type: 2}
   - {fileID: 11400000, guid: ea9f480e65a322145bff42c71cf52722, type: 2}
   - {fileID: 11400000, guid: 6da4a62dec00a2544afe133215db4568, type: 2}
@@ -6805,9 +6806,9 @@ MonoBehaviour:
   - {fileID: 5659383644587211388}
   debugList:
   - {fileID: 11400000, guid: 806d8da9722d41c498042583fb10650d, type: 2}
-  - {fileID: 11400000, guid: 8f9886be62061b94cb6c3b912313bd3e, type: 2}
+  - {fileID: 11400000, guid: f469190c3bcd1a64e9155a1806a36dbf, type: 2}
   - {fileID: 11400000, guid: 62735043317a631429fe0138116269cf, type: 2}
-  debugMode: 0
+  debugMode: 1
 --- !u!1 &8922489702688258738
 GameObject:
   m_ObjectHideFlags: 0

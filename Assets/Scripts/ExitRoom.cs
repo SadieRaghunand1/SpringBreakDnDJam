@@ -9,7 +9,7 @@ public class ExitRoom : MonoBehaviour
     private StatIncrease statIncrease;
     [SerializeField] private SpawnerEnemy spawnEnemy;
     private Attack attack;
-    [SerializeField] private int goalKill;
+    public int goalKill;
 
     private void Start()
     {

@@ -15,6 +15,8 @@ public class SpawnerEnemy : MonoBehaviour
     private GameObject enemy;
     public List<EnemyMovement> enemiesSpawned = new List<EnemyMovement>();
     public List<GameObject> enemyObjSpawned = new List<GameObject>();
+
+    [SerializeField] private ExitRoom exitRoom;
    
     [Header("Spawn time variables")]
     public float maxTime;
@@ -26,6 +28,14 @@ public class SpawnerEnemy : MonoBehaviour
     private void Start()
     {
         StartCoroutine(TimeSpawns());
+        SkillManager _skillManager = FindAnyObjectByType<SkillManager>();
+        if(_skillManager.scythesEdge)
+        {
+            numToSpawn /= 2;
+            exitRoom.goalKill = numToSpawn;
+        }
+        
+        
     }
 
     /*private void OnTriggerEnter(Collider other)
@@ -61,6 +71,10 @@ public class SpawnerEnemy : MonoBehaviour
     {
         for(int i = 0; i < spawnPoints.Length; i++)
         {
+            if(counter >= numToSpawn)
+            {
+                return;
+            }
             SpawnEnemy(spawnPoints[i].transform.position, correspondingAreas[i]);
         }
     }
