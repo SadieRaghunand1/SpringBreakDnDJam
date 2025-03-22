@@ -15,6 +15,8 @@ public class AttackSpeedInc : SkillBehavior
     public override void OnDeactivate()
     {
         skillManager.attackSpeed = false;
+        skillManager.attack.weaponAnim.SetFloat("attackSpeed", 1);
+
         Destroy(this.gameObject);
     }
 

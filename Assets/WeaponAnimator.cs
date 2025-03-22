@@ -10,10 +10,11 @@ public class WeaponAnimator : MonoBehaviour
     [SerializeField] Attack attack;
     void Update()
     {
-        if (attack.isAttacking == true)
+       /* if (attack.isAttacking == true)
         {
             Debug.Log("animate");
-            animator.SetBool("isAttacking", true);
+            //animator.SetBool("isAttacking", true);
+            animator.SetTrigger("isAttackingTrigger");
             if(attack.skillManager.attackSpeed)
             {
                 animator.SetFloat("attackSpeed",attack.skillManager.animMult);
@@ -22,7 +23,12 @@ public class WeaponAnimator : MonoBehaviour
         else
         {
 
-            animator.SetBool("isAttacking", false);
-        }
+            //animator.SetBool("isAttacking", false);
+        }*/
+    }
+
+    public void WeaponAnim()
+    {
+        animator.SetTrigger("isAttackingTrigger");
     }
 }

@@ -18,7 +18,7 @@ public class Attack : MonoBehaviour
    public ExitRoom exitRoom;
 
     public SkillManager skillManager;
-    [SerializeField] Animator weaponAnim;
+    public Animator weaponAnim;
   
 
     private void Update()
@@ -85,6 +85,11 @@ public class Attack : MonoBehaviour
         else
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.blue);
+        }
+        weaponAnim.SetTrigger("isAttackingTrigger");
+        if(skillManager.attackSpeed)
+        {
+            weaponAnim.SetFloat("attackSpeed", skillManager.animMult);
         }
     }
 
