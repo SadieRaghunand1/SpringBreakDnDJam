@@ -61,6 +61,11 @@ public class EnemyMovement : MonoBehaviour
         {
             enemyState = EnemyState.IDLE;
         }
+        
+        if(GetComponent<BossHealth>() != null)
+        {
+            enemyState = EnemyState.CHASE;
+        }
        // enemyState = EnemyState.PATROL;
     }
 
