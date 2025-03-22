@@ -28,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.Log("Die");
             playerAttack.killed++;
-            exitRoom.StopGame();
+            //exitRoom.StopGame();
             //Temp: Destroy
             Destroy(gameObject);
         }

@@ -274,11 +274,12 @@ public class HealthAndStats : MonoBehaviour
         }
         else
         {
-            if (_bossID == 0) //First boss
+            /*if (_bossID == 0) //First boss
             {
                 SceneManager.LoadScene(8);
-            }
+            }*/
         }
+        FindAnyObjectByType<ExitRoom>().bossDead = true;
 
 
     }

@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllGameScenes
       objectReference: {fileID: 0}
+    - target: {fileID: 406508487104823266, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: exitRoom
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 967271467156703049, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -142,6 +146,18 @@ PrefabInstance:
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: 71ae6450a1f8cf546bd1a52a5ee52c42, type: 2}
+    - target: {fileID: 4811497978760123918, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 96.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811497978760123918, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811497978760123918, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -81.04
+      objectReference: {fileID: 0}
     - target: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: nextAreaIndx
       value: 8
@@ -191,6 +207,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+--- !u!114 &173276456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 406508487104823266, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+  m_PrefabInstance: {fileID: 173276455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180cbe3e97dde4545bfd12b0b452c8cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &173276457 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+  m_PrefabInstance: {fileID: 173276455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f06826c01d0b424d99282a4809beec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &526857379
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,8 +755,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2979070031214085067, guid: 068c73a064a32824dabd88f3c1e841d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6750210105763785285}
   m_SourcePrefab: {fileID: 100100000, guid: 068c73a064a32824dabd88f3c1e841d1, type: 3}
+--- !u!1 &6750210105763785284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2979070031214085067, guid: 068c73a064a32824dabd88f3c1e841d1, type: 3}
+  m_PrefabInstance: {fileID: 6750210105763785283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6750210105763785285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750210105763785284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd22bc38c0f0c34e880531cb2ee3b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsManager: {fileID: 173276457}
+  spawnEnemy: {fileID: 173276456}
+  goalKill: 0
+  bossDead: 0
+  bossRoom: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

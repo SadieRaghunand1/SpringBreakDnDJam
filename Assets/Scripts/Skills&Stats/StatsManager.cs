@@ -141,7 +141,7 @@ public class StatsManager : MonoBehaviour
         statMenu.SetActive(false);
 
         //Load next area
-        ChangeSceneToNextArea();
+        //ChangeSceneToNextArea();
     }
 
     public void OpenSkillMenu()
@@ -203,7 +203,7 @@ public class StatsManager : MonoBehaviour
     /// <summary>
     /// After kill boss, next area indx should be for the first scene of the next area, if end game then go to end screen
     /// </summary>
-    void ChangeSceneToNextArea()
+    public void ChangeSceneToNextArea()
     {
         player.levelCount = 0;
         SceneManager.LoadScene(nextAreaIndx);
