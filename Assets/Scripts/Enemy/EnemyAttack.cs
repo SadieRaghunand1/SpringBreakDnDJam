@@ -13,6 +13,7 @@ public class EnemyAttack : MonoBehaviour
     private int chanceToHit;
     private float attackDistance = 50;
     [SerializeField] EnemyMovement enemyMovement;
+    [SerializeField] Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,10 @@ public class EnemyAttack : MonoBehaviour
 
     void AttackPlayer()
     {
-        //Debug.Log("Enemy Shoot");
+        anim.SetBool("isPunching", true);
+        Debug.Log("Enemy attacks");
         RaycastHit hit;
+       // enemyMovement.enemyState = EnemyMovement.EnemyState.ATTACK;
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, attackDistance))
 
@@ -44,6 +47,8 @@ public class EnemyAttack : MonoBehaviour
             }
 
         }
+
+        StartCoroutine(EndAnimation());
         
     }
 
@@ -51,8 +56,20 @@ public class EnemyAttack : MonoBehaviour
     {
         timeBwAttacks = Random.Range(timeMin, timeMax);
         yield return new WaitForSeconds(timeBwAttacks);
-        AttackPlayer();
+        if (enemyMovement.enemyState == EnemyMovement.EnemyState.CHASE || enemyMovement.enemyState == EnemyMovement.EnemyState.CHARMED)
+        {
+            
+            AttackPlayer();
+            
+        }
         StartCoroutine(TimeAttack());
+    }
+
+    private IEnumerator EndAnimation()
+    {
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+        //yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).);
+        anim.SetBool("isPunching", false);
     }
 
 }

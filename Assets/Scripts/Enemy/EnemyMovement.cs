@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
     public enum EnemyState
     {
         PATROL,
-        ATTACK,
+        //ATTACK,
         CHASE,
         CHARMED,
         IDLE

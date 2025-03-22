@@ -987,7 +987,7 @@ MonoBehaviour:
   - {fileID: 675217478797610549}
   - {fileID: 1058985653477416530}
   enemyPrefab:
-  - {fileID: 4375388206222397441, guid: b5a23aabe7fdf7042b860cb319a9441f, type: 3}
+  - {fileID: 4375388206222397441, guid: f836bc6cb2ef65c4298dad005d9c4fd9, type: 3}
   areaPatrolPts:
   - {fileID: 68796638725002034}
   - {fileID: 8532228697017726327}

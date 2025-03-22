@@ -93,7 +93,7 @@ public class Attack : MonoBehaviour
     IEnumerator WaitForAttackAnim()
     {
         canAttack = false;
-        float _time = weaponAnim.GetCurrentAnimatorStateInfo(1).length;
+        float _time = weaponAnim.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSecondsRealtime(_time);
         canAttack = true;
     }

@@ -23,10 +23,10 @@ public class EnemyAnimator : MonoBehaviour
             animator.SetBool("isPunching", false);
             animator.SetBool("isMoving", true);
         }
-        else if (em.enemyState == EnemyState.ATTACK)
+        /*else if (em.enemyState == EnemyState.ATTACK)
         {
             animator.SetBool("isPunching", true);
-        }
+        }*/
         else if (em.enemyState == EnemyState.IDLE)
         {
             animator.SetBool("isPunching", false);
