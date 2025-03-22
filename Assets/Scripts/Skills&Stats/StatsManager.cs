@@ -179,7 +179,7 @@ public class StatsManager : MonoBehaviour
             }
         }
 
-        if(buildIndices.Count <= 0)
+        if(player.levelCount == 3)
         {
             _loadSceneInx = bossBuildInx;
         }
@@ -187,7 +187,7 @@ public class StatsManager : MonoBehaviour
         {
             _loadSceneInx = buildIndices[Random.Range(0, buildIndices.Count)];
         }
-           
+           //Need to only go through 3 levels
 
         
         while(_loadSceneInx == 0)
@@ -205,6 +205,7 @@ public class StatsManager : MonoBehaviour
     /// </summary>
     void ChangeSceneToNextArea()
     {
+        player.levelCount = 0;
         SceneManager.LoadScene(nextAreaIndx);
     }
 }

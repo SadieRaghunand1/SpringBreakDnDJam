@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,8 +13,9 @@ public class HealthAndStats : MonoBehaviour
 
     [Header("Loading")]
     public List<int> scenesVisitedThisRun;
+    public int levelCount;
     private int lobbyBuildIndx = 0;
-    
+
 
     [Header("Stats")]
     public int charisma; //0
@@ -46,7 +46,7 @@ public class HealthAndStats : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         scenesVisitedThisRun = new List<int>();
-        statsManager = FindAnyObjectByType<StatsManager>();
+        
         //Temp for debugging menus
         Cursor.lockState = CursorLockMode.None;
         InitStats();
@@ -56,11 +56,13 @@ public class HealthAndStats : MonoBehaviour
 
     public void InitValuesOnLoad()
     {
+        levelCount++;
         startPos = GameObject.FindWithTag("StartPos").transform;
         transform.position = startPos.position;
         scenesVisitedThisRun.Add(SceneManager.GetActiveScene().buildIndex);
         skillManager.OnStartRemove();
-        for(int i = 0; i < scenesVisitedThisRun.Count; i++)
+        statsManager = FindAnyObjectByType<StatsManager>();
+        for (int i = 0; i < scenesVisitedThisRun.Count; i++)
         {
             //Debug.Log("Scenes: " + scenesVisitedThisRun[i]);
         }
@@ -269,6 +271,13 @@ public class HealthAndStats : MonoBehaviour
             statsManager.OpenStatMenu();
             //Then trigger bool check
             bossDefeated[_bossID] = true;
+        }
+        else
+        {
+            if (_bossID == 0) //First boss
+            {
+                SceneManager.LoadScene(8);
+            }
         }
 
 
