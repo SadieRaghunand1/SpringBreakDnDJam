@@ -240,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovement: {fileID: 645134817431661152}
   anim: {fileID: 3312909277362476299}
+  debugMode: 1
 --- !u!195 &3350465791085519661
 NavMeshAgent:
   m_ObjectHideFlags: 0

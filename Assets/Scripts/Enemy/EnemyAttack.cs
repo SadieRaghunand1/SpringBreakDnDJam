@@ -15,6 +15,8 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] EnemyMovement enemyMovement;
     [SerializeField] Animator anim;
 
+    [SerializeField] private bool debugMode;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +25,8 @@ public class EnemyAttack : MonoBehaviour
 
     void AttackPlayer()
     {
-        anim.SetBool("isPunching", true);
-        Debug.Log("Enemy attacks");
+        anim.SetTrigger("isAttacking");
+       // Debug.Log("Enemy attacks");
         RaycastHit hit;
        // enemyMovement.enemyState = EnemyMovement.EnemyState.ATTACK;
         // Does the ray intersect any objects excluding the player layer
@@ -35,8 +37,12 @@ public class EnemyAttack : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 
-                HealthAndStats healthAndStats = hit.collider.GetComponent<HealthAndStats>();
-                healthAndStats.Die();
+                if(!debugMode)
+                {
+                    HealthAndStats healthAndStats = hit.collider.GetComponent<HealthAndStats>();
+                    healthAndStats.Die();
+                }
+                
             }
 
             else if(hit.collider.gameObject.layer == 8 && enemyMovement.enemyState == EnemyMovement.EnemyState.CHARMED)
@@ -48,7 +54,7 @@ public class EnemyAttack : MonoBehaviour
 
         }
 
-        StartCoroutine(EndAnimation());
+       // StartCoroutine(EndAnimation());
         
     }
 
@@ -67,9 +73,10 @@ public class EnemyAttack : MonoBehaviour
 
     private IEnumerator EndAnimation()
     {
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
-        //yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).);
+        //Debug.Log(anim.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(2);
         anim.SetBool("isPunching", false);
+        anim.SetBool("isMoving", true);
     }
 
 }
