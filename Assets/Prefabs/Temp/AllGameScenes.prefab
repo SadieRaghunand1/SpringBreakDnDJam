@@ -1081,8 +1081,8 @@ MonoBehaviour:
   enemiesSpawned: []
   enemyObjSpawned: []
   exitRoom: {fileID: 3501053651979730477}
-  maxTime: 2
-  minTime: 0.5
+  maxTime: 3
+  minTime: 1
   numToSpawn: 15
   counter: 0
 --- !u!65 &2073247098196703084
@@ -5719,7 +5719,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 66decac3a99439042b357f3251321add, type: 2}
   m_BuildHeightMesh: 0
