@@ -7,6 +7,7 @@ public class SpawnerEnemy : MonoBehaviour
     //Manages spawning enemies per area and detecting player entrance into an area
 
     [SerializeField] private GameObject[] spawnPoints;
+    [SerializeField] private EnemyChaseTrigger[] correspondingAreas;
 
     [SerializeField] private GameObject[] enemyPrefab;
     private GameObject prefabToSpawn;
@@ -27,19 +28,20 @@ public class SpawnerEnemy : MonoBehaviour
         StartCoroutine(TimeSpawns());
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         ChangeEnemyStates(other);
-    }
-    void SpawnEnemy(Vector3 _spawnPos)
+    }*/
+    void SpawnEnemy(Vector3 _spawnPos, EnemyChaseTrigger _area)
     {
         //Debug.Log("Spawn");
         prefabToSpawn = enemyPrefab[Random.Range(0, enemyPrefab.Length)];
         enemy = Instantiate(prefabToSpawn, _spawnPos, prefabToSpawn.transform.rotation);
         EnemyMovement _enemyMove = enemy.GetComponent<EnemyMovement>();
-        _enemyMove.patrolPts = areaPatrolPts;
+        _enemyMove.patrolPts = _area.areaPatrolPts;
         enemiesSpawned.Add(_enemyMove);
         enemyObjSpawned.Add(enemy);
+        _area.assignedEnemies.Add(_enemyMove);
         counter++;
         StartCoroutine(TimeSpawns());
 
@@ -59,7 +61,7 @@ public class SpawnerEnemy : MonoBehaviour
     {
         for(int i = 0; i < spawnPoints.Length; i++)
         {
-            SpawnEnemy(spawnPoints[i].transform.position);
+            SpawnEnemy(spawnPoints[i].transform.position, correspondingAreas[i]);
         }
     }
 

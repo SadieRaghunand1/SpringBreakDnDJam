@@ -51,6 +51,16 @@ public class EnemyMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = FindAnyObjectByType<PlayerController>().gameObject;
         spawner = FindAnyObjectByType<SpawnerEnemy>();
+
+        int _idle = Random.Range(0, 3);
+        if(_idle == 0 || _idle == 2)
+        {
+            enemyState = EnemyState.PATROL;
+        }
+        else if(_idle == 1)
+        {
+            enemyState = EnemyState.IDLE;
+        }
        // enemyState = EnemyState.PATROL;
     }
 
