@@ -23,6 +23,7 @@ public class ExitRoom : MonoBehaviour
     {
         if(attack.killed >= goalKill) 
         {
+            Debug.Log(attack.killed + " " + goalKill);
             statIncrease.RandomizeStatInc();
             spawnEnemy.ClearLevelEnemies();
             statsManager.OpenSkillMenu();

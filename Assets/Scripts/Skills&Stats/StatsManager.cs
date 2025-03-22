@@ -19,6 +19,7 @@ public class StatsManager : MonoBehaviour
     [SerializeField] private List<int> buildIndices;
 
     [SerializeField] private int bossBuildInx;
+    [SerializeField] private int nextAreaIndx;
     private void Start()
     {
         InitValues();
@@ -127,19 +128,25 @@ public class StatsManager : MonoBehaviour
 
     public void OpenStatMenu()
     {
+        Debug.Log("STAT menu");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         statMenu.SetActive(true);
     }
     public void CloseStatMenu()
     {
+        Debug.Log("Stat menu closed");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         statMenu.SetActive(false);
+
+        //Load next area
+        ChangeSceneToNextArea();
     }
 
     public void OpenSkillMenu()
     {
+        Debug.Log("SKILL menu");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         skillMenu.SetActive(true);
@@ -155,7 +162,9 @@ public class StatsManager : MonoBehaviour
         ChangeSceneOnPlayer();
     }
 
-
+    /// <summary>
+    /// Change scene for normal enemies in an area, NOT BOSS
+    /// </summary>
     void ChangeSceneOnPlayer()
     {
         int _loadSceneInx;
@@ -180,14 +189,22 @@ public class StatsManager : MonoBehaviour
         }
            
 
-        //This is the culprit!
+        
         while(_loadSceneInx == 0)
         {
             Random.Range(0, buildIndices.Count);
         }
-        Debug.Log(_loadSceneInx);
+       // Debug.Log(_loadSceneInx);
          SceneManager.LoadScene(_loadSceneInx);
 
         
+    }
+
+    /// <summary>
+    /// After kill boss, next area indx should be for the first scene of the next area, if end game then go to end screen
+    /// </summary>
+    void ChangeSceneToNextArea()
+    {
+        SceneManager.LoadScene(nextAreaIndx);
     }
 }

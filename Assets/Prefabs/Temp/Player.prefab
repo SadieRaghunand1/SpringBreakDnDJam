@@ -303,7 +303,7 @@ MonoBehaviour:
   cameraSpeed: 3
   jumpForce: {x: 0, y: 5, z: 0}
   isGrounded: 0
-  sprintDuration: 0
+  sprintDuration: 1
   inSafeZone: 0
   holdPos: {fileID: 0}
   playerCamera: {fileID: 9012730307709169851}
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDistance: 20
-  attackDamage: 0
+  attackDamage: 1
   isAttacking: 0
   killed: 0
   spellDamage: 1
