@@ -6,6 +6,8 @@ public class SpawnerEnemy : MonoBehaviour
 {
     //Manages spawning enemies per area and detecting player entrance into an area
 
+    [SerializeField] private GameObject[] spawnPoints;
+
     [SerializeField] private GameObject[] enemyPrefab;
     private GameObject prefabToSpawn;
     public GameObject[] areaPatrolPts;
@@ -29,11 +31,11 @@ public class SpawnerEnemy : MonoBehaviour
     {
         ChangeEnemyStates(other);
     }
-    void SpawnEnemy()
+    void SpawnEnemy(Vector3 _spawnPos)
     {
         //Debug.Log("Spawn");
         prefabToSpawn = enemyPrefab[Random.Range(0, enemyPrefab.Length)];
-        enemy = Instantiate(prefabToSpawn, transform.position, prefabToSpawn.transform.rotation);
+        enemy = Instantiate(prefabToSpawn, _spawnPos, prefabToSpawn.transform.rotation);
         EnemyMovement _enemyMove = enemy.GetComponent<EnemyMovement>();
         _enemyMove.patrolPts = areaPatrolPts;
         enemiesSpawned.Add(_enemyMove);
@@ -53,13 +55,22 @@ public class SpawnerEnemy : MonoBehaviour
         }
     }
 
+    void IterateSpawnPoints()
+    {
+        for(int i = 0; i < spawnPoints.Length; i++)
+        {
+            SpawnEnemy(spawnPoints[i].transform.position);
+        }
+    }
+
     IEnumerator TimeSpawns()
     {
         timeS = Random.Range(minTime, maxTime);
         yield return new WaitForSeconds(timeS);
         if(counter < numToSpawn)
         {
-            SpawnEnemy();
+            IterateSpawnPoints();
+            //SpawnEnemy();
         }
         
     }

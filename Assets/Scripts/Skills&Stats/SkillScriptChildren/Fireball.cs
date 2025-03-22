@@ -23,7 +23,6 @@ public class Fireball : SkillBehavior
 
     public override void OnCast()
     {
-        Debug.Log("OH GOD WE ARE ALL GOING TO DIE WHY WOULD YOU CAST FIREBALL");
         Vector3 _spawnPos = new Vector3(skillManager.gameObject.transform.position.x, skillManager.gameObject.transform.position.y + 3, skillManager.gameObject.transform.position.z);
         fireballObj = Instantiate(fireballPrefab, _spawnPos, fireballPrefab.transform.rotation);
         
