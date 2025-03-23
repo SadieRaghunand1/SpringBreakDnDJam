@@ -13,6 +13,7 @@ public class HealthAndStats : MonoBehaviour
 
     [Header("Loading")]
     public List<int> scenesVisitedThisRun;
+    public int numOfRuns;
     public int levelCount;
     private int lobbyBuildIndx = 0;
 

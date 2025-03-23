@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class SpawnerEnemy : MonoBehaviour
 {
+
+    public enum Area
+    {
+        FOREST,
+        DUNGEON
+            //Leaves room for expansion
+    }
+
     //Manages spawning enemies per area and detecting player entrance into an area
 
     [SerializeField] private GameObject[] spawnPoints;
@@ -25,10 +33,39 @@ public class SpawnerEnemy : MonoBehaviour
     public int numToSpawn;
     public int counter;
 
+    [Header("Area indicators")]
+    public Area area;
+
     private void Start()
     {
         StartCoroutine(TimeSpawns());
         SkillManager _skillManager = FindAnyObjectByType<SkillManager>();
+        HealthAndStats _healthAndStats = FindAnyObjectByType<HealthAndStats>();
+
+        //Set num to spawn, 4-6 is base
+        numToSpawn = Random.Range(4, 7);
+        //Check for bosses killed
+        for(int i = 0; i < _healthAndStats.bossDefeated.Length; i++)
+        {
+            if (_healthAndStats.bossDefeated[i] == true)
+            {
+                numToSpawn += Random.Range(1, 3);
+            }
+        }
+
+        //Factor in number of runs
+        numToSpawn += (int)(_healthAndStats.numOfRuns * Random.Range(1f, 1.5f));
+
+        //Take into account rooms on this run
+        numToSpawn += _healthAndStats.scenesVisitedThisRun.Count;
+
+        //Take into account if in prison
+        if(area == Area.DUNGEON)
+        {
+            numToSpawn += Random.Range(4, 6);
+        }
+
+
         exitRoom = FindAnyObjectByType<ExitRoom>();
         if(_skillManager.scythesEdge)
         {

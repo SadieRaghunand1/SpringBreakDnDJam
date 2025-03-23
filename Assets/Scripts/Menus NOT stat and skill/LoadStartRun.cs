@@ -12,6 +12,7 @@ public class LoadStartRun : MonoBehaviour
 
     public void BeginRun()
     {
+        FindAnyObjectByType<HealthAndStats>().numOfRuns++;
         SceneManager.LoadScene(1);
     }
 }

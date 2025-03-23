@@ -373,6 +373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllGameScenes
       objectReference: {fileID: 0}
+    - target: {fileID: 406508487104823266, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: area
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 406919443393054242, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 136.2
