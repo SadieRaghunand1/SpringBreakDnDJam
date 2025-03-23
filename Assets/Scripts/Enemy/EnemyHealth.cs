@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     private Attack playerAttack;
     private ExitRoom exitRoom;
 
+    [SerializeField] private AudioSource attacked;
     public void Start()
     {
         playerAttack = FindAnyObjectByType<Attack>();
@@ -17,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
     public virtual void LoseHealth(float _damage)
     {
         health -= _damage;
-
+        attacked.Play();
         CheckDead();
     }
 

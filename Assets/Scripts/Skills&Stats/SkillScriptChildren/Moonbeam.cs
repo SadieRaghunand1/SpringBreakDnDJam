@@ -10,6 +10,7 @@ public class Moonbeam : SkillBehavior
     {
         skillManager.obtainedSkills[2] = data;
         skillManager.moonbeam = true;
+        spell = true;
     }
 
     public override void OnDeactivate()

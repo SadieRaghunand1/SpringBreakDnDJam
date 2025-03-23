@@ -14,6 +14,7 @@ public class SteadyHands : SkillBehavior
     {
         skillManager.obtainedSkills[2] = data;
         skillManager.steadyHands = true;
+        spell = true;
 
     }
 

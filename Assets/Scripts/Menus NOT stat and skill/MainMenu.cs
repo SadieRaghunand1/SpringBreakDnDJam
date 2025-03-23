@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadLobby()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()

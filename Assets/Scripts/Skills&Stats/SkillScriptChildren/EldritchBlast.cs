@@ -9,6 +9,7 @@ public class EldritchBlast : SkillBehavior
     {
         skillManager.obtainedSkills[2] = data;
         skillManager.eldritchBlast = true;
+        spell = true;
     }
 
     public override void OnDeactivate()

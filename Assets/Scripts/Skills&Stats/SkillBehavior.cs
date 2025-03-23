@@ -7,7 +7,7 @@ public class SkillBehavior : MonoBehaviour
     public ScriptObjSkills data;
     public SkillManager skillManager;
     protected SpawnerEnemy spawner;
-
+    public bool spell;
     protected void Awake()
     {
        // Debug.Log("Start on skill behavior run");
@@ -28,6 +28,11 @@ public class SkillBehavior : MonoBehaviour
     public virtual void OnCast()
     {
         //This only applies to spells, on this script it will remain empty for those that are not spells
+
+        if(spell)
+        {
+            skillManager.spellSound.Play();
+        }
     }
 
     public virtual void OnUpgrade(int _rank)

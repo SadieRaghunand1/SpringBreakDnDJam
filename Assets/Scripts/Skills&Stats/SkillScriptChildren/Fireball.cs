@@ -12,6 +12,7 @@ public class Fireball : SkillBehavior
     {
         skillManager.obtainedSkills[2] = data;
         skillManager.fireball = true;
+        spell = true;
     }
 
     public override void OnDeactivate()

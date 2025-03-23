@@ -17,7 +17,7 @@ public class HealthAndStats : MonoBehaviour
     public int levelCount;
     private int totalLevelCount;
     public int longestRun;
-    private int lobbyBuildIndx = 0;
+    private int lobbyBuildIndx = 1;
 
 
     [Header("Stats")]
@@ -40,7 +40,7 @@ public class HealthAndStats : MonoBehaviour
     [Header("BossIndicators")]
     public bool[] bossDefeated;
 
-
+    [SerializeField] private AudioSource deathSound;
     private void Awake()
     {
        // Debug.Log(this.gameObject.name);
@@ -262,9 +262,8 @@ public class HealthAndStats : MonoBehaviour
         if(health <= 0)
         {
             skillManager.OnDeath();
-            //Temp, rn this causes the issue of several players in scene so will need to spawn in player, not put in scene automatically
-            SceneManager.LoadScene(lobbyBuildIndx);
-            ResetEverythingOnDeath();
+            deathSound.Play();
+            StartCoroutine(WaitForAudio());
         }
 
         
@@ -289,8 +288,19 @@ public class HealthAndStats : MonoBehaviour
                 SceneManager.LoadScene(8);
             }*/
         }
-        FindAnyObjectByType<ExitRoom>().bossDead = true;
 
+       
+
+        FindAnyObjectByType<ExitRoom>().bossDead = true;
+        for (int i = 0; i < bossDefeated.Length; i++)
+        {
+            if (bossDefeated[i] == false)
+            {
+                return;
+            }
+        }
+
+        SceneManager.LoadScene("Win");
 
     }
 
@@ -337,5 +347,12 @@ public class HealthAndStats : MonoBehaviour
         {
             return false;
         }
+    }
+
+    IEnumerator WaitForAudio()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(lobbyBuildIndx);
+        ResetEverythingOnDeath();
     }
 }

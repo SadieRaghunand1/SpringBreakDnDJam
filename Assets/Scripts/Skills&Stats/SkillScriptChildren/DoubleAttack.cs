@@ -8,6 +8,7 @@ public class DoubleAttack : SkillBehavior
     {
         skillManager.obtainedSkills[2] = data;
         skillManager.doubleAttack = true;
+        spell = true;
     }
 
     public override void OnDeactivate()

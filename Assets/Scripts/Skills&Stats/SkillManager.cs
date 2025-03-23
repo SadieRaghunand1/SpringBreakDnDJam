@@ -73,7 +73,7 @@ public class SkillManager : MonoBehaviour
     public float animMult = 1.75f;
     public LineRenderer[] blasts;
 
-
+    public AudioSource spellSound;
 
     //These need container methods to be accessed by the buttons
 

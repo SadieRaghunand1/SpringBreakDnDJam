@@ -17,11 +17,13 @@ public class WinRoom : MonoBehaviour
                 healthAndStats.bossDefeated[i] = false;
             }
 
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            HealthAndStats healthAndStats = FindAnyObjectByType<HealthAndStats>();
+            Destroy(healthAndStats.gameObject);
             SceneManager.LoadScene("MainMenu");
         }
     }

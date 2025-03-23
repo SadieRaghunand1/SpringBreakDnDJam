@@ -24,7 +24,7 @@ public class Attack : MonoBehaviour
 
     [SerializeField] private GameObject seed;
 
-    
+    [SerializeField] private AudioSource attackSound;
 
     private void Update()
     {
@@ -61,7 +61,7 @@ public class Attack : MonoBehaviour
 
     void AttackSword(bool _flowerPot)
     {
-
+        attackSound.Play();
         float _distance;
         if(_flowerPot)
         {
