@@ -30,11 +30,25 @@ public class LoadStartRun : MonoBehaviour
 
         totalRuns.text = "Total runs: " + healthAndStats.numOfRuns.ToString();
         longestRun.text = "Longest run : " + healthAndStats.longestRun.ToString() + " rooms";
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            BeginRun();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            //Quit to menu
+            Destroy(healthAndStats.gameObject);
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     public void BeginRun()
