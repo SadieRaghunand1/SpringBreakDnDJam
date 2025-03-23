@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 1033910755482000193}
   - component: {fileID: 7641900256323240996}
   - component: {fileID: 3206900472672537599}
-  - component: {fileID: 6444767516158311348}
-  - component: {fileID: 8171564246532946778}
   - component: {fileID: 2960937537327585739}
   m_Layer: 7
   m_Name: tree
@@ -101,39 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freezeXZ: 0
---- !u!114 &6444767516158311348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507151983806450637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6862e6372f4000d4e802830c568a5692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backAngle: 65
-  sideAngle: 140
-  mainTransform: {fileID: 3118145687730825988}
-  animator: {fileID: 2960937537327585739}
-  spriteRenderer: {fileID: 7641900256323240996}
---- !u!114 &8171564246532946778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507151983806450637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3a3045b47b62284e9f203de67565400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainTransform: {fileID: 3118145687730825988}
-  animator: {fileID: 2960937537327585739}
-  spriteRenderer: {fileID: 7641900256323240996}
-  em: {fileID: 645134817431661152}
 --- !u!95 &2960937537327585739
 Animator:
   serializedVersion: 5
