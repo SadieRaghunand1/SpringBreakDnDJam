@@ -582,11 +582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4811497978760123918, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.05
+      value: 87.45
       objectReference: {fileID: 0}
     - target: {fileID: 4811497978760123918, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.66
+      value: -3.44
       objectReference: {fileID: 0}
     - target: {fileID: 4811497978760123918, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1262,6 +1262,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733666732}
   m_Mesh: {fileID: -5495902117074765545, guid: dd49ea4c54e8a6944999d8ac4e3f6564, type: 3}
+--- !u!1 &796359495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7029948723529949830, guid: cfac044043ddd00458dc32cdb86c9b08, type: 3}
+  m_PrefabInstance: {fileID: 1434208121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &796359499
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796359495}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -462981019419857548, guid: cfac044043ddd00458dc32cdb86c9b08, type: 3}
 --- !u!1001 &847679396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1390,6 +1417,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6027bd870684a5f4bbc83dff365a064b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ab74c3616cd4284faf7644cbc30e4a1, type: 2}
     - target: {fileID: 919132149155446097, guid: 6027bd870684a5f4bbc83dff365a064b, type: 3}
       propertyPath: m_Name
       value: portal 1 (1)
@@ -1397,8 +1428,57 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6027bd870684a5f4bbc83dff365a064b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 964143496}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6027bd870684a5f4bbc83dff365a064b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 964143495}
   m_SourcePrefab: {fileID: 100100000, guid: 6027bd870684a5f4bbc83dff365a064b, type: 3}
+--- !u!1 &964143491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6027bd870684a5f4bbc83dff365a064b, type: 3}
+  m_PrefabInstance: {fileID: 880529264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &964143495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964143491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd22bc38c0f0c34e880531cb2ee3b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsManager: {fileID: 976236695}
+  spawnEnemy: {fileID: 858571338}
+  goalKill: 0
+  bossDead: 0
+  bossRoom: 0
+--- !u!65 &964143496
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964143491}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.019999998, y: 0.023817105, z: 0.02}
+  m_Center: {x: 0, y: -0.0019085496, z: 2.8439605e-11}
 --- !u!1001 &964362033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1641,6 +1721,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6027bd870684a5f4bbc83dff365a064b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ab74c3616cd4284faf7644cbc30e4a1, type: 2}
     - target: {fileID: 919132149155446097, guid: 6027bd870684a5f4bbc83dff365a064b, type: 3}
       propertyPath: m_Name
       value: portal 1
@@ -1911,6 +1995,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b40c41f2c153c654caed2911c11a2c30, type: 2}
+    - target: {fileID: -7029948723529949830, guid: cfac044043ddd00458dc32cdb86c9b08, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cfac044043ddd00458dc32cdb86c9b08, type: 3}
       propertyPath: m_Name
       value: floor
@@ -1918,7 +2006,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -7029948723529949830, guid: cfac044043ddd00458dc32cdb86c9b08, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 796359499}
   m_SourcePrefab: {fileID: 100100000, guid: cfac044043ddd00458dc32cdb86c9b08, type: 3}
 --- !u!1001 &1465426612
 PrefabInstance:
