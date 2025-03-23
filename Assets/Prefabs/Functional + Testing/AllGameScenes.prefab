@@ -1159,6 +1159,7 @@ MonoBehaviour:
   minTime: 1
   numToSpawn: 8
   counter: 0
+  area: 0
 --- !u!65 &2073247098196703084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7118,7 +7119,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7bba36c57d465942b60a44290fac740, type: 2}
   - {fileID: 11400000, guid: f469190c3bcd1a64e9155a1806a36dbf, type: 2}
   - {fileID: 11400000, guid: 01a99035cfa7ec9499bf097d4913188b, type: 2}
-  debugMode: 1
+  debugMode: 0
 --- !u!1 &8922489702688258738
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class HealthAndStats : MonoBehaviour
     public List<int> scenesVisitedThisRun;
     public int numOfRuns;
     public int levelCount;
+    private int totalLevelCount;
+    public int longestRun;
     private int lobbyBuildIndx = 0;
 
 
@@ -58,6 +60,7 @@ public class HealthAndStats : MonoBehaviour
     public void InitValuesOnLoad()
     {
         levelCount++;
+        totalLevelCount++;
         startPos = GameObject.FindWithTag("StartPos").transform;
         transform.position = startPos.position;
         scenesVisitedThisRun.Add(SceneManager.GetActiveScene().buildIndex);
@@ -289,6 +292,12 @@ public class HealthAndStats : MonoBehaviour
     {
         health = 1;
         attack.killed = 0;
+
+        if(totalLevelCount > longestRun)
+        {
+            longestRun = totalLevelCount;
+        }
+        totalLevelCount = 0;
         attack.StopAllCoroutines();
     }
 
