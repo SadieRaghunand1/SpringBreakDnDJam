@@ -448,6 +448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GnomeKing
       objectReference: {fileID: 0}
+    - target: {fileID: 4375388206222397441, guid: 1ded37bf5fcf0c146941d08ec19d56e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -725,6 +729,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2118020980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &921511104
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3118145687730825988, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.6873379
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118145687730825988, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118145687730825988, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.5525007
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118145687730825988, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118145687730825988, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118145687730825988, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118145687730825988, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118145687730825988, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118145687730825988, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118145687730825988, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375388206222397441, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
+      propertyPath: m_Name
+      value: Skull
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da6a4de1f16993344abe89715d4f3b50, type: 3}
 --- !u!1 &1332137936
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +868,10 @@ PrefabInstance:
     - target: {fileID: 4375388206222397441, guid: 0217d3ec1de9e604aa8dfba7ac11ff99, type: 3}
       propertyPath: m_Name
       value: Mimic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375388206222397441, guid: 0217d3ec1de9e604aa8dfba7ac11ff99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1143,6 +1208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FeralGnome
       objectReference: {fileID: 0}
+    - target: {fileID: 4375388206222397441, guid: f836bc6cb2ef65c4298dad005d9c4fd9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1196,3 +1265,4 @@ SceneRoots:
   - {fileID: 1944630042}
   - {fileID: 1336463730}
   - {fileID: 218974868}
+  - {fileID: 921511104}
