@@ -1791,7 +1791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: switchToBoss
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: buildIndices.Array.size
@@ -1799,6 +1799,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: buildIndices.Array.data[0]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
+      propertyPath: buildIndices.Array.data[1]
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4899536269940243801, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}

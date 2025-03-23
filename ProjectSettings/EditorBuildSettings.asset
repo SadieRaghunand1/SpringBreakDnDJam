@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrisonScenes/PrisonRoom2.unity
     guid: e4b6b4ea0f0d146489209e5c9189aa20
+  - enabled: 1
+    path: Assets/Scenes/PrisonScenes/PrisonRoom3.unity
+    guid: a2a336f25df9bf54db26251f6d8a50c7
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: b10b81bb1463cd54098d3033c3d8e929
   m_configObjects: {}
