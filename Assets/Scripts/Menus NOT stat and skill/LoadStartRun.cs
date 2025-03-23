@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadStartRun : MonoBehaviour
 {
-    private void Awake()
+    private void Update()
     {
         Cursor.lockState = CursorLockMode.None;
     }
