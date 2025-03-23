@@ -19,6 +19,8 @@ public class StatsManager : MonoBehaviour
 
     [SerializeField] private int bossBuildInx;
     [SerializeField] private int nextAreaIndx;
+
+    public bool switchToBoss;
     private void Start()
     {
         InitValues();
@@ -178,7 +180,7 @@ public class StatsManager : MonoBehaviour
             }
         }
 
-        if(player.levelCount == 4)
+        if(player.levelCount == 4 || switchToBoss)
         {
             _loadSceneInx = bossBuildInx;
         }

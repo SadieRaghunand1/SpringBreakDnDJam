@@ -5408,6 +5408,7 @@ MonoBehaviour:
   buildIndices: 0200000003000000040000000500000006000000
   bossBuildInx: 7
   nextAreaIndx: 0
+  switchToBoss: 0
 --- !u!1 &6833859687947367335
 GameObject:
   m_ObjectHideFlags: 0
@@ -7119,7 +7120,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f17f076651c4d374b94a90cb15060747, type: 2}
   - {fileID: 11400000, guid: 7674ba49ef62f614e8e1c42cc398ad31, type: 2}
   - {fileID: 11400000, guid: 806d8da9722d41c498042583fb10650d, type: 2}
-  debugMode: 1
+  debugMode: 0
 --- !u!1 &8922489702688258738
 GameObject:
   m_ObjectHideFlags: 0

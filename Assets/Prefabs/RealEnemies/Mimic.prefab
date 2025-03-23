@@ -165,10 +165,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3118145687730825988}
   - component: {fileID: 279152412072785409}
-  - component: {fileID: 4867498648714740677}
   - component: {fileID: 2561014829643095461}
   - component: {fileID: 3350465791085519661}
   - component: {fileID: 645134817431661152}
+  - component: {fileID: 9169479472969134187}
   m_Layer: 7
   m_Name: Mimic
   m_TagString: Untagged
@@ -215,19 +215,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.187731, y: 1.7927763, z: 1}
   m_Center: {x: -0.028942585, y: 0.99797595, z: 0}
---- !u!114 &4867498648714740677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4375388206222397441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbbe87e610e416f42bd604a5c495db36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
 --- !u!114 &2561014829643095461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMovement: {fileID: 645134817431661152}
-  anim: {fileID: 0}
+  anim: {fileID: 3312909277362476299}
   spritePos: {fileID: 1033910755482000193}
   debugMode: 0
 --- !u!195 &3350465791085519661
@@ -283,6 +270,20 @@ MonoBehaviour:
   debugging: 0
   charmedVFX: {fileID: 5184631758789923856}
   freezeVFX: {fileID: 2945296594536647114}
+--- !u!114 &9169479472969134187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4375388206222397441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5891d1ebbcd5424bb66651cd9c946e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  bossID: 1
 --- !u!1001 &6139519061948058722
 PrefabInstance:
   m_ObjectHideFlags: 0

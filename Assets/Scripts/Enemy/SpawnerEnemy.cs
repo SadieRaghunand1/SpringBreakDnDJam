@@ -33,6 +33,8 @@ public class SpawnerEnemy : MonoBehaviour
     public int numToSpawn;
     public int counter;
 
+    HealthAndStats healthAndStats;
+
     [Header("Area indicators")]
     public Area area;
 
@@ -40,24 +42,24 @@ public class SpawnerEnemy : MonoBehaviour
     {
         StartCoroutine(TimeSpawns());
         SkillManager _skillManager = FindAnyObjectByType<SkillManager>();
-        HealthAndStats _healthAndStats = FindAnyObjectByType<HealthAndStats>();
+        healthAndStats = FindAnyObjectByType<HealthAndStats>();
 
         //Set num to spawn, 4-6 is base
         numToSpawn = Random.Range(4, 7);
         //Check for bosses killed
-        for(int i = 0; i < _healthAndStats.bossDefeated.Length; i++)
+        for(int i = 0; i < healthAndStats.bossDefeated.Length; i++)
         {
-            if (_healthAndStats.bossDefeated[i] == true)
+            if (healthAndStats.bossDefeated[i] == true)
             {
                 numToSpawn += Random.Range(1, 3);
             }
         }
 
         //Factor in number of runs
-        numToSpawn += (int)(_healthAndStats.numOfRuns * Random.Range(1f, 1.5f));
+        numToSpawn += (int)(healthAndStats.numOfRuns * Random.Range(1f, 1.5f));
 
         //Take into account rooms on this run
-        numToSpawn += _healthAndStats.scenesVisitedThisRun.Count;
+        numToSpawn += healthAndStats.scenesVisitedThisRun.Count;
 
         //Take into account if in prison
         if(area == Area.DUNGEON)
@@ -83,8 +85,23 @@ public class SpawnerEnemy : MonoBehaviour
     void SpawnEnemy(Vector3 _spawnPos, EnemyChaseTrigger _area)
     {
         //Debug.Log("Spawn");
-        prefabToSpawn = enemyPrefab[Random.Range(0, enemyPrefab.Length)];
-        enemy = Instantiate(prefabToSpawn, _spawnPos, prefabToSpawn.transform.rotation);
+        if(healthAndStats.numOfRuns > 1 || healthAndStats.levelCount > 2)
+        {
+            if(healthAndStats.levelCount < 4)
+            {
+                prefabToSpawn = enemyPrefab[Random.Range(0, healthAndStats.levelCount)];
+            }
+            else
+            {
+                prefabToSpawn = enemyPrefab[Random.Range(0, Random.Range(0, enemyPrefab.Length))];
+            }
+            
+        }
+        else
+        {
+            prefabToSpawn = enemyPrefab[0];
+        }
+            enemy = Instantiate(prefabToSpawn, _spawnPos, prefabToSpawn.transform.rotation);
         EnemyMovement _enemyMove = enemy.GetComponent<EnemyMovement>();
         _enemyMove.patrolPts = _area.areaPatrolPts;
         enemiesSpawned.Add(_enemyMove);
