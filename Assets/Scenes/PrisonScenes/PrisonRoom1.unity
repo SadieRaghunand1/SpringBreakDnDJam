@@ -1787,7 +1787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: bossBuildInx
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: switchToBoss
@@ -1799,7 +1799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: buildIndices.Array.data[0]
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4858533997449167557, guid: ac12eed31677ab042b12ba86ea3b87b5, type: 3}
       propertyPath: buildIndices.Array.data[1]
