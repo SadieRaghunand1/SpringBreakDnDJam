@@ -22,6 +22,10 @@ public class Attack : MonoBehaviour
     public Animator weaponAnim;
     [SerializeField] private Camera cam;
 
+    [SerializeField] private GameObject seed;
+
+    
+
     private void Update()
     {
         InputAttack();
@@ -123,6 +127,7 @@ public class Attack : MonoBehaviour
     {
         yield return new WaitForSeconds(flowerPotSpeed);
         AttackSword(true);
+        Instantiate(seed, transform.position, transform.rotation);
         StartCoroutine(FlowerPotAttack());
     }
 

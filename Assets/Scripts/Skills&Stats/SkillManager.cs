@@ -71,6 +71,7 @@ public class SkillManager : MonoBehaviour
     private bool currentlyVine;
     public GameObject[] blastPoints;
     public float animMult = 1.75f;
+    public LineRenderer[] blasts;
 
 
 

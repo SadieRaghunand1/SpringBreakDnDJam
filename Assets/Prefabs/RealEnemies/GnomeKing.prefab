@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovement: {fileID: 645134817431661152}
   anim: {fileID: 3312909277362476299}
+  spritePos: {fileID: 1033910755482000193}
   debugMode: 0
 --- !u!195 &3350465791085519661
 NavMeshAgent:

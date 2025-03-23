@@ -11,9 +11,10 @@ public class EnemyAttack : MonoBehaviour
 
 
     private int chanceToHit;
-    private float attackDistance = 50;
+    private float attackDistance = 10;
     [SerializeField] EnemyMovement enemyMovement;
     [SerializeField] Animator anim;
+    [SerializeField] Transform spritePos;
 
     [SerializeField] private bool debugMode;
 
@@ -22,6 +23,7 @@ public class EnemyAttack : MonoBehaviour
     {
         StartCoroutine(TimeAttack());
     }
+   
 
     void AttackPlayer()
     {
@@ -30,12 +32,12 @@ public class EnemyAttack : MonoBehaviour
         RaycastHit hit;
        // enemyMovement.enemyState = EnemyMovement.EnemyState.ATTACK;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, attackDistance))
+        if (Physics.Raycast(new Vector3(spritePos.position.x, spritePos.position.y + 0.5f, spritePos.position.z), transform.forward, out hit, attackDistance))
 
         {
             if (hit.collider.gameObject.layer == 8 && enemyMovement.enemyState != EnemyMovement.EnemyState.CHARMED)
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                Debug.DrawRay(new Vector3(spritePos.position.x, spritePos.position.y + 0.5f, spritePos.position.z), transform.forward * hit.distance, Color.yellow);
 
                 if(!debugMode)
                 {
@@ -50,6 +52,10 @@ public class EnemyAttack : MonoBehaviour
                 EnemyHealth _enemyHealth = hit.collider.gameObject.GetComponent<EnemyHealth>();
                 _enemyHealth.LoseHealth(1);
                 Debug.Log("Enemy hit bc one is charmed");
+            }
+            else
+            {
+                Debug.DrawRay(new Vector3(spritePos.position.x, spritePos.position.y + 0.5f, spritePos.position.z), transform.forward * hit.distance, Color.blue);
             }
 
         }

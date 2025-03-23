@@ -32,7 +32,10 @@ public class HealthAndStats : MonoBehaviour
     [Header("Skills")]
     [SerializeField] private SkillManager skillManager;
     public int reviveRate = 5;
+    [SerializeField] private ParticleSystem reviveVFX;
     public int dodgeRate = 10;
+    [SerializeField] private SpriteRenderer dodgeObj;
+    [SerializeField] private Animator dodgeAnim;
 
     [Header("BossIndicators")]
     public bool[] bossDefeated;
@@ -244,11 +247,14 @@ public class HealthAndStats : MonoBehaviour
         
         if(skillManager.barbarianHelmet && Revive())
         {
+            reviveVFX.Play();
             return;
         }
 
         if(skillManager.knightHelmet && Dodge())
         {
+            dodgeObj.enabled = true;
+            dodgeAnim.SetTrigger("Dodge");
             return;
         }
 
@@ -308,6 +314,7 @@ public class HealthAndStats : MonoBehaviour
         {
             health = 1;
             Debug.Log("Revive");
+            
             return true; //Survive
         }
         else

@@ -22,14 +22,17 @@ public class EldritchBlast : SkillBehavior
         for(int i = 0; i < skillManager.blastPoints.Length; i++)
         {
             RaycastHit hit;
-            if (Physics.Raycast(skillManager.blastPoints[i].transform.position, skillManager.blastPoints[i].transform.TransformDirection(Vector3.forward), out hit, 10))
+            if (Physics.Raycast(skillManager.blastPoints[i].transform.position, skillManager.blastPoints[i].transform.TransformDirection(Vector3.forward), out hit, 50))
 
             {
                 if (hit.collider.gameObject.GetComponent<EnemyHealth>() != null)
                 {
-                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
+                    Debug.DrawRay(transform.position, transform.TransformDirection(skillManager.transform.forward) * hit.distance, Color.green);
                     Debug.Log("Eldricth");
-
+                    skillManager.blasts[i].enabled = true;
+                    skillManager.blasts[i].SetPosition(0, skillManager.transform.position);
+                    skillManager.blasts[i].SetPosition(1, hit.collider.gameObject.transform.position);
+                    StartCoroutine(TunrOffBlast(skillManager.blasts[i]));
                     hit.collider.gameObject.GetComponent<EnemyHealth>().LoseHealth(skillManager.attack.spellDamage);
                 } 
                
@@ -43,5 +46,11 @@ public class EldritchBlast : SkillBehavior
     public override void OnUpgrade(int _rank)
     {
         //Increase number of beams
+    }
+
+    IEnumerator TunrOffBlast(LineRenderer _line)
+    {
+        yield return new WaitForSeconds(1f);
+        _line.enabled = false;
     }
 }
