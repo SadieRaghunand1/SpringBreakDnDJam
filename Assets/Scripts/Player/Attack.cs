@@ -20,7 +20,7 @@ public class Attack : MonoBehaviour
 
     public SkillManager skillManager;
     public Animator weaponAnim;
-  
+    [SerializeField] private Camera cam;
 
     private void Update()
     {
@@ -69,9 +69,10 @@ public class Attack : MonoBehaviour
         }
 
             RaycastHit hit;
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _distance))
-
+        //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _distance))
+        if (Physics.Raycast(ray, out hit, _distance))
         {
             if(hit.collider.gameObject.layer == 7)
             {

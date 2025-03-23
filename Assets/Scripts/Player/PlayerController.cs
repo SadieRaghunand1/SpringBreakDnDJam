@@ -108,11 +108,11 @@ public class PlayerController : MonoBehaviour
 
     void RotateCam()
     {
-        //added for pause menu
+        
         
             rotationX += -Input.GetAxis("Mouse Y") * cameraSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            //playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         
     }
 

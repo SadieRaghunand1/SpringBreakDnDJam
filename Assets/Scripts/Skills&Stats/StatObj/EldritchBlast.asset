@@ -17,4 +17,5 @@ MonoBehaviour:
   skillIndex: 14
   skillType: 2
   statAssociated: 0
+  icon: {fileID: 21300000, guid: 6579ef445f49c58448681a5c0e093769, type: 3}
   skillBehavior: {fileID: 2189565928783673540, guid: b7fc02acf7bba834a80dbd9478c67965, type: 3}

@@ -205,7 +205,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8640796634095554241}
-  - {fileID: 8690563646491808551}
   - {fileID: 1244250106910107482}
   - {fileID: 1590879479605778649}
   - {fileID: 8072378912276326246}
@@ -357,6 +356,7 @@ MonoBehaviour:
   exitRoom: {fileID: 0}
   skillManager: {fileID: 1709396392718550915}
   weaponAnim: {fileID: 8142407899557828825}
+  cam: {fileID: 9012730307709169851}
 --- !u!114 &4072236553033286769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,7 +511,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.39, z: 0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8690563646491808551}
   m_Father: {fileID: 1139825034466438659}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &9012730307709169851
@@ -600,12 +601,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7123784514400915711}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.327, y: -0.377, z: 1.486}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.327, y: -0.76699996, z: 1.326}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1139825034466438659}
+  m_Father: {fileID: 8640796634095554241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8142407899557828825
 Animator:

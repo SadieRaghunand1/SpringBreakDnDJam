@@ -34,6 +34,8 @@ public class StatIncrease : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] title;
     [SerializeField] private TextMeshProUGUI[] desc;
     [SerializeField] private TextMeshProUGUI[] stat;
+    [SerializeField] private TextMeshProUGUI[] type;
+    [SerializeField] private Image[] icon;
 
     [Header("Debugging")]
     public ScriptObjSkills[] debugList;
@@ -133,7 +135,11 @@ public class StatIncrease : MonoBehaviour
         {
             title[i].text = displayedChoices[i].statName;
             desc[i].text = displayedChoices[i].statDesc;
+
             stat[i].text = displayedChoices[i].statAssociated.ToString();
+
+            type[i].text = displayedChoices[i].skillType.ToString();
+            icon[i].sprite = displayedChoices[i].icon;
         }
     }
 

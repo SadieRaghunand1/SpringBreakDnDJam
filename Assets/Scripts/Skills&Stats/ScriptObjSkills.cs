@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu]
 public class ScriptObjSkills : ScriptableObject
@@ -29,5 +30,6 @@ public class ScriptObjSkills : ScriptableObject
     public int skillIndex;
     public SkillType skillType;
     public StatAssociated statAssociated;
+    public Sprite icon;
     public SkillBehavior skillBehavior;
 }
