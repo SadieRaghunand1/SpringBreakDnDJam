@@ -61,7 +61,9 @@ public class SkillManager : MonoBehaviour
     [Header("Specific functionality")]
     public float frostDuration = 5;
     public LineRenderer moon;
+    public ParticleSystem moonPart;
     public LineRenderer vine;
+    public ParticleSystem vinePart;
     public float vineSpeed;
     private float vineStartTime;
     private float vineDistance;
@@ -147,6 +149,7 @@ public class SkillManager : MonoBehaviour
 
 
                 EnemyMovement _enemyMove = hit.collider.gameObject.GetComponent<EnemyMovement>();
+                _enemyMove.freezeVFX.Play();
                 EnemyMovement.EnemyState _previousState = _enemyMove.enemyState;
                 _enemyMove.enemyState = EnemyMovement.EnemyState.IDLE;
 
@@ -191,14 +194,18 @@ public class SkillManager : MonoBehaviour
 
              Debug.Log(_spawner.gameObject.name);
             //Debug.Log("This - " + this.transform.parent.gameObject.name);
-            Debug.Log(_spawner.enemyObjSpawned[i] + "Spawner");
-            float _thisDistance = Vector3.Distance(this.transform.position, _spawner.enemyObjSpawned[i].transform.position);
-
-            if (_closestDistanceComp == 0 || _thisDistance < _closestDistanceComp)
+            if(_spawner.enemyObjSpawned[i] != null)
             {
-                _closestDistanceComp = _thisDistance;
-                _targetEnemy = _spawner.enemyObjSpawned[i].transform;
+                Debug.Log(_spawner.enemyObjSpawned[i] + "Spawner");
+                float _thisDistance = Vector3.Distance(this.transform.position, _spawner.enemyObjSpawned[i].transform.position);
+
+                if (_closestDistanceComp == 0 || _thisDistance < _closestDistanceComp)
+                {
+                    _closestDistanceComp = _thisDistance;
+                    _targetEnemy = _spawner.enemyObjSpawned[i].transform;
+                }
             }
+           
         }
         Debug.Log(_targetEnemy.gameObject.name + "Get vined");
 
@@ -210,6 +217,7 @@ public class SkillManager : MonoBehaviour
         vineDistance = _closestDistanceComp;
         enemyVined = _targetEnemy.gameObject;
         currentlyVine = true;
+        vinePart.Play();
         StartCoroutine(EndVineWhip());
     }
 
@@ -218,7 +226,11 @@ public class SkillManager : MonoBehaviour
         float _a = (Time.time - vineStartTime) * vineSpeed;
         float _b = _a / vineDistance;
 
-        enemyVined.transform.position = Vector3.Lerp(enemyVined.transform.position, transform.position, _b);
+        if(enemyVined != null)
+        {
+            enemyVined.transform.position = Vector3.Lerp(enemyVined.transform.position, transform.position, _b);
+        }
+        
     }
 
     public IEnumerator StartVineWhip()

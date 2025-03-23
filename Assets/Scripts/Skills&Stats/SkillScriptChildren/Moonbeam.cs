@@ -37,6 +37,8 @@ public class Moonbeam : SkillBehavior
         skillManager.moon.enabled = true;
         skillManager.moon.SetPosition(0, skillManager.moon.gameObject.transform.position);
         skillManager.moon.SetPosition(1, _lockedEnemy.transform.position);
+        skillManager.moonPart.transform.position = _lockedEnemy.transform.position;
+        skillManager.moonPart.Play();
         StartCoroutine(HideMoonbeam());
     }
 

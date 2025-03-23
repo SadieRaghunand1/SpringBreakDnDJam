@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fireball : SkillBehavior
 {
-    private float fireballForce = 20;
+    private float fireballForce = 10;
     [SerializeField] private GameObject fireballPrefab;
     public GameObject fireballObj;
 

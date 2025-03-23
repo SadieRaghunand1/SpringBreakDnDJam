@@ -27,6 +27,9 @@ public class EnemyMovement : MonoBehaviour
     private SpawnerEnemy spawner;
     private GameObject targetEnemy;
 
+    [SerializeField] private ParticleSystem charmedVFX;
+    public ParticleSystem freezeVFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,19 +77,23 @@ public class EnemyMovement : MonoBehaviour
         if(enemyState == EnemyState.PATROL)
         {
             //Move
+            charmedVFX.Stop();
             agent.SetDestination(patrolPts[ptIndex].transform.position);
             ChangePatrolPt();
         }
         else if (enemyState == EnemyState.CHASE)
         {
+            charmedVFX.Stop();
             agent.SetDestination(player.transform.position);
         }
         else if (enemyState == EnemyState.CHARMED)
         {
+            charmedVFX.Play();
             CharmedMovement();
         }
         else if(enemyState == EnemyState.IDLE)
         {
+            charmedVFX.Stop();
             ;
         }
     }
