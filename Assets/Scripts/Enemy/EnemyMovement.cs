@@ -88,7 +88,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else if (enemyState == EnemyState.CHARMED)
         {
-            charmedVFX.Play();
+            //charmedVFX.Play();
             CharmedMovement();
         }
         else if(enemyState == EnemyState.IDLE)
@@ -117,14 +117,18 @@ public class EnemyMovement : MonoBehaviour
 
     public void ChooseEnemyCharmed ()
     {
+        charmedVFX.Play();
         int _index = Random.Range(0, spawner.enemyObjSpawned.Count);
         targetEnemy = spawner.enemyObjSpawned[_index];
     }
 
     void CharmedMovement()
     {
+        Debug.Log("This enemy charmed");
         if (targetEnemy != null)
             agent.SetDestination(targetEnemy.transform.position);
+
+        //charmedVFX.Play();
     }
 
 }
