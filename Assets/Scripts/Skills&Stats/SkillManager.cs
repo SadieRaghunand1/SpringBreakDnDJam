@@ -107,19 +107,7 @@ public class SkillManager : MonoBehaviour
     public void OnDeath()
     {
 
-       /* if(blurryHat)
-        {
-            playerController.speed /= 2;
-        }
-
-        blurryHat = false;
-        flowerPot = false;
-        knightHelmet = false;
-        propellorHat = false;
-        wingedHelmet = false;
-
-        healthAndStats.health = 1;
-        rb.mass = 1;*/
+       
 
         for(int i = 0; i < skillBehavior.Length; i++)
         {

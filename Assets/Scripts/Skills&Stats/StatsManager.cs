@@ -180,7 +180,7 @@ public class StatsManager : MonoBehaviour
             }
         }
 
-        if(player.levelCount == 4 || switchToBoss)
+        if(player.totalLevelCount == 4)
         {
             _loadSceneInx = bossBuildInx;
         }

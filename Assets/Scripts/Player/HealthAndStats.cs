@@ -15,7 +15,7 @@ public class HealthAndStats : MonoBehaviour
     public List<int> scenesVisitedThisRun;
     public int numOfRuns;
     public int levelCount;
-    private int totalLevelCount;
+    public int totalLevelCount;
     public int longestRun;
     private int lobbyBuildIndx = 1;
 
@@ -69,6 +69,7 @@ public class HealthAndStats : MonoBehaviour
         scenesVisitedThisRun.Add(SceneManager.GetActiveScene().buildIndex);
         skillManager.OnStartRemove();
         statsManager = FindAnyObjectByType<StatsManager>();
+        attack.canAttack = true;
         for (int i = 0; i < scenesVisitedThisRun.Count; i++)
         {
             //Debug.Log("Scenes: " + scenesVisitedThisRun[i]);

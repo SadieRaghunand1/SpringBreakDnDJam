@@ -9,7 +9,7 @@ public class Attack : MonoBehaviour
     [SerializeField] private float flowerDistance;
     public float attackDamage;
     public bool isAttacking = false;
-    private bool canAttack = true;
+    public bool canAttack = true;
 
     public int killed;
 
@@ -37,7 +37,7 @@ public class Attack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             isAttacking = true;
-            //Debug.Log("Shoot");
+            Debug.Log("Shoot");
             AttackSword(false);
 
             StartCoroutine(WaitForAttackAnim());
